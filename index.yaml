@@ -66,6 +66,22 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/cert-wildcard-0.1.0/cert-wildcard-0.1.0.tgz
     version: 0.1.0
+  esphome:
+  - apiVersion: v2
+    created: "2021-11-07T18:08:42.09402494Z"
+    dependencies:
+    - name: esphome
+      repository: https://k8s-at-home.com/charts/
+      version: 8.0.1
+    description: Preconfigured ESPHome Deployment
+    digest: c3dcf3e4e7f189f9f571a9968ee7b9c902633cc4fa808697f3c2566295e771c7
+    name: esphome
+    sources:
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/esphome
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/esphome-0.0.1/esphome-0.0.1.tgz
+    version: 0.0.1
   external-secrets-manifests:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -113,4 +129,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/fritz-exporter-0.0.1/fritz-exporter-0.0.1.tgz
     version: 0.0.1
-generated: "2021-11-07T18:07:00.222826776Z"
+generated: "2021-11-07T18:08:42.09405354Z"
