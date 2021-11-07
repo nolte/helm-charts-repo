@@ -11,6 +11,27 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflow-mixin-0.1.0/argo-workflow-mixin-0.1.0.tgz
     version: 0.1.0
+  argo-workflows:
+  - apiVersion: v2
+    created: "2021-11-07T18:03:52.108568382Z"
+    dependencies:
+    - alias: argoworkflows
+      name: argo-workflows
+      repository: https://argoproj.github.io/argo-helm
+      version: 0.8.1
+    - alias: argoworkflowmixin
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.0
+    description: Preconfigured argo workflows Deployment
+    digest: 50ad2073998a9b41759dc7a329627ab4805261b112204eacbd66e55242eab585
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/master/charts/argo-workflows
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflows-0.2.2/argo-workflows-0.2.2.tgz
+    version: 0.2.2
   cert-manager-webhook-duckdns:
   - apiVersion: v2
     created: "2021-11-07T16:16:50.753225502Z"
@@ -81,4 +102,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/fritz-exporter-0.0.1/fritz-exporter-0.0.1.tgz
     version: 0.0.1
-generated: "2021-11-07T17:56:45.405539147Z"
+generated: "2021-11-07T18:03:52.108584282Z"
