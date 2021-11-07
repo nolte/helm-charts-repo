@@ -3,6 +3,9 @@
     "config:base"
   ],
   "rebaseWhen": "conflicted",
+  "helm-values": {
+    "enabled": true
+  },
   "helmv3": {
     "fileMatch": ["charts/.+/Chart\\.yaml$"]
   }
