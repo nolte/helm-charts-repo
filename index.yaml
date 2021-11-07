@@ -129,4 +129,56 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/fritz-exporter-0.0.1/fritz-exporter-0.0.1.tgz
     version: 0.0.1
-generated: "2021-11-07T18:08:42.09405354Z"
+  gitea:
+  - apiVersion: v2
+    created: "2021-11-07T18:13:52.65161257Z"
+    dependencies:
+    - name: gitea
+      repository: https://dl.gitea.io/charts/
+      version: 4.1.1
+    description: Preconfigured gitea Deployment
+    digest: 4983c88fee98db655ba357c8adac0d900b1bb6f250e6edb38e3fbf915359b5d2
+    name: gitea
+    sources:
+    - https://gitea.com/gitea/helm-chart
+    - https://gitea.io/en-us/
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/gitea-0.0.1/gitea-0.0.1.tgz
+    version: 0.0.1
+  harbor:
+  - apiVersion: v2
+    created: "2021-11-07T18:13:52.81157466Z"
+    dependencies:
+    - name: harbor
+      repository: https://helm.goharbor.io
+      version: 1.8.0
+    description: Preconfigured harbor Deployment
+    digest: c4cf8167672bdd982692c304276629342a52c5191cad072c7f091d47b7dfcd66
+    name: harbor
+    sources:
+    - https://github.com/goharbor/harbor-helm
+    - https://github.com/goharbor/harbor
+    - https://goharbor.io/
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/harbor-0.0.1/harbor-0.0.1.tgz
+    version: 0.0.1
+  home-assistant:
+  - apiVersion: v2
+    created: "2021-11-07T18:13:53.000151398Z"
+    dependencies:
+    - alias: homeassistant
+      name: home-assistant
+      repository: https://k8s-at-home.com/charts/
+      version: 11.1.0
+    description: Preconfigured Home Assistant Deployment
+    digest: 0e606dda3ef494383a54db3a62a43a731ae48ebc5e12480096f090d64f71cfd4
+    name: home-assistant
+    sources:
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/home-assistant
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/home-assistant-0.2.2/home-assistant-0.2.2.tgz
+    version: 0.2.2
+generated: "2021-11-07T18:13:53.0003588Z"
