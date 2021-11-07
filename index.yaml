@@ -1,0 +1,24 @@
+apiVersion: v1
+entries:
+  external-secrets-manifests:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-11-07T15:45:41.416707152Z"
+    description: A Helm chart for Configure External Secrets, allows to keep the Git
+      Password free
+    digest: f7c966dba4ba0b021810c78599a74810989bb69e0cfb70fe2be146e17d2a45ad
+    home: https://github.com/nolte/helm-charts-repo/tree/main/stable/external-secrets-manifests
+    keywords:
+    - secrets
+    - vault
+    maintainers:
+    - name: nolte
+    name: external-secrets-manifests
+    sources:
+    - https://github.com/nolte/helm-charts-repo
+    - https://github.com/external-secrets/kubernetes-external-secrets
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/external-secrets-manifests-0.1.1/external-secrets-manifests-0.1.1.tgz
+    version: 0.1.1
+generated: "2021-11-07T15:45:41.416713052Z"
