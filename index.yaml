@@ -55,6 +55,17 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/cert-manager-webhook-duckdns-0.2.2/cert-manager-webhook-duckdns-0.2.2.tgz
     version: 0.2.2
+  cert-wildcard:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-11-07T18:07:00.222818976Z"
+    description: A Helm chart for Kubernetes
+    digest: 9c3d724d61320ef4c91ca28145fc3628a2e5b24ffacab2d87be3b29b15739366
+    name: cert-wildcard
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/cert-wildcard-0.1.0/cert-wildcard-0.1.0.tgz
+    version: 0.1.0
   external-secrets-manifests:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -102,4 +113,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/fritz-exporter-0.0.1/fritz-exporter-0.0.1.tgz
     version: 0.0.1
-generated: "2021-11-07T18:03:52.108584282Z"
+generated: "2021-11-07T18:07:00.222826776Z"
