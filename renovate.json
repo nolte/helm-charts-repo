@@ -1,5 +1,9 @@
 {
   "extends": [
     "config:base"
-  ]
+  ],
+  "rebaseWhen": "conflicted",
+  "helmv3": {
+    "fileMatch": ["charts/.+/Chart\\.yaml$"]
+  }
 }

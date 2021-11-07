@@ -10,3 +10,5 @@ chart-repos:
 - k8s-at-home-libraries=https://library-charts.k8s-at-home.com
 - k8s-at-home=https://k8s-at-home.com/charts
 - jetstack=https://charts.jetstack.io
+- nolte-ebrianne=https://nolte.github.io/ebrianne-helm-charts
+- nolte-charts=https://nolte.github.io/helm-charts-repo
