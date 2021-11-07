@@ -103,6 +103,23 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/external-secrets-manifests-0.1.1/external-secrets-manifests-0.1.1.tgz
     version: 0.1.1
+  forecastle:
+  - apiVersion: v2
+    created: "2021-11-07T18:29:19.829880646Z"
+    dependencies:
+    - name: forecastle
+      repository: https://stakater.github.io/stakater-charts
+      version: v1.0.69
+    description: Preconfigured forecastle Deployment
+    digest: a3e1c37f7e434979ceb906a270327ccc191dfdb85c8924334d542f85734f7b9e
+    name: forecastle
+    sources:
+    - https://stakater.github.io/stakater-charts
+    - https://github.com/stakater/Forecastle/tree/master/deployments/kubernetes/chart/forecastle
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/forecastle-0.2.2/forecastle-0.2.2.tgz
+    version: 0.2.2
   fritz-exporter:
   - apiVersion: v2
     appVersion: v2.0.0
@@ -181,4 +198,65 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/home-assistant-0.2.2/home-assistant-0.2.2.tgz
     version: 0.2.2
-generated: "2021-11-07T18:13:53.0003588Z"
+  keycloak:
+  - apiVersion: v2
+    created: "2021-11-07T18:29:19.954460046Z"
+    dependencies:
+    - name: keycloak
+      repository: https://codecentric.github.io/helm-charts
+      version: 15.1.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.0
+    description: Preconfigured keycloak Deployment
+    digest: 4e6ff226a96c46f29b23a96719849a3f46229cc232f7a0ed4ff461466101a245
+    name: keycloak
+    sources:
+    - https://codecentric.github.io/helm-charts
+    - https://github.com/codecentric/helm-charts/tree/master/charts/keycloak
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/keycloak-0.2.2/keycloak-0.2.2.tgz
+    version: 0.2.2
+  powerdns:
+  - apiVersion: v2
+    created: "2021-11-07T18:29:20.09339111Z"
+    dependencies:
+    - name: powerdns
+      repository: https://k8s-at-home.com/charts
+      version: 3.5.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.0
+    description: extendet powerdns chart
+    digest: 166efd8d6cb2227c1cb24e971602769e1af866d51d69b7df8cd6e8c3c833bcdc
+    name: powerdns
+    sources:
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/powerdns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/powerdns-0.0.1/powerdns-0.0.1.tgz
+    version: 0.0.1
+  vault:
+  - apiVersion: v2
+    created: "2021-11-07T18:29:20.217177357Z"
+    dependencies:
+    - name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.17.1
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.0
+    description: Preconfigured Vault Deployment
+    digest: ab801ee401a150c1b89c0a28fd7aaf1243489eeead403fbacb87da228ae2675c
+    name: vault
+    sources:
+    - https://github.com/hashicorp/vault-helm
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
+    version: 0.2.2
+generated: "2021-11-07T18:29:20.217188658Z"
