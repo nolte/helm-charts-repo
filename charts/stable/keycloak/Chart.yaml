@@ -10,7 +10,7 @@ dependencies:
   - name: keycloak
     version: 15.1.0
     repository: https://codecentric.github.io/helm-charts
-
-  - name: argo-workflows-execution
-    version: 0.0.1
-    repository: "file://../../../argo-workflow-templates/deploy/chart"
+  - name: argo-workflow-mixin
+    repository: https://nolte.github.io/helm-charts-repo/
+    version: 0.1.0
+    alias: argo-workflows-execution
