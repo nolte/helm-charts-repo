@@ -1,5 +1,28 @@
 apiVersion: v1
 entries:
+  cert-manager-webhook-duckdns:
+  - apiVersion: v2
+    created: "2021-11-07T16:16:50.753225502Z"
+    dependencies:
+    - alias: certmanagerwebhookduckdns
+      name: cert-manager-webhook-duckdns
+      repository: https://nolte.github.io/ebrianne-helm-charts
+      version: 1.2.4
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.1
+    description: Preconfigured Certmanager Duckdns Deployment
+    digest: bd92fc72ec349df6fbb8485d1323e05c513886de6dbcf5d9c95789b7f6f89964
+    name: cert-manager-webhook-duckdns
+    sources:
+    - https://github.com/ebrianne/helm-charts/tree/master/charts/cert-manager-webhook-duckdns
+    - https://github.com/ebrianne/cert-manager-webhook-duckdns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/cert-manager-webhook-duckdns-0.2.2/cert-manager-webhook-duckdns-0.2.2.tgz
+    version: 0.2.2
   external-secrets-manifests:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -21,4 +44,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/external-secrets-manifests-0.1.1/external-secrets-manifests-0.1.1.tgz
     version: 0.1.1
-generated: "2021-11-07T15:45:41.416713052Z"
+generated: "2021-11-07T16:16:50.753231902Z"
