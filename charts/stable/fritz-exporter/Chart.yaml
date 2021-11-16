@@ -19,4 +19,5 @@ dependencies:
   version: 0.1.1
   repository: https://nolte.github.io/helm-charts-repo/
   alias: externalsecrets
-  condition: externalsecrets.enabled  
+  condition: externalsecrets.enabled
+
