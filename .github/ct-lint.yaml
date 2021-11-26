@@ -13,3 +13,4 @@ chart-repos:
 - jetstack=https://charts.jetstack.io
 - nolte-ebrianne=https://nolte.github.io/ebrianne-helm-charts
 - nolte-charts=https://nolte.github.io/helm-charts-repo
+- gitea=https://dl.gitea.io/charts/
