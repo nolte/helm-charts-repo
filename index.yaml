@@ -241,6 +241,25 @@ entries:
     version: 0.0.1
   vault:
   - apiVersion: v2
+    created: "2021-11-26T19:08:59.353134585Z"
+    dependencies:
+    - name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.18.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.0
+    description: Preconfigured Vault Deployment
+    digest: 8fc5395732f13bb46d19e36ffd1d01391633aa8f7437266c6049eea1baf7cd14
+    name: vault
+    sources:
+    - https://github.com/hashicorp/vault-helm
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.3.0/vault-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
     created: "2021-11-07T18:29:20.217177357Z"
     dependencies:
     - name: vault
@@ -259,4 +278,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2021-11-07T18:29:20.217188658Z"
+generated: "2021-11-26T19:08:59.353153386Z"
