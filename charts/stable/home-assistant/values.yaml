@@ -82,7 +82,7 @@ certificate:
   create: false
 
 assistantCreds:
-  data: 
+  data:
     - key: secrets-tf/data/third-party-services/google.com/projects/home-assistant
       name: GOOGLE_CLIENT_ID
       property: client_id
