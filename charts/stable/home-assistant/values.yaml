@@ -5,7 +5,7 @@
 #            mountPath: /config
 homeassistant:
   global:
-    fullnameOverride: home-assistant      
+    fullnameOverride: home-assistant
   env:
     HUE_ENDPOINT: "192.168.0.17"
     MQTT_ENDPOINT: mosquitto.mosquitto.svc
@@ -14,11 +14,11 @@ homeassistant:
     PHILIPSTV_ENDPOINT: "192.168.0.24"
     FRITZBOX_ENDPOINT: "192.168.0.1"
     HARMONY_ENDPOINT: "192.168.0.32"
-    
+
   envFrom:
     - secretRef:
         name: home-assistant-creds
-  
+
   controller:
     annotations:
       reloader.stakater.com/auto: "true"
@@ -36,7 +36,7 @@ homeassistant:
         - name: "GIT_BRANCH"
           value: "feature/minimized-config"
         - name: "GIT_REPO"
-          value: "git@github.com:nolte/home-assistant-config.git"                  
+          value: "git@github.com:nolte/home-assistant-config.git"
       command:
       - /bin/sh
       - -c
@@ -48,7 +48,7 @@ homeassistant:
         name: config
       - mountPath: /root/.ssh
         name: gitsecret
-  additionalContainers:    
+  additionalContainers:
     hassConfigurator:
       image: causticlab/hass-configurator-docker:latest
       name: hass-configurator
@@ -76,7 +76,7 @@ homeassistant:
           secretName: git-creds
     config:
       enabled: true
-      mountPath: /config      
+      mountPath: /config
          
 certificate:
   create: false
