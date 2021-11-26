@@ -1,7 +1,6 @@
 apiVersion: v2
 dependencies:
-  - # https://github.com/hashicorp/vault-helm
-    name: vault
+  - name: vault
     repository: https://helm.releases.hashicorp.com
     version: 0.18.0
   - name: argo-workflow-mixin
