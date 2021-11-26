@@ -77,7 +77,7 @@ homeassistant:
     config:
       enabled: true
       mountPath: /config
-         
+
 certificate:
   create: false
 
@@ -86,18 +86,18 @@ assistantCreds:
     - key: secrets-tf/data/third-party-services/google.com/projects/home-assistant
       name: GOOGLE_CLIENT_ID
       property: client_id
-    
+
     - key: secrets-tf/data/third-party-services/google.com/projects/home-assistant
       name: GOOGLE_CLIENT_SECRET
       property: client_secret
 
     - key: secrets-tf/data/third-party-services/openweathermap.org/projects/home-assistant
       name: OPENWEATHERMAP_API_KEY
-      property: token      
-    
+      property: token
+
     - key: secrets-tf/data/services/router-fritz-box/users/admin
       name: FRITZBOX_USERNAME
-      property: username   
+      property: username
     - key: secrets-tf/data/services/router-fritz-box/users/admin
       name: FRITZBOX_PASSWORD
       property: password
@@ -106,10 +106,9 @@ assistantCreds:
       name: GITHUB_ACCESS_TOKEN
       property: token
 
-
 #    - key: secrets-tf/data/third-party-services/github.com/deploymentkey/home-assistant
 #      name: TELEGRAM_API_TOKEN
-#      property: token 
+#      property: token
 #    - key: secrets-tf/data/third-party-services/github.com/deploymentkey/home-assistant
 #      name: TELEGRAM_USER_ID
 #      property: token
@@ -119,6 +118,6 @@ assistantCreds:
 
 httpProxy:
   create: false
-  fqdn:  home-assistant.smart-home.k8sservices.local
+  fqdn: home-assistant.smart-home.k8sservices.local
   tls:
     secretName: cert-manager/wildcard-duckdns-org-tls
