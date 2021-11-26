@@ -1,12 +1,132 @@
 {
-  "extends": [
-    "config:base"
-  ],
-  "rebaseWhen": "conflicted",
-  "helm-values": {
-    "enabled": true
-  },
-  "helmv3": {
-    "fileMatch": ["charts/stable/.+/Chart\\.yaml$"]
-  }
+   "extends":[
+      "config:base"
+   ],
+   "rebaseWhen":"conflicted",
+   "helm-values":{
+      "enabled":true
+   },
+   "helmv3":{
+      "fileMatch":[
+         "charts/stable/.+/Chart\\.yaml$"
+      ]
+   },
+   "packageRules":[
+      {
+         "matchDatasources":[
+            "helm"
+         ],
+         "commitMessageTopic":"Helm chart {{depName}}",
+         "separateMinorPatch":true
+      },
+      {
+         "matchDatasources":[
+            "github-tags"
+         ],
+         "matchPackageNames":[
+            "potiuk/get-workflow-origin"
+         ],
+         "versioning":"regex:^v(?<major>\\d+)_(?<minor>\\d+)(_(?<patch>\\d+))?$"
+      },
+      {
+         "commitMessagePrefix":"[{{{parentDir}}}]",
+         "branchTopic":"{{{parentDir}}}-{{{depNameSanitized}}}-{{{newMajor}}}{{#if isPatch}}.{{{newMinor}}}{{/if}}.x{{#if isLockfileUpdate}}-lockfile{{/if}}",
+         "updateTypes":[
+            "major"
+         ],
+         "bumpVersion":"major",
+         "labels":[
+            "dependency/major"
+         ],
+         "packageNames":[
+            "common"
+         ],
+         "groupName":[
+            "internal major dep"
+         ]
+      },
+      {
+         "updateTypes":[
+            "minor"
+         ],
+         "bumpVersion":"minor",
+         "labels":[
+            "dependency/minor"
+         ],
+         "packageNames":[
+            "common"
+         ],
+         "groupName":[
+            "internal minor dep"
+         ]
+      },
+      {
+         "updateTypes":[
+            "patch"
+         ],
+         "bumpVersion":"patch",
+         "labels":[
+            "dependency/patch"
+         ],
+         "packageNames":[
+            "common"
+         ],
+         "groupName":[
+            "internal patch dep"
+         ]
+      },
+      {
+         "commitMessagePrefix":"[{{{parentDir}}}]",
+         "branchTopic":"{{{parentDir}}}-{{{depNameSanitized}}}-{{{newMajor}}}{{#if isPatch}}.{{{newMinor}}}{{/if}}.x{{#if isLockfileUpdate}}-lockfile{{/if}}",
+         "updateTypes":[
+            "major"
+         ],
+         "bumpVersion":"major",
+         "labels":[
+            "dependency/major"
+         ],
+         "excludePackageNames":[
+            "common"
+         ],
+         "schedule":[
+            "every 3 months on the first day of the month"
+         ]
+      },
+      {
+         "updateTypes":[
+            "minor"
+         ],
+         "bumpVersion":"minor",
+         "labels":[
+            "dependency/minor"
+         ],
+         "excludePackageNames":[
+            "common"
+         ],
+         "groupName":[
+            "external minor dep"
+         ],
+         "schedule":[
+            "every 2 months on the first day of the month"
+         ]
+      },
+      {
+         "updateTypes":[
+            "patch"
+         ],
+         "bumpVersion":"patch",
+         "labels":[
+            "dependency/patch"
+         ],
+         "excludePackageNames":[
+            "common"
+         ],
+         "groupName":[
+            "external patch dep"
+         ],
+         "schedule":[
+            "every 1 months on the first day of the month"
+         ]
+      }
+   ]
 }

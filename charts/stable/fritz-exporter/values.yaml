@@ -43,12 +43,12 @@ metrics:
     labels: {}
 
 
-envFrom:
-  - secretRef:
-      name: fritz-creds
+# envFrom:
+#   - secretRef:
+#       name: fritz-creds
 
 externalsecrets:
-  enabled: true
+  enabled: false
   secrets:
     fritz-creds:
       data:

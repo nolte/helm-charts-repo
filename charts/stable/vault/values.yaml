@@ -2,7 +2,7 @@ address: http://vault.{{ .Release.Namespace }}.svc:8200
 
 httpProxy:
   create: false
-  fqdn:  vault.smart-home.k8sservices.local
+  fqdn: vault.smart-home.k8sservices.local
   tls:
     secretName: cert-manager/wildcard-duckdns-org-tls
 
