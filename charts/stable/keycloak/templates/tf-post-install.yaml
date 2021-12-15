@@ -16,7 +16,7 @@ spec:
   entrypoint: exec
   templates:
   - name: exec
-    steps:                            
+    steps:
       - - name: configure-keycloak
           templateRef:
             name: flow-tf-keycloak-baseline

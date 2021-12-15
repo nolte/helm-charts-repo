@@ -1,6 +1,6 @@
 httpProxy:
   create: false
-  fqdn:  harbor.smart-home.k8sservices.local
+  fqdn: harbor.smart-home.k8sservices.local
   tls:
     secretName: cert-manager/wildcard-duckdns-org-tls
 

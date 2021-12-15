@@ -75,7 +75,7 @@ spec:
         - name: AWS_SHARED_CREDENTIALS_FILE
           value: /vault/secrets/s3access
         - name: KEYCLOAK_URL
-          value: http://keycloak-http.{{.Release.Namespace}}.svc          
+          value: http://keycloak-http.{{.Release.Namespace}}.svc
       envFrom:
         - configMapRef:
             name: tf-static-endpoints
