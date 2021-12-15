@@ -6,11 +6,11 @@ client_id: admin-cli
 
 httpProxy:
   create: false
-  fqdn:  keycloak.smart-home.k8sservices.local
+  fqdn: keycloak.smart-home.k8sservices.local
   tls:
     secretName: cert-manager/wildcard-duckdns-org-tls
 
-keycloak: 
+keycloak:
   extraEnvFrom: |
     - secretRef:
         name: 'keycloak-admin-user'

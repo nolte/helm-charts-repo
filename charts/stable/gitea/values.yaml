@@ -1,11 +1,8 @@
 httpProxy:
   create: false
-  fqdn:  gitea.smart-home.k8sservices.local
+  fqdn: gitea.smart-home.k8sservices.local
   tls:
     secretName: cert-manager/wildcard-duckdns-org-tls
 
 externalSecret:
   create: false
-
-# gitea:
-# 

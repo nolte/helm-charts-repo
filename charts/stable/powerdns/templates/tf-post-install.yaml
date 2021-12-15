@@ -13,7 +13,7 @@ spec:
   entrypoint: exec
   templates:
   - name: exec
-    steps:                            
+    steps:
       - - name: configure-pdns
           templateRef:
             name: flow-tf-powerdns-baseline
