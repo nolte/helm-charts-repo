@@ -3,6 +3,16 @@ entries:
   argo-workflow-mixin:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2021-12-15T21:37:47.431370523Z"
+    description: A Helm chart for Kubernetes
+    digest: 244c3cf1678e3401f6ad425d3c940d4fa990ff797d735a2b765ab7fed90d84b7
+    name: argo-workflow-mixin
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflow-mixin-0.2.0/argo-workflow-mixin-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2021-11-07T17:56:45.405532947Z"
     description: A Helm chart for Kubernetes
     digest: cedcc215693a56c1e2d516c827555a5e8f4d5d986534dbf22a6854b0db1735a8
@@ -54,6 +64,28 @@ entries:
     version: 0.2.2
   cert-manager-webhook-duckdns:
   - apiVersion: v2
+    created: "2021-12-15T21:37:47.553883575Z"
+    dependencies:
+    - alias: certmanagerwebhookduckdns
+      name: cert-manager-webhook-duckdns
+      repository: https://nolte.github.io/ebrianne-helm-charts
+      version: 1.2.4
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.1
+    description: Preconfigured Certmanager Duckdns Deployment
+    digest: ee071f18ad924a7ec40f5341ff74f3cd18dac7e458fd353a08b897d935d089d2
+    name: cert-manager-webhook-duckdns
+    sources:
+    - https://github.com/ebrianne/helm-charts/tree/master/charts/cert-manager-webhook-duckdns
+    - https://github.com/ebrianne/cert-manager-webhook-duckdns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/cert-manager-webhook-duckdns-0.2.3/cert-manager-webhook-duckdns-0.2.3.tgz
+    version: 0.2.3
+  - apiVersion: v2
     created: "2021-11-07T16:16:50.753225502Z"
     dependencies:
     - alias: certmanagerwebhookduckdns
@@ -78,6 +110,16 @@ entries:
   cert-wildcard:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2021-12-15T21:37:47.683239708Z"
+    description: A Helm chart for Kubernetes
+    digest: 1f4bead7621f1f65fd1f4ed3828bae4ddd040bef8090d602bc15430fd47f1eb9
+    name: cert-wildcard
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/cert-wildcard-0.1.1/cert-wildcard-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2021-11-07T18:07:00.222818976Z"
     description: A Helm chart for Kubernetes
     digest: 9c3d724d61320ef4c91ca28145fc3628a2e5b24ffacab2d87be3b29b15739366
@@ -87,6 +129,21 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/cert-wildcard-0.1.0/cert-wildcard-0.1.0.tgz
     version: 0.1.0
   esphome:
+  - apiVersion: v2
+    created: "2021-12-15T21:37:47.800286895Z"
+    dependencies:
+    - name: esphome
+      repository: https://k8s-at-home.com/charts/
+      version: 8.1.0
+    description: Preconfigured ESPHome Deployment
+    digest: 163dc7ba992a1693e54d8cb5cb52d170760dcf718a9c26d88423a19e96b04782
+    name: esphome
+    sources:
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/esphome
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/esphome-0.2.0/esphome-0.2.0.tgz
+    version: 0.2.0
   - apiVersion: v2
     created: "2021-11-26T19:37:40.992431401Z"
     dependencies:
@@ -224,6 +281,22 @@ entries:
     version: 0.0.1
   gitea:
   - apiVersion: v2
+    created: "2021-12-15T21:37:47.925053774Z"
+    dependencies:
+    - name: gitea
+      repository: https://dl.gitea.io/charts/
+      version: 4.1.1
+    description: Preconfigured gitea Deployment
+    digest: 13faedace19568eaf2c81e45109850fa7cf98f9ee8140f7709df85d29dffb550
+    name: gitea
+    sources:
+    - https://gitea.com/gitea/helm-chart
+    - https://gitea.io/en-us/
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/gitea-0.1.0/gitea-0.1.0.tgz
+    version: 0.1.0
+  - apiVersion: v2
     created: "2021-11-07T18:13:52.65161257Z"
     dependencies:
     - name: gitea
@@ -240,6 +313,23 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/gitea-0.0.1/gitea-0.0.1.tgz
     version: 0.0.1
   harbor:
+  - apiVersion: v2
+    created: "2021-12-15T21:37:48.045139597Z"
+    dependencies:
+    - name: harbor
+      repository: https://helm.goharbor.io
+      version: 1.8.0
+    description: Preconfigured harbor Deployment
+    digest: b3dc7f290c8939d44b6663f6401a1406e3fd5a23cd1509b7cb32a475ec19bb37
+    name: harbor
+    sources:
+    - https://github.com/goharbor/harbor-helm
+    - https://github.com/goharbor/harbor
+    - https://goharbor.io/
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/harbor-0.1.0/harbor-0.1.0.tgz
+    version: 0.1.0
   - apiVersion: v2
     created: "2021-11-07T18:13:52.81157466Z"
     dependencies:
@@ -292,6 +382,26 @@ entries:
     version: 0.2.2
   keycloak:
   - apiVersion: v2
+    created: "2021-12-15T21:37:48.190681022Z"
+    dependencies:
+    - name: keycloak
+      repository: https://codecentric.github.io/helm-charts
+      version: 15.1.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.0
+    description: Preconfigured keycloak Deployment
+    digest: d933fd76b0e33b494c466f73dda3ea3c0001e795b30babe16679dcae05457740
+    name: keycloak
+    sources:
+    - https://codecentric.github.io/helm-charts
+    - https://github.com/codecentric/helm-charts/tree/master/charts/keycloak
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/keycloak-0.3.0/keycloak-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
     created: "2021-11-07T18:29:19.954460046Z"
     dependencies:
     - name: keycloak
@@ -313,6 +423,25 @@ entries:
     version: 0.2.2
   powerdns:
   - apiVersion: v2
+    created: "2021-12-15T21:37:48.346202465Z"
+    dependencies:
+    - name: powerdns
+      repository: https://k8s-at-home.com/charts
+      version: 3.5.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.0
+    description: extendet powerdns chart
+    digest: 1d50689a121094342e5c0f4b16dc68af79d070ef4e2b24aa5a400370d643c86b
+    name: powerdns
+    sources:
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/powerdns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/powerdns-0.1.0/powerdns-0.1.0.tgz
+    version: 0.1.0
+  - apiVersion: v2
     created: "2021-11-07T18:29:20.09339111Z"
     dependencies:
     - name: powerdns
@@ -332,6 +461,25 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/powerdns-0.0.1/powerdns-0.0.1.tgz
     version: 0.0.1
   vault:
+  - apiVersion: v2
+    created: "2021-12-15T21:37:48.466699593Z"
+    dependencies:
+    - name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.18.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.0
+    description: Preconfigured Vault Deployment
+    digest: ac767e47389fceb853dac6c526ea4d105ac47e7a70bc0f919cbd4b1accea166e
+    name: vault
+    sources:
+    - https://github.com/hashicorp/vault-helm
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.4.0/vault-0.4.0.tgz
+    version: 0.4.0
   - apiVersion: v2
     created: "2021-11-26T19:08:59.353134585Z"
     dependencies:
@@ -370,4 +518,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2021-11-26T19:44:38.968380151Z"
+generated: "2021-12-15T21:37:48.466789994Z"
