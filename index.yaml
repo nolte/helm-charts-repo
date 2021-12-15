@@ -23,6 +23,26 @@ entries:
     version: 0.1.0
   argo-workflows:
   - apiVersion: v2
+    created: "2021-12-15T21:41:09.685987142Z"
+    dependencies:
+    - alias: argoworkflows
+      name: argo-workflows
+      repository: https://argoproj.github.io/argo-helm
+      version: 0.9.3
+    - alias: argoworkflowmixin
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.0
+    description: Preconfigured argo workflows Deployment
+    digest: 6d3ae116b54feb967773712a17b3351a7d21ef9880da21fc9187cf34e06a1c19
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/master/charts/argo-workflows
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflows-0.3.1/argo-workflows-0.3.1.tgz
+    version: 0.3.1
+  - apiVersion: v2
     created: "2021-11-26T19:37:40.854223534Z"
     dependencies:
     - alias: argoworkflows
@@ -197,6 +217,22 @@ entries:
     version: 0.1.1
   forecastle:
   - apiVersion: v2
+    created: "2021-12-15T21:41:09.808676412Z"
+    dependencies:
+    - name: forecastle
+      repository: https://stakater.github.io/stakater-charts
+      version: v1.0.71
+    description: Preconfigured forecastle Deployment
+    digest: 56bc807e382214356933044a27fc244844b53695d6ae80672c6700b2a1670d57
+    name: forecastle
+    sources:
+    - https://stakater.github.io/stakater-charts
+    - https://github.com/stakater/Forecastle/tree/master/deployments/kubernetes/chart/forecastle
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/forecastle-0.2.4/forecastle-0.2.4.tgz
+    version: 0.2.4
+  - apiVersion: v2
     created: "2021-11-26T19:44:38.968355251Z"
     dependencies:
     - name: forecastle
@@ -349,6 +385,22 @@ entries:
     version: 0.0.1
   home-assistant:
   - apiVersion: v2
+    created: "2021-12-15T21:41:09.962701223Z"
+    dependencies:
+    - alias: homeassistant
+      name: home-assistant
+      repository: https://k8s-at-home.com/charts/
+      version: 11.2.1
+    description: Preconfigured Home Assistant Deployment
+    digest: 4fe8d5244fa05a41d822dbfdf73295f5310aa86f526a76d807a93e012734b667
+    name: home-assistant
+    sources:
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/home-assistant
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/home-assistant-0.3.1/home-assistant-0.3.1.tgz
+    version: 0.3.1
+  - apiVersion: v2
     created: "2021-11-26T19:37:41.176364921Z"
     dependencies:
     - alias: homeassistant
@@ -442,6 +494,25 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/keycloak-0.2.2/keycloak-0.2.2.tgz
     version: 0.2.2
   powerdns:
+  - apiVersion: v2
+    created: "2021-12-15T21:41:10.098662668Z"
+    dependencies:
+    - name: powerdns
+      repository: https://k8s-at-home.com/charts
+      version: 3.5.1
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.0
+    description: extendet powerdns chart
+    digest: 8f4e72ac4532ac675d07239364c03a8fa43a1cf98e5703fc78371a6f5b5c8f8e
+    name: powerdns
+    sources:
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/powerdns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/powerdns-0.1.1/powerdns-0.1.1.tgz
+    version: 0.1.1
   - apiVersion: v2
     created: "2021-12-15T21:37:48.346202465Z"
     dependencies:
@@ -538,4 +609,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2021-12-15T21:40:24.464583502Z"
+generated: "2021-12-15T21:41:10.098719468Z"
