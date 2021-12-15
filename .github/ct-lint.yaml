@@ -8,9 +8,11 @@ chart-dirs:
 excluded-charts: []
 chart-repos:
 - bitnami=https://charts.bitnami.com/bitnami
+- codecentric=https://codecentric.github.io/helm-charts
+- gitea=https://dl.gitea.io/charts/
+- hashicorp=https://helm.releases.hashicorp.com
+- jetstack=https://charts.jetstack.io
 - k8s-at-home-libraries=https://library-charts.k8s-at-home.com
 - k8s-at-home=https://k8s-at-home.com/charts
-- jetstack=https://charts.jetstack.io
-- nolte-ebrianne=https://nolte.github.io/ebrianne-helm-charts
 - nolte-charts=https://nolte.github.io/helm-charts-repo
-- gitea=https://dl.gitea.io/charts/
+- nolte-ebrianne=https://nolte.github.io/ebrianne-helm-charts
