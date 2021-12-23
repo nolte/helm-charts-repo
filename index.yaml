@@ -23,6 +23,26 @@ entries:
     version: 0.1.0
   argo-workflows:
   - apiVersion: v2
+    created: "2021-12-23T22:46:53.540347292Z"
+    dependencies:
+    - alias: argoworkflows
+      name: argo-workflows
+      repository: https://argoproj.github.io/argo-helm
+      version: 0.9.4
+    - alias: argoworkflowmixin
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.2.0
+    description: Preconfigured argo workflows Deployment
+    digest: 6149c6fc9581ee95b35a8b4d2e5a7f3311a2b508c45d8373126557cc17d5bff4
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/master/charts/argo-workflows
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflows-0.4.1/argo-workflows-0.4.1.tgz
+    version: 0.4.1
+  - apiVersion: v2
     created: "2021-12-23T22:44:30.96977977Z"
     dependencies:
     - alias: argoworkflows
@@ -237,6 +257,22 @@ entries:
     version: 0.1.1
   forecastle:
   - apiVersion: v2
+    created: "2021-12-23T22:46:53.672858908Z"
+    dependencies:
+    - name: forecastle
+      repository: https://stakater.github.io/stakater-charts
+      version: v1.0.72
+    description: Preconfigured forecastle Deployment
+    digest: 60ae3bf2c4eba9730ba4a67284194350c1a5ccef05f900aa39525f989616e632
+    name: forecastle
+    sources:
+    - https://stakater.github.io/stakater-charts
+    - https://github.com/stakater/Forecastle/tree/master/deployments/kubernetes/chart/forecastle
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/forecastle-0.2.5/forecastle-0.2.5.tgz
+    version: 0.2.5
+  - apiVersion: v2
     created: "2021-12-15T21:41:09.808676412Z"
     dependencies:
     - name: forecastle
@@ -370,6 +406,23 @@ entries:
     version: 0.0.1
   harbor:
   - apiVersion: v2
+    created: "2021-12-23T22:46:53.819944414Z"
+    dependencies:
+    - name: harbor
+      repository: https://helm.goharbor.io
+      version: 1.8.1
+    description: Preconfigured harbor Deployment
+    digest: d5c4997061eafbb1a0cfc5df341ef44bcaee5e7d0c81c70aa59d0e2ea3aa1f6a
+    name: harbor
+    sources:
+    - https://github.com/goharbor/harbor-helm
+    - https://github.com/goharbor/harbor
+    - https://goharbor.io/
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/harbor-0.1.1/harbor-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
     created: "2021-12-15T21:37:48.045139597Z"
     dependencies:
     - name: harbor
@@ -453,6 +506,26 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/home-assistant-0.2.2/home-assistant-0.2.2.tgz
     version: 0.2.2
   keycloak:
+  - apiVersion: v2
+    created: "2021-12-23T22:46:53.973656006Z"
+    dependencies:
+    - name: keycloak
+      repository: https://codecentric.github.io/helm-charts
+      version: 16.0.5
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.2.0
+    description: Preconfigured keycloak Deployment
+    digest: f6f7ac770fea4b0c1906ae74f7de66fee50bf4f507703a3ee61892b4007f8c68
+    name: keycloak
+    sources:
+    - https://codecentric.github.io/helm-charts
+    - https://github.com/codecentric/helm-charts/tree/master/charts/keycloak
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/keycloak-1.1.1/keycloak-1.1.1.tgz
+    version: 1.1.1
   - apiVersion: v2
     created: "2021-12-23T22:44:31.170578413Z"
     dependencies:
@@ -687,4 +760,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2021-12-23T22:44:31.569268028Z"
+generated: "2021-12-23T22:46:53.973868408Z"
