@@ -317,6 +317,22 @@ entries:
     version: 0.0.1
   gitea:
   - apiVersion: v2
+    created: "2021-12-23T22:44:00.981597251Z"
+    dependencies:
+    - name: gitea
+      repository: https://dl.gitea.io/charts/
+      version: 5.0.0
+    description: Preconfigured gitea Deployment
+    digest: fb4552f8e3603ccef195fc026c1013474e6f6106bd9b66acf11d358eaae17779
+    name: gitea
+    sources:
+    - https://gitea.com/gitea/helm-chart
+    - https://gitea.io/en-us/
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/gitea-1.0.0/gitea-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v2
     created: "2021-12-15T21:37:47.925053774Z"
     dependencies:
     - name: gitea
@@ -609,4 +625,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2021-12-15T21:41:10.098719468Z"
+generated: "2021-12-23T22:44:00.981664652Z"
