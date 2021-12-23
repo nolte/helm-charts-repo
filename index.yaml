@@ -23,6 +23,26 @@ entries:
     version: 0.1.0
   argo-workflows:
   - apiVersion: v2
+    created: "2021-12-23T22:44:30.96977977Z"
+    dependencies:
+    - alias: argoworkflows
+      name: argo-workflows
+      repository: https://argoproj.github.io/argo-helm
+      version: 0.9.3
+    - alias: argoworkflowmixin
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.2.0
+    description: Preconfigured argo workflows Deployment
+    digest: e7642b546c861abab2140d01cd019a614e2e43ae34290e5f85551ef9027ca7a8
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/master/charts/argo-workflows
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflows-0.4.0/argo-workflows-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v2
     created: "2021-12-15T21:41:09.685987142Z"
     dependencies:
     - alias: argoworkflows
@@ -317,22 +337,6 @@ entries:
     version: 0.0.1
   gitea:
   - apiVersion: v2
-    created: "2021-12-23T22:44:00.981597251Z"
-    dependencies:
-    - name: gitea
-      repository: https://dl.gitea.io/charts/
-      version: 5.0.0
-    description: Preconfigured gitea Deployment
-    digest: fb4552f8e3603ccef195fc026c1013474e6f6106bd9b66acf11d358eaae17779
-    name: gitea
-    sources:
-    - https://gitea.com/gitea/helm-chart
-    - https://gitea.io/en-us/
-    type: application
-    urls:
-    - https://github.com/nolte/helm-charts-repo/releases/download/gitea-1.0.0/gitea-1.0.0.tgz
-    version: 1.0.0
-  - apiVersion: v2
     created: "2021-12-15T21:37:47.925053774Z"
     dependencies:
     - name: gitea
@@ -450,6 +454,26 @@ entries:
     version: 0.2.2
   keycloak:
   - apiVersion: v2
+    created: "2021-12-23T22:44:31.170578413Z"
+    dependencies:
+    - name: keycloak
+      repository: https://codecentric.github.io/helm-charts
+      version: 16.0.4
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.2.0
+    description: Preconfigured keycloak Deployment
+    digest: b72873322d27f155dcee154b842c5fb2290a31085ff504ac2b13d9695561a362
+    name: keycloak
+    sources:
+    - https://codecentric.github.io/helm-charts
+    - https://github.com/codecentric/helm-charts/tree/master/charts/keycloak
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/keycloak-1.1.0/keycloak-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v2
     created: "2021-12-15T21:40:24.464533901Z"
     dependencies:
     - name: keycloak
@@ -511,6 +535,25 @@ entries:
     version: 0.2.2
   powerdns:
   - apiVersion: v2
+    created: "2021-12-23T22:44:31.381809558Z"
+    dependencies:
+    - name: powerdns
+      repository: https://k8s-at-home.com/charts
+      version: 3.5.1
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.2.0
+    description: extendet powerdns chart
+    digest: 10dc0f828dee43da97133f45d2b145d2d0b74de0793d8c3033f98280cbcd1ea4
+    name: powerdns
+    sources:
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/powerdns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/powerdns-0.2.0/powerdns-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     created: "2021-12-15T21:41:10.098662668Z"
     dependencies:
     - name: powerdns
@@ -569,6 +612,25 @@ entries:
     version: 0.0.1
   vault:
   - apiVersion: v2
+    created: "2021-12-23T22:44:31.569155427Z"
+    dependencies:
+    - name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.18.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.2.0
+    description: Preconfigured Vault Deployment
+    digest: 81f956ae1b2ea5c72f8ac7f002e11da86c91378cc58ccb17c4f2ed55600a412c
+    name: vault
+    sources:
+    - https://github.com/hashicorp/vault-helm
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.5.0/vault-0.5.0.tgz
+    version: 0.5.0
+  - apiVersion: v2
     created: "2021-12-15T21:37:48.466699593Z"
     dependencies:
     - name: vault
@@ -625,4 +687,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2021-12-23T22:44:00.981664652Z"
+generated: "2021-12-23T22:44:31.569268028Z"
