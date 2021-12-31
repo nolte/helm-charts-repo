@@ -8,4 +8,4 @@ name: esphome
 sources:
   - https://github.com/k8s-at-home/charts/tree/master/charts/stable/esphome
 type: application
-version: 0.2.0
+version: 0.2.1
