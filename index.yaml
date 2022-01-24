@@ -190,21 +190,6 @@ entries:
     version: 0.1.0
   esphome:
   - apiVersion: v2
-    created: "2022-01-24T00:08:12.708287264Z"
-    dependencies:
-    - name: esphome
-      repository: https://k8s-at-home.com/charts/
-      version: 8.2.0
-    description: Preconfigured ESPHome Deployment
-    digest: 61c7fc6e623966207c69ce628c74e2fba0a52f9bda40389d0403a8a9e8d6fc32
-    name: esphome
-    sources:
-    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/esphome
-    type: application
-    urls:
-    - https://github.com/nolte/helm-charts-repo/releases/download/esphome-0.3.0/esphome-0.3.0.tgz
-    version: 0.3.0
-  - apiVersion: v2
     created: "2021-12-15T21:37:47.800286895Z"
     dependencies:
     - name: esphome
@@ -498,6 +483,22 @@ entries:
     version: 0.0.1
   home-assistant:
   - apiVersion: v2
+    created: "2022-01-24T00:09:10.600642193Z"
+    dependencies:
+    - alias: homeassistant
+      name: home-assistant
+      repository: https://k8s-at-home.com/charts/
+      version: 12.0.1
+    description: Preconfigured Home Assistant Deployment
+    digest: 70003095cc04ab2a0e5fdc3096bfea2fe3cc897817fa8321c944efa1bb3217d1
+    name: home-assistant
+    sources:
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/home-assistant
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/home-assistant-1.0.0/home-assistant-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v2
     created: "2021-12-15T21:41:09.962701223Z"
     dependencies:
     - alias: homeassistant
@@ -725,25 +726,6 @@ entries:
     version: 0.0.1
   vault:
   - apiVersion: v2
-    created: "2022-01-24T00:08:12.90504597Z"
-    dependencies:
-    - name: vault
-      repository: https://helm.releases.hashicorp.com
-      version: 0.19.0
-    - alias: argo-workflows-execution
-      name: argo-workflow-mixin
-      repository: https://nolte.github.io/helm-charts-repo/
-      version: 0.2.0
-    description: Preconfigured Vault Deployment
-    digest: f3397011cb32f9d42a65fcd59b1728d7b0e63d51a72a6b7c7c3a31f7f8f85703
-    name: vault
-    sources:
-    - https://github.com/hashicorp/vault-helm
-    type: application
-    urls:
-    - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.6.0/vault-0.6.0.tgz
-    version: 0.6.0
-  - apiVersion: v2
     created: "2021-12-23T22:44:31.569155427Z"
     dependencies:
     - name: vault
@@ -819,4 +801,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-01-24T00:08:12.905264273Z"
+generated: "2022-01-24T00:09:10.600911698Z"
