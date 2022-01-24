@@ -2,13 +2,13 @@ apiVersion: v2
 name: powerdns
 description: extendet powerdns chart
 type: application
-version: 0.2.0
+version: 1.0.0
 sources:
   - https://github.com/k8s-at-home/charts/tree/master/charts/stable/powerdns
 
 dependencies:
   - name: powerdns
-    version: 3.5.1
+    version: 4.0.0
     repository: https://k8s-at-home.com/charts
   - name: argo-workflow-mixin
     repository: https://nolte.github.io/helm-charts-repo/
