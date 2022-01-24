@@ -190,6 +190,21 @@ entries:
     version: 0.1.0
   esphome:
   - apiVersion: v2
+    created: "2022-01-24T00:08:12.708287264Z"
+    dependencies:
+    - name: esphome
+      repository: https://k8s-at-home.com/charts/
+      version: 8.2.0
+    description: Preconfigured ESPHome Deployment
+    digest: 61c7fc6e623966207c69ce628c74e2fba0a52f9bda40389d0403a8a9e8d6fc32
+    name: esphome
+    sources:
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/esphome
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/esphome-0.3.0/esphome-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
     created: "2021-12-15T21:37:47.800286895Z"
     dependencies:
     - name: esphome
@@ -256,22 +271,6 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/external-secrets-manifests-0.1.1/external-secrets-manifests-0.1.1.tgz
     version: 0.1.1
   forecastle:
-  - apiVersion: v2
-    created: "2022-01-24T00:07:39.062958375Z"
-    dependencies:
-    - name: forecastle
-      repository: https://stakater.github.io/stakater-charts
-      version: v1.0.73
-    description: Preconfigured forecastle Deployment
-    digest: 6d8dee17d1f0a6dcc1647d05f1367700e6333ed42ff88c24ab83b6769ed1df80
-    name: forecastle
-    sources:
-    - https://stakater.github.io/stakater-charts
-    - https://github.com/stakater/Forecastle/tree/master/deployments/kubernetes/chart/forecastle
-    type: application
-    urls:
-    - https://github.com/nolte/helm-charts-repo/releases/download/forecastle-0.2.6/forecastle-0.2.6.tgz
-    version: 0.2.6
   - apiVersion: v2
     created: "2021-12-23T22:46:53.672858908Z"
     dependencies:
@@ -413,22 +412,6 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/fritz-exporter-0.0.1/fritz-exporter-0.0.1.tgz
     version: 0.0.1
   gitea:
-  - apiVersion: v2
-    created: "2022-01-24T00:07:39.267686147Z"
-    dependencies:
-    - name: gitea
-      repository: https://dl.gitea.io/charts/
-      version: 5.0.1
-    description: Preconfigured gitea Deployment
-    digest: 35600b016e6dd21f6634bd9f80436aabb8b9c23961f78b8a88fca2fd0b2382ce
-    name: gitea
-    sources:
-    - https://gitea.com/gitea/helm-chart
-    - https://gitea.io/en-us/
-    type: application
-    urls:
-    - https://github.com/nolte/helm-charts-repo/releases/download/gitea-1.0.1/gitea-1.0.1.tgz
-    version: 1.0.1
   - apiVersion: v2
     created: "2021-12-15T21:37:47.925053774Z"
     dependencies:
@@ -742,6 +725,25 @@ entries:
     version: 0.0.1
   vault:
   - apiVersion: v2
+    created: "2022-01-24T00:08:12.90504597Z"
+    dependencies:
+    - name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.19.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.2.0
+    description: Preconfigured Vault Deployment
+    digest: f3397011cb32f9d42a65fcd59b1728d7b0e63d51a72a6b7c7c3a31f7f8f85703
+    name: vault
+    sources:
+    - https://github.com/hashicorp/vault-helm
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.6.0/vault-0.6.0.tgz
+    version: 0.6.0
+  - apiVersion: v2
     created: "2021-12-23T22:44:31.569155427Z"
     dependencies:
     - name: vault
@@ -817,4 +819,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-01-24T00:07:39.267779047Z"
+generated: "2022-01-24T00:08:12.905264273Z"
