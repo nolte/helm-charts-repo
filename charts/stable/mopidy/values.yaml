@@ -1,0 +1,155 @@
+#
+# IMPORTANT NOTE
+#
+# This chart inherits from our common library chart. You can check the default values/options here:
+# https://github.com/k8s-at-home/library-charts/tree/main/charts/stable/common/values.yaml
+#
+
+image:
+  # -- image repository
+  repository: nolte/mopidy
+  # -- image tag
+  tag: v3.2.0-2
+  # -- image pull policy
+  pullPolicy: IfNotPresent
+
+controller:
+  strategy: RollingUpdate
+
+securityContext:
+  privileged: true  # required for /dev/snd
+#  runAsUser: 105
+#  runAsGroup: 26
+
+podSecurityContext:
+  fsGroup: 29
+  runAsUser: 105
+  runAsGroup: 29
+  
+# @default -- See below
+env:
+  # -- Set the container timezone
+  TZ: UTC
+
+mopidy:
+  config: |
+    [local]
+    data_dir = /var/lib/mopidy/local
+    media_dir = /var/lib/mopidy/media
+    
+    [http]
+    hostname = 0.0.0.0
+
+    [mpd]
+    hostname = 0.0.0.0
+
+    [audio]
+    output = audioresample ! audioconvert ! audio/x-raw,rate=48000,channels=2,format=S16LE ! wavenc ! filesink location=/tmp/sharesound/snapfifo
+
+additionalContainers: 
+  - env:
+    - name: TZ
+      value: UTC
+    image: nolte/snapcast-server:v0.26.0
+    imagePullPolicy: IfNotPresent
+    
+    #args: ["-s","pipe:///tmp/sharesound/snapfifo?name=Radio"]
+    command: ["snapserver","-c","/tmp/snapserver/snapserver.conf"]
+    
+    #args: ["--config","/tmp/notexisting-config.yaml"]
+    name: snapcast-server
+    securityContext:
+      privileged: true
+    #  fsGroup: 29
+    #  runAsGroup: 29
+    #  runAsUser: 105
+    ports:
+    - containerPort: 1705
+      name: tcpstream
+      protocol: TCP
+    - containerPort: 1780
+      name: mpd
+      protocol: TCP
+    - containerPort: 1704
+      name: stream
+      protocol: TCP
+    volumeMounts:
+    - mountPath: /tmp/sharesound
+      name: snapfifo
+    - mountPath: /tmp/snapserver
+      name: snapserver-config
+
+#- mountPath: /root/.config/snapcast/
+# -- Configures service settings for the chart.
+# @default -- See values.yaml
+service:
+  main:
+    ports:
+      http:
+        enabled: true
+        protocol: TCP
+        port: 6680
+      mpd:
+        enabled: true
+        protocol: TCP
+        port: 6600
+      # https://github.com/mopidy/mopidy/issues/775
+      visualizer:
+        enabled: false
+        protocol: UDP
+        port: 5555
+
+persistence:
+  # -- Default persistence for configuration files.
+  # @default -- See below
+  media:
+    # -- Enables or disables the persistence item
+    enabled: true
+    mountPath: /var/lib/mopidy/media
+    type: pvc
+    accessMode: ReadWriteOnce
+    size: 1Gi
+    # hostPath: /tmp/mounttest 
+    # type: hostPath
+    #readOnly: true
+
+  #sound: 
+  #  enabled: true
+  #  mountPath: /dev/snd
+  #  hostPath: /dev/snd
+  #  type: hostPath
+  playlists:
+    # -- Enables or disables the persistence item
+    enabled: true
+    mountPath: /var/lib/mopidy/playlists
+    type: emptyDir
+  local:
+    # -- Enables or disables the persistence item
+    enabled: true
+    mountPath: /var/lib/mopidy/local
+    type: emptyDir
+  snapfifo:
+    enabled: true
+    mountPath: /tmp/sharesound
+    type: emptyDir
+#  snapserversettings:
+#    enabled: true
+#    mountPath: //.config/snapserver/
+#    type: emptyDir      
+  cache:
+    # -- Enables or disables the persistence item
+    enabled: true
+    mountPath: /var/lib/mopidy/.cache
+    type: emptyDir
+  config:
+    name: mopidy-config
+    # -- Enables or disables the persistence item
+    enabled: true
+    mountPath: /var/lib/mopidy/.config/mopidy
+    type: configMap
+  snapserver-config:
+    name: snapserver-config
+    # -- Enables or disables the persistence item
+    enabled: true
+    mountPath: /tmp/snapserver/
+    type: configMap    
