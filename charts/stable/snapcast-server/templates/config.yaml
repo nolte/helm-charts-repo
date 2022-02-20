@@ -1,0 +1,10 @@
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: snapserver-config
+  labels:
+    {{- include "common.labels" . | nindent 4 }}
+data:
+  snapserver.conf: |
+    {{- tpl .Values.snapcastServer.config . | nindent 4 }}

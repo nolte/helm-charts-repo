@@ -9,9 +9,10 @@ image:
   # -- image repository
   repository: nolte/mopidy
   # -- image tag
-  tag: v3.2.0-2
+  tag: v3.2.0-3
   # -- image pull policy
   pullPolicy: IfNotPresent
+
 
 controller:
   strategy: RollingUpdate
@@ -32,6 +33,8 @@ env:
   TZ: UTC
 
 mopidy:
+  spotify:
+    enabled: false
   config: |
     [local]
     data_dir = /var/lib/mopidy/local
@@ -42,42 +45,20 @@ mopidy:
 
     [mpd]
     hostname = 0.0.0.0
+    enabled = true
+    port = 6600
+    password =
+    max_connections = 20
+    connection_timeout = 60
+    zeroconf = Mopidy MPD server on $hostname
+    command_blacklist = listall,listallinfo
+    default_playlist_scheme = m3u
+
+    [spotify]
+    enabled = {{.Values.mopidy.spotify.enabled}}
 
     [audio]
-    output = audioresample ! audioconvert ! audio/x-raw,rate=48000,channels=2,format=S16LE ! wavenc ! filesink location=/tmp/sharesound/snapfifo
-
-additionalContainers: 
-  - env:
-    - name: TZ
-      value: UTC
-    image: nolte/snapcast-server:v0.26.0
-    imagePullPolicy: IfNotPresent
-    
-    #args: ["-s","pipe:///tmp/sharesound/snapfifo?name=Radio"]
-    command: ["snapserver","-c","/tmp/snapserver/snapserver.conf"]
-    
-    #args: ["--config","/tmp/notexisting-config.yaml"]
-    name: snapcast-server
-    securityContext:
-      privileged: true
-    #  fsGroup: 29
-    #  runAsGroup: 29
-    #  runAsUser: 105
-    ports:
-    - containerPort: 1705
-      name: tcpstream
-      protocol: TCP
-    - containerPort: 1780
-      name: mpd
-      protocol: TCP
-    - containerPort: 1704
-      name: stream
-      protocol: TCP
-    volumeMounts:
-    - mountPath: /tmp/sharesound
-      name: snapfifo
-    - mountPath: /tmp/snapserver
-      name: snapserver-config
+    output = audioresample ! audioconvert ! audio/x-raw,rate=48000,channels=2,format=S16LE ! wavenc ! tcpclientsink host=station-snapcast-server
 
 #- mountPath: /root/.config/snapcast/
 # -- Configures service settings for the chart.
@@ -128,14 +109,6 @@ persistence:
     enabled: true
     mountPath: /var/lib/mopidy/local
     type: emptyDir
-  snapfifo:
-    enabled: true
-    mountPath: /tmp/sharesound
-    type: emptyDir
-#  snapserversettings:
-#    enabled: true
-#    mountPath: //.config/snapserver/
-#    type: emptyDir      
   cache:
     # -- Enables or disables the persistence item
     enabled: true
@@ -147,9 +120,3 @@ persistence:
     enabled: true
     mountPath: /var/lib/mopidy/.config/mopidy
     type: configMap
-  snapserver-config:
-    name: snapserver-config
-    # -- Enables or disables the persistence item
-    enabled: true
-    mountPath: /tmp/snapserver/
-    type: configMap    

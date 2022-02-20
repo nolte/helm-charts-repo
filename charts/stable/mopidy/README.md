@@ -1,32 +1,36 @@
 # Mopidy
 
-Simple Helm Chart for running [mopidy](https://github.com/mopidy/mopidy) inside a k8s Cluster.
+Simple Helm Chart for running [mopidy](https://github.com/mopidy/mopidy) inside a k8s Cluster. 
 
+This chart will be a part of the [docker_compose-audiostation](https://github.com/nolte/docker_compose-audiostation) migration.
 
-Copy files to container
+**WIP**
+
+## Usefull commands
+
+```sh
+kind load docker-image nolte/mopidy:dirty
+```
 
 ```bash
 
-kind load docker-image nolte/mopidy:dirty
+export MOPIDY_NAMESPACE=audio-station
 
-helm upgrade -i mopidy-test . --create-namespace 
+helm upgrade -i mopidy . -n $MOPIDY_NAMESPACE --create-namespace 
 
-helm delete mopidy-test
+helm delete mopidy -n -n $MOPIDY_NAMESPACE
 
-kubectl port-forward svc/mopidy-test 6680
+kubectl port-forward -n $MOPIDY_NAMESPACE  svc/mopidy 6680
 
-kubectl cp ~/Musik/NeonSchwarZ/Metropolis/B01CPJ7Z6A_\(disc_1\)_01_-_Dies_das_Ananas.mp3  $(kubectl get pods -l app.kubernetes.io/name=mopidy -ojson | jq -r '.items[0].metadata.name'):/var/lib/mopidy/media/01_-_Dies_das_Ananas.mp3
+kubectl -n $MOPIDY_NAMESPACE logs $(kubectl -n $MOPIDY_NAMESPACE get pods -l app.kubernetes.io/name=mopidy -ojson | jq -r '.items[0].metadata.name') -f
+```
 
+Copy files to container
 
-kubectl cp ~/Musik  $(kubectl get pods -l app.kubernetes.io/name=mopidy -ojson | jq -r '.items[0].metadata.name'):/var/lib/mopidy/media/
+```sh
+kubectl -n $MOPIDY_NAMESPACE cp ~/Musik  $(kubectl get pods -l app.kubernetes.io/name=mopidy -n $MOPIDY_NAMESPACE  -ojson | jq -r '.items[0].metadata.name'):/var/lib/mopidy/media/
 
-kubectl logs $(kubectl get pods -l app.kubernetes.io/name=mopidy -ojson | jq -r '.items[0].metadata.name') -f
-
-
-kubectl exec -ti $(kubectl get pods -l app.kubernetes.io/name=mopidy -ojson | jq -r '.items[0].metadata.name') -- /bin/bash
-
-
-kubectl exec $(kubectl get pods -l app.kubernetes.io/name=mopidy -ojson | jq -r '.items[0].metadata.name') -- mopidy local scan
+kubectl -n $MOPIDY_NAMESPACE exec $(kubectl get pods -l app.kubernetes.io/name=mopidy -n $MOPIDY_NAMESPACE  -ojson | jq -r '.items[0].metadata.name') -- mopidy local scan
 ```
 
 

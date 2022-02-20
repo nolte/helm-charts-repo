@@ -1,0 +1,17 @@
+apiVersion: v2
+appVersion: v0.0.1
+description: upmpdcli Receiver
+name: upmpdcli
+version: 0.0.1
+kubeVersion: ">=1.16.0-0"
+keywords:
+- upmpdcli
+- audio
+home: https://github.com/nolte/helm-charts-repo/tree/master/charts/stable/upmpdcli
+sources:
+- https://github.com/nolte/docker-upmpdcli
+maintainers: []
+dependencies:
+- name: common
+  repository: https://library-charts.k8s-at-home.com
+  version: 4.3.0
