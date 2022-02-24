@@ -70,15 +70,19 @@ service:
         enabled: true
         protocol: TCP
         port: 6680
-      mpd:
-        enabled: true
-        protocol: TCP
-        port: 6600
       # https://github.com/mopidy/mopidy/issues/775
       visualizer:
         enabled: false
         protocol: UDP
         port: 5555
+  public:
+    type: NodePort
+    enabled: true
+    ports:
+      mpd:
+        enabled: true
+        protocol: TCP
+        port: 36600
 
 persistence:
   # -- Default persistence for configuration files.
