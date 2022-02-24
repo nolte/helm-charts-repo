@@ -82,7 +82,8 @@ service:
       mpd:
         enabled: true
         protocol: TCP
-        port: 36600
+        port: 6600
+        nodePort: 36600
 
 persistence:
   # -- Default persistence for configuration files.

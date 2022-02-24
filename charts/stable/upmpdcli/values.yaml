@@ -14,7 +14,7 @@ image:
   pullPolicy: IfNotPresent
 
 # "-f","mopidy","-c","/var/lib/upmpdcli/.config/upmpdcli.conf"
-args: ["-m","3","-l","0","-h","mopidy","-p","6600","-P","1900",]
+args: ["-m","3","-l","0","-h","localhost","-p","36600","-P","1900",]
 
 controller:
   strategy: RollingUpdate
@@ -54,6 +54,11 @@ service:
     type: NodePort
     ports:
       http:
+        enabled: true
+        protocol: TCP
+        port: 49149
+        nodePort: 30149
+      stream:
         enabled: true
         protocol: TCP
         port: 49152
