@@ -23,6 +23,26 @@ entries:
     version: 0.1.0
   argo-workflows:
   - apiVersion: v2
+    created: "2022-03-10T06:49:20.054623432Z"
+    dependencies:
+    - alias: argoworkflows
+      name: argo-workflows
+      repository: https://argoproj.github.io/argo-helm
+      version: 0.11.2
+    - alias: argoworkflowmixin
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.2.0
+    description: Preconfigured argo workflows Deployment
+    digest: 40253a943083c7b2176aacade58e93dc905b309209f0c5f547a28edb4d9def3c
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/master/charts/argo-workflows
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflows-0.6.1/argo-workflows-0.6.1.tgz
+    version: 0.6.1
+  - apiVersion: v2
     created: "2022-03-01T21:43:11.600269809Z"
     dependencies:
     - alias: argoworkflows
@@ -474,6 +494,22 @@ entries:
     version: 0.0.1
   gitea:
   - apiVersion: v2
+    created: "2022-03-10T06:49:20.22169941Z"
+    dependencies:
+    - name: gitea
+      repository: https://dl.gitea.io/charts/
+      version: 5.0.2
+    description: Preconfigured gitea Deployment
+    digest: 6d6aa03a511b81f3d9746696bb988c6adaf3f6a5b0b20868a599e2a0ca87a6a9
+    name: gitea
+    sources:
+    - https://gitea.com/gitea/helm-chart
+    - https://gitea.io/en-us/
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/gitea-1.0.2/gitea-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
     created: "2021-12-15T21:37:47.925053774Z"
     dependencies:
     - name: gitea
@@ -558,22 +594,6 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/harbor-0.0.1/harbor-0.0.1.tgz
     version: 0.0.1
   home-assistant:
-  - apiVersion: v2
-    created: "2022-03-10T06:48:52.922643396Z"
-    dependencies:
-    - alias: homeassistant
-      name: home-assistant
-      repository: https://k8s-at-home.com/charts/
-      version: 12.1.0
-    description: Preconfigured Home Assistant Deployment
-    digest: a6c416423c66067ec0a6b2728a52a0f86b7039783cf4a2fda36c8f7c6a7842ee
-    name: home-assistant
-    sources:
-    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/home-assistant
-    type: application
-    urls:
-    - https://github.com/nolte/helm-charts-repo/releases/download/home-assistant-1.1.0/home-assistant-1.1.0.tgz
-    version: 1.1.0
   - apiVersion: v2
     created: "2022-01-24T00:09:10.600642193Z"
     dependencies:
@@ -952,4 +972,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-03-10T06:48:52.9227424Z"
+generated: "2022-03-10T06:49:20.221896913Z"
