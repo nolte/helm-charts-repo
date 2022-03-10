@@ -559,6 +559,22 @@ entries:
     version: 0.0.1
   home-assistant:
   - apiVersion: v2
+    created: "2022-03-10T06:48:52.922643396Z"
+    dependencies:
+    - alias: homeassistant
+      name: home-assistant
+      repository: https://k8s-at-home.com/charts/
+      version: 12.1.0
+    description: Preconfigured Home Assistant Deployment
+    digest: a6c416423c66067ec0a6b2728a52a0f86b7039783cf4a2fda36c8f7c6a7842ee
+    name: home-assistant
+    sources:
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/home-assistant
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/home-assistant-1.1.0/home-assistant-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v2
     created: "2022-01-24T00:09:10.600642193Z"
     dependencies:
     - alias: homeassistant
@@ -936,4 +952,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-03-01T21:43:11.600462613Z"
+generated: "2022-03-10T06:48:52.9227424Z"
