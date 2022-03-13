@@ -33,6 +33,9 @@ env:
   TZ: UTC
 
 mopidy:
+  snapcast:
+    server:
+      host: snapcast-server
   spotify:
     enabled: false
   config: |
@@ -58,7 +61,7 @@ mopidy:
     enabled = {{.Values.mopidy.spotify.enabled}}
 
     [audio]
-    output = audioresample ! audioconvert ! audio/x-raw,rate=48000,channels=2,format=S16LE ! wavenc ! tcpclientsink host=station-snapcast-server
+    output = audioresample ! audioconvert ! audio/x-raw,rate=48000,channels=2,format=S16LE ! wavenc ! tcpclientsink host={{.Values.mopidy.snapcast.server.host}}
 
 #- mountPath: /root/.config/snapcast/
 # -- Configures service settings for the chart.
