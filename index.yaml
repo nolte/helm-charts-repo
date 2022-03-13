@@ -23,6 +23,26 @@ entries:
     version: 0.1.0
   argo-workflows:
   - apiVersion: v2
+    created: "2022-03-13T22:29:50.753252117Z"
+    dependencies:
+    - alias: argoworkflows
+      name: argo-workflows
+      repository: https://argoproj.github.io/argo-helm
+      version: 0.13.0
+    - alias: argoworkflowmixin
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.2.0
+    description: Preconfigured argo workflows Deployment
+    digest: 277d9f1f2dc48751f8a11ac57d51966b1d769ff0738de9bb5483579dcfa45047
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/master/charts/argo-workflows
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflows-0.7.0/argo-workflows-0.7.0.tgz
+    version: 0.7.0
+  - apiVersion: v2
     created: "2022-03-10T06:49:20.054623432Z"
     dependencies:
     - alias: argoworkflows
@@ -972,4 +992,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-03-10T06:49:20.221896913Z"
+generated: "2022-03-13T22:29:50.753368918Z"
