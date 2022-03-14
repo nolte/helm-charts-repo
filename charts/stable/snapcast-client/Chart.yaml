@@ -1,0 +1,18 @@
+apiVersion: v2
+appVersion: v0.2.6
+description: Multi Room Music Client
+name: snapcast-client
+version: 0.0.1
+kubeVersion: ">=1.16.0-0"
+keywords:
+- snapcast
+- multi-room-audio
+home: https://github.com/nolte/helm-charts-repo/tree/master/charts/stable/snapcast-server
+sources:
+- https://github.com/badaix/snapcast
+- https://github.com/nolte/docker-snapcast
+maintainers: []
+dependencies:
+- name: common
+  repository: https://library-charts.k8s-at-home.com
+  version: 4.3.0
