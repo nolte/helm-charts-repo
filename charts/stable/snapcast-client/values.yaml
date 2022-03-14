@@ -15,7 +15,10 @@ image:
 
 controller:
   strategy: RollingUpdate
-  
+
+securityContext:
+  privileged: true  
+
 # @default -- See below
 env:
   # -- Set the container timezone
@@ -29,4 +32,15 @@ service:
     enabled: false
 
 # -- Override the command(s) for the default container
-args: ["-h", "snapcast-server"]
+args: ["-h", "rpi-snapcast-server"]
+
+persistence:
+  hostpathmounts-data:
+      enabled: true
+      type: hostPath
+      hostPath: "/dev/snd"
+      mountPath: "/dev/snd"
+
+nodeSelector:
+  task: hifi
+
