@@ -1,4 +1,5 @@
-args:
+command: 
+  - /usr/bin/mopidy 
   - -o 
   - spotify/username=$(SPOTIFY_USERNAME) 
   - -o 
