@@ -32,7 +32,7 @@ service:
     enabled: false
 
 # -- Override the command(s) for the default container
-args: ["-h", "rpi-snapcast-server"]
+args: ["-h", "rpi-snapcast-server-public"]
 
 persistence:
   hostpathmounts-data:
@@ -40,7 +40,3 @@ persistence:
       type: hostPath
       hostPath: "/dev/snd"
       mountPath: "/dev/snd"
-
-nodeSelector:
-  task: hifi
-
