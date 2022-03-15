@@ -15,7 +15,7 @@ image:
 
 
 controller:
-  strategy: RollingUpdate
+  strategy: Recreate
 
 securityContext:
   privileged: true  # required for /dev/snd

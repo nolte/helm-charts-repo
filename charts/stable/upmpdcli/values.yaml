@@ -17,7 +17,7 @@ image:
 args: ["-m","3","-l","0","-h","localhost","-p","32767","-P","1900",]
 
 controller:
-  strategy: RollingUpdate
+  strategy: Recreate
 
 #securityContext:
 #  privileged: true  # required for /dev/snd

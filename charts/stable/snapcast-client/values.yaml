@@ -14,7 +14,7 @@ image:
   pullPolicy: IfNotPresent
 
 controller:
-  strategy: RollingUpdate
+  strategy: Recreate
 
 securityContext:
   privileged: true  

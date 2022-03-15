@@ -14,7 +14,7 @@ image:
   pullPolicy: IfNotPresent
 
 controller:
-  strategy: RollingUpdate
+  strategy: Recreate
   
 # @default -- See below
 env:
