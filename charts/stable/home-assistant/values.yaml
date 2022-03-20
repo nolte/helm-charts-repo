@@ -81,7 +81,11 @@ homeassistant:
 certificate:
   create: false
 
+gitCreds:
+  create: true
+
 assistantCreds:
+  create: true
   data:
     - key: secrets-tf/data/third-party-services/google.com/projects/home-assistant
       name: GOOGLE_CLIENT_ID
