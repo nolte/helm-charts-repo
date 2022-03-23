@@ -6,14 +6,14 @@
 homeassistant:
   global:
     fullnameOverride: home-assistant
-  env:
-    HUE_ENDPOINT: "192.168.0.17"
-    MQTT_ENDPOINT: mosquitto.mosquitto.svc
-    FIRETV_ENDPOINT: "192.168.0.20"
-    DENON_ENDPOINT: "192.168.0.27"
-    PHILIPSTV_ENDPOINT: "192.168.0.24"
-    FRITZBOX_ENDPOINT: "192.168.0.1"
-    HARMONY_ENDPOINT: "192.168.0.32"
+#  env:
+#    HUE_ENDPOINT: "192.168.0.17"
+#    MQTT_ENDPOINT: mosquitto.mosquitto.svc
+#    FIRETV_ENDPOINT: "192.168.0.20"
+#    DENON_ENDPOINT: "192.168.0.27"
+#    PHILIPSTV_ENDPOINT: "192.168.0.24"
+#    FRITZBOX_ENDPOINT: "192.168.0.1"
+#    HARMONY_ENDPOINT: "192.168.0.32"
 
   envFrom:
     - secretRef:
