@@ -1,5 +1,3 @@
-
-
 # home-assistant
 
 ![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
@@ -16,33 +14,15 @@ and using External Secrets for Direct load Credentials from Vault Secret Backend
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://k8s-at-home.com/charts/ | homeassistant(home-assistant) | 12.0.1 |
+| https://k8s-at-home.com/charts/ | homeassistant(home-assistant) | 12.1.0 |
 
 ## Values
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| assistantCreds.create | bool | `true` |  |
-| assistantCreds.data[0].key | string | `"secrets-tf/data/third-party-services/google.com/projects/home-assistant"` |  |
-| assistantCreds.data[0].name | string | `"GOOGLE_CLIENT_ID"` |  |
-| assistantCreds.data[0].property | string | `"client_id"` |  |
-| assistantCreds.data[1].key | string | `"secrets-tf/data/third-party-services/google.com/projects/home-assistant"` |  |
-| assistantCreds.data[1].name | string | `"GOOGLE_CLIENT_SECRET"` |  |
-| assistantCreds.data[1].property | string | `"client_secret"` |  |
-| assistantCreds.data[2].key | string | `"secrets-tf/data/third-party-services/openweathermap.org/projects/home-assistant"` |  |
-| assistantCreds.data[2].name | string | `"OPENWEATHERMAP_API_KEY"` |  |
-| assistantCreds.data[2].property | string | `"token"` |  |
-| assistantCreds.data[3].key | string | `"secrets-tf/data/services/router-fritz-box/users/admin"` |  |
-| assistantCreds.data[3].name | string | `"FRITZBOX_USERNAME"` |  |
-| assistantCreds.data[3].property | string | `"username"` |  |
-| assistantCreds.data[4].key | string | `"secrets-tf/data/services/router-fritz-box/users/admin"` |  |
-| assistantCreds.data[4].name | string | `"FRITZBOX_PASSWORD"` |  |
-| assistantCreds.data[4].property | string | `"password"` |  |
-| assistantCreds.data[5].key | string | `"secrets-tf/data/third-party-services/github.com/apitoken/home-assistant"` |  |
-| assistantCreds.data[5].name | string | `"GITHUB_ACCESS_TOKEN"` |  |
-| assistantCreds.data[5].property | string | `"token"` |  |
+| assistantCreds.create | bool | `false` |  |
 | certificate.create | bool | `false` |  |
-| gitCreds.create | bool | `true` |  |
+| gitCreds.create | bool | `false` |  |
 | homeassistant.additionalContainers.hassConfigurator.image | string | `"causticlab/hass-configurator-docker:latest"` |  |
 | homeassistant.additionalContainers.hassConfigurator.name | string | `"hass-configurator"` |  |
 | homeassistant.additionalContainers.hassConfigurator.volumeMounts[0].mountPath | string | `"/hass-config"` |  |
@@ -50,29 +30,12 @@ and using External Secrets for Direct load Credentials from Vault Secret Backend
 | homeassistant.additionalContainers.hassConfigurator.volumeMounts[1].mountPath | string | `"/root/.ssh"` |  |
 | homeassistant.additionalContainers.hassConfigurator.volumeMounts[1].name | string | `"gitsecret"` |  |
 | homeassistant.controller.annotations."reloader.stakater.com/auto" | string | `"true"` |  |
-| homeassistant.env.DENON_ENDPOINT | string | `"192.168.0.27"` |  |
-| homeassistant.env.FIRETV_ENDPOINT | string | `"192.168.0.20"` |  |
-| homeassistant.env.FRITZBOX_ENDPOINT | string | `"192.168.0.1"` |  |
-| homeassistant.env.HARMONY_ENDPOINT | string | `"192.168.0.32"` |  |
-| homeassistant.env.HUE_ENDPOINT | string | `"192.168.0.17"` |  |
-| homeassistant.env.MQTT_ENDPOINT | string | `"mosquitto.mosquitto.svc"` |  |
-| homeassistant.env.PHILIPSTV_ENDPOINT | string | `"192.168.0.24"` |  |
 | homeassistant.envFrom[0].secretRef.name | string | `"home-assistant-creds"` |  |
 | homeassistant.global.fullnameOverride | string | `"home-assistant"` |  |
-| homeassistant.initContainers.gitsync.args[0] | string | `"set -e; if [ -d \"/config/.git\" ]; then git -C \"/config\" pull || true; else if [ \"$(ls -A /config)\" ]; then git clone --branch ${GIT_BRANCH} --depth 2 \"${GIT_REPO}\" /tmp/repo; cp -rf /tmp/repo/.git \"/config\"; cd \"/config\"; git checkout -f; else git clone --branch ${GIT_BRANCH} --depth 2 \"${GIT_REPO}\" \"/config\"; fi; fi; if [ -f \"/root/.ssh/git-crypt-key\" ]; then cd /config; git-crypt unlock \"/root/.ssh/git-crypt-key\"; fi;"` |  |
-| homeassistant.initContainers.gitsync.command[0] | string | `"/bin/sh"` |  |
-| homeassistant.initContainers.gitsync.command[1] | string | `"-c"` |  |
-| homeassistant.initContainers.gitsync.env[0].name | string | `"GIT_BRANCH"` |  |
-| homeassistant.initContainers.gitsync.env[0].value | string | `"feature/minimized-config"` |  |
-| homeassistant.initContainers.gitsync.env[1].name | string | `"GIT_REPO"` |  |
-| homeassistant.initContainers.gitsync.env[1].value | string | `"git@github.com:nolte/home-assistant-config.git"` |  |
-| homeassistant.initContainers.gitsync.image | string | `"k8sathome/git-crypt:2020.11.15"` |  |
-| homeassistant.initContainers.gitsync.imagePullPolicy | string | `"IfNotPresent"` |  |
-| homeassistant.initContainers.gitsync.name | string | `"git-sync"` |  |
-| homeassistant.initContainers.gitsync.volumeMounts[0].mountPath | string | `"/config"` |  |
-| homeassistant.initContainers.gitsync.volumeMounts[0].name | string | `"config"` |  |
-| homeassistant.initContainers.gitsync.volumeMounts[1].mountPath | string | `"/root/.ssh"` |  |
-| homeassistant.initContainers.gitsync.volumeMounts[1].name | string | `"gitsecret"` |  |
+| homeassistant.ingress.main.annotations."nginx.org/websocket-services" | string | `"home-assistant"` |  |
+| homeassistant.ingress.main.enabled | bool | `false` |  |
+| homeassistant.ingress.main.hosts[0].host | string | `"home-assistant.local"` |  |
+| homeassistant.ingress.main.hosts[0].paths[0].path | string | `"/"` |  |
 | homeassistant.persistence.config.enabled | bool | `true` |  |
 | homeassistant.persistence.config.mountPath | string | `"/config"` |  |
 | homeassistant.persistence.gitsecret.enabled | bool | `true` |  |
@@ -95,5 +58,33 @@ and using External Secrets for Direct load Credentials from Vault Secret Backend
 
 ```sh
 
+kubectl -n home-assistant create secret generic git-creds \
+  --from-literal=id_rsa="$(pass internet/project/homeassistant/deploymentkey/id_rsa)" \
+  --from-literal=id_rsa.pub="$(pass internet/project/homeassistant/deploymentkey/id_rsa.pub)" \
+  --from-literal=known_hosts="$(ssh-keyscan -t rsa github.com)"
+
+```
+
+```sh
+kubectl -n home-assistant delete secret home-assistant-creds
+
+kubectl -n home-assistant create secret generic home-assistant-creds \
+  --from-literal=GOOGLE_CLIENT_ID="$(pass internet/google.com/projects/home-assistant-274616/client_id)" \
+  --from-literal=GOOGLE_CLIENT_SECRET="$(pass internet/google.com/projects/home-assistant-274616/client_secret)" \
+  --from-literal=OPENWEATHERMAP_API_KEY="$(pass network/homeassistant/openweather/apikey)" \
+  --from-literal=FRITZBOX_USERNAME="$(pass network/homeassistant/fritzbox/user)" \
+  --from-literal=FRITZBOX_PASSWORD="$(pass network/homeassistant/fritzbox/password)" \
+  --from-literal=GITHUB_ACCESS_TOKEN="$(pass internet/github.com/nolte/servics/home-assistant/token)" \
+  --from-literal=HUE_ENDPOINT=192.168.178.29
+```
+
+Using Env Variables for make scripts a bit more flexible.
+
+```yaml
+...
+  env:
+    HUE_ENDPOINT: "192.168.0.17"
+    MQTT_ENDPOINT: mosquitto.mosquitto.svc
+...
 ```
 

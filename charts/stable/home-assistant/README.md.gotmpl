@@ -24,4 +24,15 @@ kubectl -n home-assistant create secret generic home-assistant-creds \
   --from-literal=GITHUB_ACCESS_TOKEN="$(pass internet/github.com/nolte/servics/home-assistant/token)" \
   --from-literal=HUE_ENDPOINT=192.168.178.29
 ```
+
+Using Env Variables for make scripts a bit more flexible.
+
+```yaml
+...
+  env:
+    HUE_ENDPOINT: "192.168.0.17"
+    MQTT_ENDPOINT: mosquitto.mosquitto.svc
+...
+```
+
 {{ end }}
