@@ -23,6 +23,26 @@ entries:
     version: 0.1.0
   argo-workflows:
   - apiVersion: v2
+    created: "2022-03-23T23:22:06.810215189Z"
+    dependencies:
+    - alias: argoworkflows
+      name: argo-workflows
+      repository: https://argoproj.github.io/argo-helm
+      version: 0.13.1
+    - alias: argoworkflowmixin
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.2.0
+    description: Preconfigured argo workflows Deployment
+    digest: 60f0a440d0dad65db23ddd98d519f855e3f640835834a80827e16caf75b3dc5d
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/master/charts/argo-workflows
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflows-0.7.1/argo-workflows-0.7.1.tgz
+    version: 0.7.1
+  - apiVersion: v2
     created: "2022-03-13T22:29:50.753252117Z"
     dependencies:
     - alias: argoworkflows
@@ -514,6 +534,22 @@ entries:
     version: 0.0.1
   gitea:
   - apiVersion: v2
+    created: "2022-03-23T23:22:07.112391395Z"
+    dependencies:
+    - name: gitea
+      repository: https://dl.gitea.io/charts/
+      version: 5.0.3
+    description: Preconfigured gitea Deployment
+    digest: c976d23c3af93ce991c4505e8cf58ea6d9d0e263b02db014c1a1ed0b19aeecbc
+    name: gitea
+    sources:
+    - https://gitea.com/gitea/helm-chart
+    - https://gitea.io/en-us/
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/gitea-1.0.3/gitea-1.0.3.tgz
+    version: 1.0.3
+  - apiVersion: v2
     created: "2022-03-10T06:49:20.22169941Z"
     dependencies:
     - name: gitea
@@ -562,6 +598,23 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/gitea-0.0.1/gitea-0.0.1.tgz
     version: 0.0.1
   harbor:
+  - apiVersion: v2
+    created: "2022-03-23T23:22:07.340407882Z"
+    dependencies:
+    - name: harbor
+      repository: https://helm.goharbor.io
+      version: 1.8.2
+    description: Preconfigured harbor Deployment
+    digest: 44c13f175ce015062ca487ff9606bcc398ed3dd82a4e114e6a0f8cf762b53bce
+    name: harbor
+    sources:
+    - https://github.com/goharbor/harbor-helm
+    - https://github.com/goharbor/harbor
+    - https://goharbor.io/
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/harbor-0.1.2/harbor-0.1.2.tgz
+    version: 0.1.2
   - apiVersion: v2
     created: "2021-12-23T22:46:53.819944414Z"
     dependencies:
@@ -992,4 +1045,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-03-13T22:29:50.753368918Z"
+generated: "2022-03-23T23:22:07.340581783Z"
