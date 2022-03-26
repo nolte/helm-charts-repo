@@ -534,6 +534,22 @@ entries:
     version: 0.0.1
   gitea:
   - apiVersion: v2
+    created: "2022-03-26T11:00:36.038507246Z"
+    dependencies:
+    - name: gitea
+      repository: https://dl.gitea.io/charts/
+      version: 5.0.4
+    description: Preconfigured gitea Deployment
+    digest: 91c1c7af05e9254818a4ff709cca9dd99a6e9948b3cd328903ca83b4591eb66f
+    name: gitea
+    sources:
+    - https://gitea.com/gitea/helm-chart
+    - https://gitea.io/en-us/
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/gitea-1.0.4/gitea-1.0.4.tgz
+    version: 1.0.4
+  - apiVersion: v2
     created: "2022-03-23T23:22:07.112391395Z"
     dependencies:
     - name: gitea
@@ -732,6 +748,26 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/home-assistant-0.2.2/home-assistant-0.2.2.tgz
     version: 0.2.2
   keycloak:
+  - apiVersion: v2
+    created: "2022-03-26T11:00:36.32974188Z"
+    dependencies:
+    - name: keycloak
+      repository: https://codecentric.github.io/helm-charts
+      version: 17.0.3
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.2.0
+    description: Preconfigured keycloak Deployment
+    digest: e2cbd81f3bbd25a1c2606cb4a47659162cda46af66e5af9df6490b806d36f905
+    name: keycloak
+    sources:
+    - https://codecentric.github.io/helm-charts
+    - https://github.com/codecentric/helm-charts/tree/master/charts/keycloak
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/keycloak-2.0.2/keycloak-2.0.2.tgz
+    version: 2.0.2
   - apiVersion: v2
     created: "2022-02-11T20:23:51.898523317Z"
     dependencies:
@@ -1045,4 +1081,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-03-23T23:22:07.340581783Z"
+generated: "2022-03-26T11:00:36.329905479Z"
