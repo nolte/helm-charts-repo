@@ -704,6 +704,22 @@ entries:
     version: 0.0.1
   home-assistant:
   - apiVersion: v2
+    created: "2022-03-29T22:14:06.916155083Z"
+    dependencies:
+    - alias: homeassistant
+      name: home-assistant
+      repository: https://k8s-at-home.com/charts/
+      version: 12.2.0
+    description: Preconfigured Home Assistant Deployment
+    digest: 1d89bb41b4ca9f8504c27d6e33fccc5bddc2ad06b9296afa6f73b28847b5e4e3
+    name: home-assistant
+    sources:
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/home-assistant
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/home-assistant-1.2.0/home-assistant-1.2.0.tgz
+    version: 1.2.0
+  - apiVersion: v2
     created: "2022-01-24T00:09:10.600642193Z"
     dependencies:
     - alias: homeassistant
@@ -930,6 +946,25 @@ entries:
     version: 0.2.2
   powerdns:
   - apiVersion: v2
+    created: "2022-03-29T22:14:07.053731761Z"
+    dependencies:
+    - name: powerdns
+      repository: https://k8s-at-home.com/charts
+      version: 4.1.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.2.0
+    description: extendet powerdns chart
+    digest: 303641a2037a20a9243294c3aee8b8fc60283d369b535ffb7c3384b4afe5d6f5
+    name: powerdns
+    sources:
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/powerdns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/powerdns-1.1.0/powerdns-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v2
     created: "2022-01-24T13:09:51.223731581Z"
     dependencies:
     - name: powerdns
@@ -1101,4 +1136,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-03-27T14:57:47.986605369Z"
+generated: "2022-03-29T22:14:07.053934263Z"
