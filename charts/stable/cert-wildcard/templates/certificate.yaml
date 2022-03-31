@@ -11,3 +11,7 @@ spec:
     name:  {{ tpl .Values.issuerName . }}
     kind: ClusterIssuer
   secretName: wildcard-duckdns-org-tls
+  {{- with .Values.certificateTemplate}}
+  secretTemplate:
+    {{- . | toYaml | nindent 4}}
+  {{- end }}
