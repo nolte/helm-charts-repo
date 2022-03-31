@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: v0.2.6
 description: Multi Room Music Server
 name: snapcast-server
-version: 0.1.0
+version: 0.1.1
 kubeVersion: ">=1.16.0-0"
 keywords:
 - snapcast

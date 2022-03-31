@@ -11,4 +11,3 @@ repos:
           )
       - id: end-of-file-fixer
         exclude: ".bumpversion.cfg"
-      - id: check-yaml

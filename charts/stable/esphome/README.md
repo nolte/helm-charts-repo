@@ -51,4 +51,3 @@ kubectl -n esphome create secret generic git-creds \
   --from-literal=id_rsa.pub="$(pass internet/project/homeassistant/deploymentkey/id_rsa.pub)" \
   --from-literal=known_hosts="$(ssh-keyscan -t rsa github.com)"
 ```
-
