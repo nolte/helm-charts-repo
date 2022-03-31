@@ -36,6 +36,14 @@ tasks:
     - check-chart
     - lint
 
+  docs:
+    desc: lint your chart code
+    dir: "{{.GIT_ROOT}}/charts/{{.CHART_TYPE}}/{{.CHART}}"
+    cmds:
+    - helm-docs -t {{.GIT_ROOT}}/charts/README.md.gotmpl -t README.md.gotmpl
+    deps:
+    - check-chart
+
   # Checks Parameters
   check-chart:
     cmds:

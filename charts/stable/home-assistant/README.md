@@ -1,9 +1,11 @@
 # home-assistant
 
-![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 1.3.0](https://img.shields.io/badge/Version-1.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Extended Home Assistant Deployment, with optional Project Contour HTTPProxy support
 and using External Secrets for Direct load Credentials from Vault Secret Backend.
+
+**Homepage:** <https://github.com/nolte/helm-charts-repo/tree/main/charts/stable/home-assistant>
 
 ## Source Code
 
@@ -14,7 +16,7 @@ and using External Secrets for Direct load Credentials from Vault Secret Backend
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://k8s-at-home.com/charts/ | homeassistant(home-assistant) | 12.1.0 |
+| https://k8s-at-home.com/charts/ | homeassistant(home-assistant) | 12.2.0 |
 
 ## Values
 
@@ -36,6 +38,7 @@ and using External Secrets for Direct load Credentials from Vault Secret Backend
 | homeassistant.ingress.main.enabled | bool | `false` |  |
 | homeassistant.ingress.main.hosts[0].host | string | `"home-assistant.local"` |  |
 | homeassistant.ingress.main.hosts[0].paths[0].path | string | `"/"` |  |
+| homeassistant.ingress.main.ingressClassName | string | `"nginx"` |  |
 | homeassistant.persistence.config.enabled | bool | `true` |  |
 | homeassistant.persistence.config.mountPath | string | `"/config"` |  |
 | homeassistant.persistence.gitsecret.enabled | bool | `true` |  |
@@ -87,4 +90,3 @@ Using Env Variables for make scripts a bit more flexible.
     MQTT_ENDPOINT: mosquitto.mosquitto.svc
 ...
 ```
-

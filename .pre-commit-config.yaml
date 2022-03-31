@@ -9,6 +9,3 @@ repos:
               .md|
               .bumpversion.cfg
           )
-      - id: end-of-file-fixer
-        exclude: ".bumpversion.cfg"
-      - id: check-yaml

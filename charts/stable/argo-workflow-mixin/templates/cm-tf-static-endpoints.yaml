@@ -4,7 +4,7 @@ kind: ConfigMap
 metadata:
   name: tf-static-endpoints
   labels:
-    {{- include "argo-workflows-execution.labels" . | nindent 4 }}  
+    {{- include "argo-workflows-execution.labels" . | nindent 4 }}
 data:
   # property-like keys; each key maps to a simple value
   AWS_S3_ENDPOINT: {{tpl .Values.cmTfStaticEndpoints.s3 . }}

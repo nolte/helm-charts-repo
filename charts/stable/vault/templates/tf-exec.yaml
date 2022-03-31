@@ -20,7 +20,7 @@ spec:
     - name: path
       value: ./src/applications/vault/configuration/baseline
 
-  templates:  
+  templates:
   - name: exec
     inputs:
       parameters:
@@ -45,9 +45,9 @@ spec:
         set -o errexit
         set -o pipefail
         set -o nounset
-        
+
         cd {{ "{{" }}inputs.parameters.path{{ "}}" }}
-        
+
         terragrunt {{ "{{" }}inputs.parameters.action{{ "}}" }} -input=false -auto-approve -no-color -compact-warnings
 
       env:
