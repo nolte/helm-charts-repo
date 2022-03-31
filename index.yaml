@@ -3,6 +3,16 @@ entries:
   argo-workflow-mixin:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-03-31T21:56:11.696998726Z"
+    description: A Helm chart for Kubernetes
+    digest: 015b65abd9a6bec93f142104e67658b8fa77d2d1932f1b2aea4f81248f533593
+    name: argo-workflow-mixin
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflow-mixin-0.2.1/argo-workflow-mixin-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2021-12-15T21:37:47.431370523Z"
     description: A Helm chart for Kubernetes
     digest: 244c3cf1678e3401f6ad425d3c940d4fa990ff797d735a2b765ab7fed90d84b7
@@ -290,6 +300,16 @@ entries:
   cert-wildcard:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-03-31T21:56:11.804646537Z"
+    description: A Helm chart for Kubernetes
+    digest: f7c081033bb9b21560e46d98e9590b24f9857c1e5976d5c6b98ec80aa64003cc
+    name: cert-wildcard
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/cert-wildcard-0.2.2/cert-wildcard-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-03-27T14:57:47.986458657Z"
     description: A Helm chart for Kubernetes
     digest: b9221a1e7d1f28caaba21af185807f61fc37c6a6c87f84e5129fd4347cb1ff04
@@ -329,6 +349,22 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/cert-wildcard-0.1.0/cert-wildcard-0.1.0.tgz
     version: 0.1.0
   esphome:
+  - apiVersion: v2
+    created: "2022-03-31T21:56:11.931984618Z"
+    dependencies:
+    - name: esphome
+      repository: https://k8s-at-home.com/charts/
+      version: 8.2.0
+    description: Pre Configured ESPHome Deployment, with example values for use a
+      git init container to receive configurations from a repository.
+    digest: 89f69c25d81f07da83875a5d373d2f5e44ab70836ceb231e24a5cc1950fcd098
+    name: esphome
+    sources:
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/esphome
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/esphome-0.4.1/esphome-0.4.1.tgz
+    version: 0.4.1
   - apiVersion: v2
     created: "2022-03-31T21:29:19.443734466Z"
     dependencies:
@@ -391,6 +427,26 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/esphome-0.0.1/esphome-0.0.1.tgz
     version: 0.0.1
   external-secrets-manifests:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-31T21:56:12.055269535Z"
+    description: A Helm chart for Configure External Secrets, allows to keep the Git
+      Password free
+    digest: 9ae68181c4360273fcc4a56d511b51313b9016b97d76e5aba59d542878269df2
+    home: https://github.com/nolte/helm-charts-repo/tree/main/stable/external-secrets-manifests
+    keywords:
+    - secrets
+    - vault
+    maintainers:
+    - name: nolte
+    name: external-secrets-manifests
+    sources:
+    - https://github.com/nolte/helm-charts-repo
+    - https://github.com/external-secrets/kubernetes-external-secrets
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/external-secrets-manifests-0.1.2/external-secrets-manifests-0.1.2.tgz
+    version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2021-11-07T15:45:41.416707152Z"
@@ -570,6 +626,22 @@ entries:
     version: 0.0.1
   gitea:
   - apiVersion: v2
+    created: "2022-03-31T21:56:12.21414794Z"
+    dependencies:
+    - name: gitea
+      repository: https://dl.gitea.io/charts/
+      version: 5.0.4
+    description: Preconfigured gitea Deployment
+    digest: bd373b155805c38d80c9208491ada1709cf7a451217ab5cc830e406a95c718d7
+    name: gitea
+    sources:
+    - https://gitea.com/gitea/helm-chart
+    - https://gitea.io/en-us/
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/gitea-1.1.1/gitea-1.1.1.tgz
+    version: 1.1.1
+  - apiVersion: v2
     created: "2022-03-31T21:29:19.602411195Z"
     dependencies:
     - name: gitea
@@ -736,6 +808,26 @@ entries:
     version: 0.0.1
   home-assistant:
   - apiVersion: v2
+    created: "2022-03-31T21:56:12.370949163Z"
+    dependencies:
+    - alias: homeassistant
+      name: home-assistant
+      repository: https://k8s-at-home.com/charts/
+      version: 12.2.0
+    description: 'Extended Home Assistant Deployment, with optional Project Contour
+      HTTPProxy support and using External Secrets for Direct load Credentials from
+      Vault Secret Backend. '
+    digest: 3973ba4c43518e76bfb77e1a0c76ec5b59a8a9fa78e11a491cb810557c2b4985
+    home: https://github.com/nolte/helm-charts-repo/tree/main/charts/stable/home-assistant
+    name: home-assistant
+    sources:
+    - https://github.com/nolte/helm-charts-repo/tree/main/charts/stable/home-assistant
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/home-assistant
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/home-assistant-1.3.1/home-assistant-1.3.1.tgz
+    version: 1.3.1
+  - apiVersion: v2
     created: "2022-03-31T21:29:19.777443531Z"
     dependencies:
     - alias: homeassistant
@@ -836,6 +928,26 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/home-assistant-0.2.2/home-assistant-0.2.2.tgz
     version: 0.2.2
   keycloak:
+  - apiVersion: v2
+    created: "2022-03-31T21:56:12.50671187Z"
+    dependencies:
+    - name: keycloak
+      repository: https://codecentric.github.io/helm-charts
+      version: 17.0.3
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.2.0
+    description: Preconfigured keycloak Deployment
+    digest: a9c3e5be2aa5f834688372b8fd27fb9f7c816f57f22a173743b5940b89a8652e
+    name: keycloak
+    sources:
+    - https://codecentric.github.io/helm-charts
+    - https://github.com/codecentric/helm-charts/tree/master/charts/keycloak
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/keycloak-2.0.3/keycloak-2.0.3.tgz
+    version: 2.0.3
   - apiVersion: v2
     created: "2022-03-26T11:00:36.32974188Z"
     dependencies:
@@ -999,6 +1111,28 @@ entries:
   mopidy:
   - apiVersion: v2
     appVersion: v0.0.1
+    created: "2022-03-31T21:56:12.639875001Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.3.0
+    description: Hackable Music Server
+    digest: c6e37da3dae2df810931bea51f3298b2c696b31adf645419057f1a41e9aa1f34
+    home: https://github.com/nolte/helm-charts-repo/tree/master/charts/stable/mopidy
+    keywords:
+    - fritz-exporter
+    - fritzbox
+    kubeVersion: '>=1.16.0-0'
+    name: mopidy
+    sources:
+    - https://github.com/mopidy/mopidy
+    - https://mopidy.com/
+    - https://github.com/wernight/docker-mopidy
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/mopidy-0.1.1/mopidy-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: v0.0.1
     created: "2022-03-31T21:29:19.907314774Z"
     dependencies:
     - name: common
@@ -1020,6 +1154,25 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/mopidy-0.1.0/mopidy-0.1.0.tgz
     version: 0.1.0
   powerdns:
+  - apiVersion: v2
+    created: "2022-03-31T21:56:12.780311767Z"
+    dependencies:
+    - name: powerdns
+      repository: https://k8s-at-home.com/charts
+      version: 4.1.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.2.0
+    description: extendet powerdns chart
+    digest: 319bd003fb53c35a8ad921c11d5f96f5804bd8523d59d5ce854bdb74a3f1007c
+    name: powerdns
+    sources:
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/powerdns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/powerdns-1.1.1/powerdns-1.1.1.tgz
+    version: 1.1.1
   - apiVersion: v2
     created: "2022-03-29T22:14:07.053731761Z"
     dependencies:
@@ -1137,6 +1290,27 @@ entries:
   snapcast-client:
   - apiVersion: v2
     appVersion: v0.2.6
+    created: "2022-03-31T21:56:12.897422538Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.3.0
+    description: Multi Room Music Client
+    digest: 926e916afe58280e9fd213f012472886b6342a59846cad562a880e1fe9d732eb
+    home: https://github.com/nolte/helm-charts-repo/tree/master/charts/stable/snapcast-server
+    keywords:
+    - snapcast
+    - multi-room-audio
+    kubeVersion: '>=1.16.0-0'
+    name: snapcast-client
+    sources:
+    - https://github.com/badaix/snapcast
+    - https://github.com/nolte/docker-snapcast
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/snapcast-client-0.1.1/snapcast-client-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: v0.2.6
     created: "2022-03-31T21:29:20.035554706Z"
     dependencies:
     - name: common
@@ -1157,6 +1331,27 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/snapcast-client-0.1.0/snapcast-client-0.1.0.tgz
     version: 0.1.0
   snapcast-server:
+  - apiVersion: v2
+    appVersion: v0.2.6
+    created: "2022-03-31T21:56:13.023245433Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.3.0
+    description: Multi Room Music Server
+    digest: d5b5d275945a8d6eb645e89e68056d1fdab510a39a06075c8da00682db2b6af4
+    home: https://github.com/nolte/helm-charts-repo/tree/master/charts/stable/snapcast-server
+    keywords:
+    - snapcast
+    - multi-room-audio
+    kubeVersion: '>=1.16.0-0'
+    name: snapcast-server
+    sources:
+    - https://github.com/badaix/snapcast
+    - https://github.com/nolte/docker-snapcast
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/snapcast-server-0.1.1/snapcast-server-0.1.1.tgz
+    version: 0.1.1
   - apiVersion: v2
     appVersion: v0.2.6
     created: "2022-03-31T21:29:20.154208976Z"
@@ -1181,6 +1376,26 @@ entries:
   upmpdcli:
   - apiVersion: v2
     appVersion: v0.0.1
+    created: "2022-03-31T21:56:13.214946549Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.3.0
+    description: upmpdcli Receiver
+    digest: 2559b69502bf9a49347a5128875f9a2b882974afcc914fbf40cc9e515c8b1c5a
+    home: https://github.com/nolte/helm-charts-repo/tree/master/charts/stable/upmpdcli
+    keywords:
+    - upmpdcli
+    - audio
+    kubeVersion: '>=1.16.0-0'
+    name: upmpdcli
+    sources:
+    - https://github.com/nolte/docker-upmpdcli
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/upmpdcli-0.1.0/upmpdcli-0.1.0.tgz
+    version: 0.1.0
+  - apiVersion: v2
+    appVersion: v0.0.1
     created: "2022-03-31T21:29:20.291419966Z"
     dependencies:
     - name: common
@@ -1200,6 +1415,25 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/upmpdcli-0.0.1/upmpdcli-0.0.1.tgz
     version: 0.0.1
   vault:
+  - apiVersion: v2
+    created: "2022-03-31T21:56:13.359568579Z"
+    dependencies:
+    - name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.19.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.2.0
+    description: Preconfigured Vault Deployment
+    digest: 9a9006d8a47252133953852a880d436c8c256ff6aef3c4a4ab43cd33d6bf57da
+    name: vault
+    sources:
+    - https://github.com/hashicorp/vault-helm
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.6.1/vault-0.6.1.tgz
+    version: 0.6.1
   - apiVersion: v2
     created: "2021-12-23T22:44:31.569155427Z"
     dependencies:
@@ -1276,4 +1510,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-03-31T21:29:20.291596267Z"
+generated: "2022-03-31T21:56:13.359795577Z"
