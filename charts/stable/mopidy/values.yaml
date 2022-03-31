@@ -26,7 +26,7 @@ podSecurityContext:
   fsGroup: 29
   runAsUser: 105
   runAsGroup: 29
-  
+
 # @default -- See below
 env:
   # -- Set the container timezone
@@ -42,7 +42,7 @@ mopidy:
     [local]
     data_dir = /var/lib/mopidy/local
     media_dir = /var/lib/mopidy/media
-    
+
     [http]
     hostname = 0.0.0.0
 
@@ -63,7 +63,6 @@ mopidy:
     [audio]
     output = audioresample ! audioconvert ! audio/x-raw,rate=48000,channels=2,format=S16LE ! wavenc ! tcpclientsink host={{.Values.mopidy.snapcast.server.host}}
 
-#- mountPath: /root/.config/snapcast/
 # -- Configures service settings for the chart.
 # @default -- See values.yaml
 service:
@@ -98,15 +97,11 @@ persistence:
     type: pvc
     accessMode: ReadWriteOnce
     size: 1Gi
-    # hostPath: /tmp/mounttest 
-    # type: hostPath
-    #readOnly: true
-
-  #sound: 
-  #  enabled: true
-  #  mountPath: /dev/snd
-  #  hostPath: /dev/snd
-  #  type: hostPath
+  # sound:
+  #   enabled: true
+  #   mountPath: /dev/snd
+  #   hostPath: /dev/snd
+  #   type: hostPath
   playlists:
     # -- Enables or disables the persistence item
     enabled: true

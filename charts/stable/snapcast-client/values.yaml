@@ -17,14 +17,13 @@ controller:
   strategy: Recreate
 
 securityContext:
-  privileged: true  
+  privileged: true
 
 # @default -- See below
 env:
   # -- Set the container timezone
   TZ: UTC
 
-#- mountPath: /root/.config/snapcast/
 # -- Configures service settings for the chart.
 # @default -- See values.yaml
 service:
@@ -36,7 +35,7 @@ args: ["-h", "rpi-snapcast-server-public"]
 
 persistence:
   hostpathmounts-data:
-      enabled: true
-      type: hostPath
-      hostPath: "/dev/snd"
-      mountPath: "/dev/snd"
+    enabled: true
+    type: hostPath
+    hostPath: "/dev/snd"
+    mountPath: "/dev/snd"

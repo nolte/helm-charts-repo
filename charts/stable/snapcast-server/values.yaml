@@ -15,7 +15,7 @@ image:
 
 controller:
   strategy: Recreate
-  
+
 # @default -- See below
 env:
   # -- Set the container timezone
@@ -25,11 +25,10 @@ snapcastServer:
   config: |
     [http]
     doc_root = /usr/share/snapserver/snapweb
-    
+
     [stream]
     stream = tcp://0.0.0.0:4953?name=mopidy_tcp
 
-#- mountPath: /root/.config/snapcast/
 # -- Configures service settings for the chart.
 # @default -- See values.yaml
 service:
@@ -51,7 +50,7 @@ service:
       control:
         enabled: true
         protocol: TCP
-        port: 1704    
+        port: 1704
         nodePort: 30704
       server:
         enabled: true
@@ -59,11 +58,8 @@ service:
         port: 1705
         nodePort: 30705
 
-# -- Override the command(s) for the default container
-args: ["-c","/tmp/snapserver/snapserver.conf"]
 # -- Override the args for the default container
-#args: []
-
+args: ["-c", "/tmp/snapserver/snapserver.conf"]
 
 persistence:
   snapserver-config:
@@ -71,4 +67,4 @@ persistence:
     # -- Enables or disables the persistence item
     enabled: true
     mountPath: /tmp/snapserver/
-    type: configMap    
+    type: configMap

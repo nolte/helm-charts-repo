@@ -1,8 +1,7 @@
+#  IMPORTANT NOTE
 #
-# IMPORTANT NOTE
-#
-# This chart inherits from our common library chart. You can check the default values/options here:
-# https://github.com/k8s-at-home/library-charts/tree/main/charts/stable/common/values.yaml
+#  This chart inherits from our common library chart. You can check the default values/options here:
+#  https://github.com/k8s-at-home/library-charts/tree/main/charts/stable/common/values.yaml
 #
 
 image:
@@ -13,22 +12,21 @@ image:
   # -- image pull policy
   pullPolicy: IfNotPresent
 
-# "-f","mopidy","-c","/var/lib/upmpdcli/.config/upmpdcli.conf"
-args: ["-m","3","-l","0","-h","localhost","-p","32767","-P","1900",]
+args: ["-m", "3", "-l", "0", "-h", "localhost", "-p", "32767", "-P", "1900"]
 
 controller:
   strategy: Recreate
 
-#securityContext:
-#  privileged: true  # required for /dev/snd
-#  runAsUser: 105
-#  runAsGroup: 26
+# securityContext:
+#   privileged: true  # required for /dev/snd
+#   runAsUser: 105
+#   runAsGroup: 26
 
-#podSecurityContext:
-#  fsGroup: 29
-#  runAsUser: 105
-#  runAsGroup: 29
-  
+# podSecurityContext:
+#   fsGroup: 29
+#   runAsUser: 105
+#   runAsGroup: 29
+
 # @default -- See below
 env:
   # -- Set the container timezone
@@ -44,8 +42,6 @@ upmpdcli:
     # Upmpdcli Radios plugin parameters
     upradiostitle = Upmpdcli Radio List
 
-
-#- mountPath: /root/.config/snapcast/
 # -- Configures service settings for the chart.
 # @default -- See values.yaml
 service:
