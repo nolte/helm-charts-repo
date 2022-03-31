@@ -3,9 +3,9 @@ dependencies:
   - name: esphome
     repository: https://k8s-at-home.com/charts/
     version: 8.2.0
-description: Preconfigured ESPHome Deployment
+description: Pre Configured ESPHome Deployment, with example values for use a git init container to receive configurations from a repository.
 name: esphome
 sources:
   - https://github.com/k8s-at-home/charts/tree/master/charts/stable/esphome
 type: application
-version: 0.3.0
+version: 0.4.0

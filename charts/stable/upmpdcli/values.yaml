@@ -1,0 +1,74 @@
+#  IMPORTANT NOTE
+#
+#  This chart inherits from our common library chart. You can check the default values/options here:
+#  https://github.com/k8s-at-home/library-charts/tree/main/charts/stable/common/values.yaml
+#
+
+image:
+  # -- image repository
+  repository: nolte/upmpdcli
+  # -- image tag
+  tag: v0.9.1
+  # -- image pull policy
+  pullPolicy: IfNotPresent
+
+args: ["-m", "3", "-l", "0", "-h", "localhost", "-p", "32767", "-P", "1900"]
+
+controller:
+  strategy: Recreate
+
+# securityContext:
+#   privileged: true  # required for /dev/snd
+#   runAsUser: 105
+#   runAsGroup: 26
+
+# podSecurityContext:
+#   fsGroup: 29
+#   runAsUser: 105
+#   runAsGroup: 29
+
+# @default -- See below
+env:
+  # -- Set the container timezone
+  TZ: UTC
+
+upmpdcli:
+  config: |
+    # Path to an external file with radio definitions.
+    radiolist = /usr/share/upmpdcli/radio_scripts/radiolist.conf
+
+    # Local Media Server parameters
+    uprcltitle = Local Music
+    # Upmpdcli Radios plugin parameters
+    upradiostitle = Upmpdcli Radio List
+
+# -- Configures service settings for the chart.
+# @default -- See values.yaml
+service:
+  main:
+    enabled: true
+    type: NodePort
+    ports:
+      http:
+        enabled: true
+        protocol: TCP
+        port: 49149
+        nodePort: 30149
+      stream:
+        enabled: true
+        protocol: TCP
+        port: 49152
+        nodePort: 30152
+      upnp:
+        enabled: true
+        protocol: UDP
+        port: 1900
+        nodePort: 30900
+#
+persistence:
+  config:
+    name: upmpdcli-config
+    # -- Enables or disables the persistence item
+    enabled: true
+    mountPath: /var/lib/upmpdcli/.config/
+    type: configMap

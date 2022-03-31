@@ -1,0 +1,42 @@
+# Mopidy
+
+Simple Helm Chart for running [mopidy](https://github.com/mopidy/mopidy) inside a k8s Cluster. 
+
+This chart will be a part of the [docker_compose-audiostation](https://github.com/nolte/docker_compose-audiostation) migration.
+
+**WIP**
+
+## Usefull commands
+
+```sh
+kind load docker-image nolte/mopidy:dirty
+```
+
+```bash
+
+export MOPIDY_NAMESPACE=audio-station
+
+helm upgrade -i mopidy . -n $MOPIDY_NAMESPACE --create-namespace 
+
+helm delete mopidy -n -n $MOPIDY_NAMESPACE
+
+kubectl port-forward -n $MOPIDY_NAMESPACE  svc/mopidy 6680
+
+kubectl -n $MOPIDY_NAMESPACE logs $(kubectl -n $MOPIDY_NAMESPACE get pods -l app.kubernetes.io/name=mopidy -ojson | jq -r '.items[0].metadata.name') -f
+```
+
+Copy files to container
+
+```sh
+kubectl -n $MOPIDY_NAMESPACE cp ~/Musik  $(kubectl get pods -l app.kubernetes.io/name=mopidy -n $MOPIDY_NAMESPACE  -ojson | jq -r '.items[0].metadata.name'):/var/lib/mopidy/media/
+
+kubectl -n $MOPIDY_NAMESPACE exec $(kubectl get pods -l app.kubernetes.io/name=mopidy -n $MOPIDY_NAMESPACE  -ojson | jq -r '.items[0].metadata.name') -- mopidy local scan
+```
+
+
+## Links
+
+* [badaix/snapcast/](https://github.com/badaix/snapcast/) 
+* [medoc92/upmpdcli](https://framagit.org/medoc92/upmpdcli)
+* [mopidy/mopidy](https://github.com/mopidy/mopidy)
+* [nolte/docker_compose-audiostation](https://github.com/nolte/docker_compose-audiostation/blob/master/docker-compose.yml)
