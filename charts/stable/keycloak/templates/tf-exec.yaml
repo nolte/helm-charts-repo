@@ -20,7 +20,7 @@ spec:
     - name: path
       value: ./src/applications/keycloak/configuration/baseline
 
-  templates:  
+  templates:
   - name: exec
     metadata:
       annotations:
@@ -33,14 +33,14 @@ spec:
           {{"{{-"}} with secret "secrets-tf/services/IdentityAccessManagement/users/admin" {{ "-}}" }}
           export KEYCLOAK_USER={{"{{"}} .Data.data.username {{ "}}" }}
           export KEYCLOAK_PASSWORD={{"{{"}} .Data.data.password {{ "}}" }}
-          {{"{{-"}} end {{ "}}" }}        
+          {{"{{-"}} end {{ "}}" }}
         vault.hashicorp.com/agent-inject-secret-s3access: secrets-tf/services/s3/users/admin
         vault.hashicorp.com/agent-inject-template-s3access: |
           {{"{{-"}} with secret "secrets-tf/services/s3/users/admin" {{ "-}}" }}
           [default]
           aws_access_key_id={{"{{"}} .Data.data.accesskey {{ "}}" }}
           aws_secret_access_key={{"{{"}} .Data.data.secretkey {{ "}}" }}
-          {{"{{-"}} end {{ "}}" }}  
+          {{"{{-"}} end {{ "}}" }}
     inputs:
       parameters:
       - name: revision
@@ -64,11 +64,11 @@ spec:
         set -o errexit
         set -o pipefail
         set -o nounset
-        
+
         cd {{ "{{" }}inputs.parameters.path{{ "}}" }}
         source /vault/secrets/keycloak
         export VAULT_TOKEN=$(cat /vault/secrets/token)
-        
+
         terragrunt {{ "{{" }}inputs.parameters.action{{ "}}" }} -input=false -auto-approve -no-color -compact-warnings
 
       env:

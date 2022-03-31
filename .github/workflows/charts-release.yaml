@@ -11,7 +11,7 @@ on:
     - 'charts/**'
 
 jobs:
-  
+
   release:
     runs-on: ubuntu-20.04
     steps:
