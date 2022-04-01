@@ -33,6 +33,26 @@ entries:
     version: 0.1.0
   argo-workflows:
   - apiVersion: v2
+    created: "2022-04-01T18:15:55.967946846Z"
+    dependencies:
+    - alias: argoworkflows
+      name: argo-workflows
+      repository: https://argoproj.github.io/argo-helm
+      version: 0.13.1
+    - alias: argoworkflowmixin
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.2.1
+    description: Preconfigured argo workflows Deployment
+    digest: b2334d90d1daa2a9043ce863410101e55105911145059d7b1f4c5bc151c2b7de
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/master/charts/argo-workflows
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflows-0.7.2/argo-workflows-0.7.2.tgz
+    version: 0.7.2
+  - apiVersion: v2
     created: "2022-03-23T23:22:06.810215189Z"
     dependencies:
     - alias: argoworkflows
@@ -253,6 +273,28 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflows-0.2.2/argo-workflows-0.2.2.tgz
     version: 0.2.2
   cert-manager-webhook-duckdns:
+  - apiVersion: v2
+    created: "2022-04-01T18:15:56.129184665Z"
+    dependencies:
+    - alias: certmanagerwebhookduckdns
+      name: cert-manager-webhook-duckdns
+      repository: https://nolte.github.io/ebrianne-helm-charts
+      version: 1.2.4
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.2
+    description: Preconfigured Certmanager Duckdns Deployment
+    digest: d238e32a5d621b7bf6e7a942dd0dc2c5a96941bcfe6ff35f2ac27c692c5f0f9e
+    name: cert-manager-webhook-duckdns
+    sources:
+    - https://github.com/ebrianne/helm-charts/tree/master/charts/cert-manager-webhook-duckdns
+    - https://github.com/ebrianne/cert-manager-webhook-duckdns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/cert-manager-webhook-duckdns-0.2.4/cert-manager-webhook-duckdns-0.2.4.tgz
+    version: 0.2.4
   - apiVersion: v2
     created: "2021-12-15T21:37:47.553883575Z"
     dependencies:
@@ -549,6 +591,31 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/forecastle-0.2.2/forecastle-0.2.2.tgz
     version: 0.2.2
   fritz-exporter:
+  - apiVersion: v2
+    appVersion: v2.0.0
+    created: "2022-04-01T18:15:56.783743562Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.3.0
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.2
+    description: FritzBox Exporter
+    digest: bbc50d697b9b76b77e974670b5a48489b34ca2134c0377ac227f0d8bbfd6cad1
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/incubator/fritzbox-exporter
+    keywords:
+    - fritz-exporter
+    - fritzbox
+    kubeVersion: '>=1.16.0-0'
+    name: fritz-exporter
+    sources:
+    - https://github.com/pdreker/fritz_exporter
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/fritz-exporter-0.2.1/fritz-exporter-0.2.1.tgz
+    version: 0.2.1
   - apiVersion: v2
     appVersion: v2.0.0
     created: "2022-01-07T17:50:59.088647166Z"
@@ -929,6 +996,26 @@ entries:
     version: 0.2.2
   keycloak:
   - apiVersion: v2
+    created: "2022-04-01T18:15:57.325483679Z"
+    dependencies:
+    - name: keycloak
+      repository: https://codecentric.github.io/helm-charts
+      version: 17.0.3
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.2.1
+    description: Preconfigured keycloak Deployment
+    digest: 077a0522bb1d0f3a5100b21699e957d419a540a2fdac43edc5b93ed9cacb258d
+    name: keycloak
+    sources:
+    - https://codecentric.github.io/helm-charts
+    - https://github.com/codecentric/helm-charts/tree/master/charts/keycloak
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/keycloak-2.0.4/keycloak-2.0.4.tgz
+    version: 2.0.4
+  - apiVersion: v2
     created: "2022-03-31T21:56:12.50671187Z"
     dependencies:
     - name: keycloak
@@ -1154,6 +1241,25 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/mopidy-0.1.0/mopidy-0.1.0.tgz
     version: 0.1.0
   powerdns:
+  - apiVersion: v2
+    created: "2022-04-01T18:15:57.570549498Z"
+    dependencies:
+    - name: powerdns
+      repository: https://k8s-at-home.com/charts
+      version: 4.1.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.2.1
+    description: extendet powerdns chart
+    digest: 9ddfa36344369d9322a0e34ae00a8b7ff70a2f0c1864105fffc6b2b42cdc25e7
+    name: powerdns
+    sources:
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/powerdns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/powerdns-1.1.2/powerdns-1.1.2.tgz
+    version: 1.1.2
   - apiVersion: v2
     created: "2022-03-31T21:56:12.780311767Z"
     dependencies:
@@ -1416,6 +1522,25 @@ entries:
     version: 0.0.1
   vault:
   - apiVersion: v2
+    created: "2022-04-01T18:15:58.040804372Z"
+    dependencies:
+    - name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.19.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.2.1
+    description: Preconfigured Vault Deployment
+    digest: 845a09ec250909df85ab99cbd1453ffcc845ec8727d84de62f7576ebbcd0d1a6
+    name: vault
+    sources:
+    - https://github.com/hashicorp/vault-helm
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.6.2/vault-0.6.2.tgz
+    version: 0.6.2
+  - apiVersion: v2
     created: "2022-03-31T21:56:13.359568579Z"
     dependencies:
     - name: vault
@@ -1510,4 +1635,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-03-31T21:56:13.359795577Z"
+generated: "2022-04-01T18:15:58.041023388Z"
