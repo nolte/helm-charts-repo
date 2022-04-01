@@ -5,11 +5,11 @@ dependencies:
     version: 0.19.0
   - name: argo-workflow-mixin
     repository: https://nolte.github.io/helm-charts-repo/
-    version: 0.2.0
+    version: 0.2.1
     alias: argo-workflows-execution
 description: Preconfigured Vault Deployment
 name: vault
 sources:
   - https://github.com/hashicorp/vault-helm
 type: application
-version: 0.6.1
+version: 0.6.2
