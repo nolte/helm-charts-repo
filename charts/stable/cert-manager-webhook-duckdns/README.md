@@ -1,6 +1,6 @@
 # cert-manager-webhook-duckdns
 
-![Version: 0.2.3](https://img.shields.io/badge/Version-0.2.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.2.4](https://img.shields.io/badge/Version-0.2.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Preconfigured Certmanager Duckdns Deployment
 
@@ -14,7 +14,7 @@ Preconfigured Certmanager Duckdns Deployment
 | Repository | Name | Version |
 |------------|------|---------|
 | https://nolte.github.io/ebrianne-helm-charts | certmanagerwebhookduckdns(cert-manager-webhook-duckdns) | 1.2.4 |
-| https://nolte.github.io/helm-charts-repo/ | externalsecrets(external-secrets-manifests) | 0.1.1 |
+| https://nolte.github.io/helm-charts-repo/ | externalsecrets(external-secrets-manifests) | 0.1.2 |
 
 ## Values
 
