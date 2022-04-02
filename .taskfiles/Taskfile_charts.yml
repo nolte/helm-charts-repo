@@ -1,0 +1,15 @@
+---
+version: '3'
+
+env:
+  CHART_TYPE: stable
+
+tasks:
+
+  docs:
+    desc: Documentate all Chars
+    cmds:
+    - for i in $(ls -d {{.GIT_ROOT}}/charts/{{.CHART_TYPE}}/*); do export CHART=$(basename ${i%%/}) &&  task chart:docs ; done
+    silent: true
+
+

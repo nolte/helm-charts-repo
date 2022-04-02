@@ -1,6 +1,6 @@
 # esphome
 
-![Version: 0.4.0](https://img.shields.io/badge/Version-0.4.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.4.1](https://img.shields.io/badge/Version-0.4.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Pre Configured ESPHome Deployment, with example values for use a git init container to receive configurations from a repository.
 
@@ -51,3 +51,4 @@ kubectl -n esphome create secret generic git-creds \
   --from-literal=id_rsa.pub="$(pass internet/project/homeassistant/deploymentkey/id_rsa.pub)" \
   --from-literal=known_hosts="$(ssh-keyscan -t rsa github.com)"
 ```
+

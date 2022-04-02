@@ -1,6 +1,6 @@
 # mopidy
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![AppVersion: v0.0.1](https://img.shields.io/badge/AppVersion-v0.0.1-informational?style=flat-square)
+![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square) ![AppVersion: v0.0.1](https://img.shields.io/badge/AppVersion-v0.0.1-informational?style=flat-square)
 
 Hackable Music Server
 
@@ -86,3 +86,4 @@ kubectl -n $MOPIDY_NAMESPACE exec $(kubectl get pods -l app.kubernetes.io/name=m
 * [medoc92/upmpdcli](https://framagit.org/medoc92/upmpdcli)
 * [mopidy/mopidy](https://github.com/mopidy/mopidy)
 * [nolte/docker_compose-audiostation](https://github.com/nolte/docker_compose-audiostation/blob/master/docker-compose.yml)
+
