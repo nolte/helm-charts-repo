@@ -875,6 +875,26 @@ entries:
     version: 0.0.1
   home-assistant:
   - apiVersion: v2
+    created: "2022-04-07T22:55:02.68603548Z"
+    dependencies:
+    - alias: homeassistant
+      name: home-assistant
+      repository: https://k8s-at-home.com/charts/
+      version: 13.0.1
+    description: 'Extended Home Assistant Deployment, with optional Project Contour
+      HTTPProxy support and using External Secrets for Direct load Credentials from
+      Vault Secret Backend. '
+    digest: 164492384c4cc66ba21cfc986479bebea02e0e00535eff88f4a415483a87f799
+    home: https://github.com/nolte/helm-charts-repo/tree/main/charts/stable/home-assistant
+    name: home-assistant
+    sources:
+    - https://github.com/nolte/helm-charts-repo/tree/main/charts/stable/home-assistant
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/home-assistant
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/home-assistant-2.0.0/home-assistant-2.0.0.tgz
+    version: 2.0.0
+  - apiVersion: v2
     created: "2022-03-31T21:56:12.370949163Z"
     dependencies:
     - alias: homeassistant
@@ -1635,4 +1655,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-04-01T18:15:58.041023388Z"
+generated: "2022-04-07T22:55:03.602259706Z"
