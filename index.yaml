@@ -838,6 +838,23 @@ entries:
     version: 0.0.1
   harbor:
   - apiVersion: v2
+    created: "2022-04-14T21:06:43.815273854Z"
+    dependencies:
+    - name: harbor
+      repository: https://helm.goharbor.io
+      version: 1.9.0
+    description: Preconfigured harbor Deployment
+    digest: 9ebbf389e8f152e0261847fe39c15eb0961cd113d9f5c49ae610c8c867b347d8
+    name: harbor
+    sources:
+    - https://github.com/goharbor/harbor-helm
+    - https://github.com/goharbor/harbor
+    - https://goharbor.io/
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/harbor-0.2.0/harbor-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     created: "2022-03-23T23:22:07.340407882Z"
     dependencies:
     - name: harbor
@@ -1047,6 +1064,26 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/home-assistant-0.2.2/home-assistant-0.2.2.tgz
     version: 0.2.2
   keycloak:
+  - apiVersion: v2
+    created: "2022-04-14T21:06:43.947767783Z"
+    dependencies:
+    - name: keycloak
+      repository: https://codecentric.github.io/helm-charts
+      version: 18.1.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.2.1
+    description: Preconfigured keycloak Deployment
+    digest: dd4a74a8abf63d231f36433f4398c77c85cc6554c13cffbe8ea5e197ae572daa
+    name: keycloak
+    sources:
+    - https://codecentric.github.io/helm-charts
+    - https://github.com/codecentric/helm-charts/tree/master/charts/keycloak
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/keycloak-3.1.0/keycloak-3.1.0.tgz
+    version: 3.1.0
   - apiVersion: v2
     created: "2022-04-10T20:25:14.910476055Z"
     dependencies:
@@ -1707,4 +1744,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-04-14T21:05:12.551601422Z"
+generated: "2022-04-14T21:06:43.948045783Z"
