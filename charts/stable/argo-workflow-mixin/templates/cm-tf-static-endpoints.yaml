@@ -9,4 +9,5 @@ data:
   # property-like keys; each key maps to a simple value
   AWS_S3_ENDPOINT: {{tpl .Values.cmTfStaticEndpoints.s3 . }}
   VAULT_ADDR: {{tpl .Values.cmTfStaticEndpoints.vaultEndpoint . }}
+  KEYCLOAK_URL: {{tpl .Values.cmTfStaticEndpoints.keycloak . }}
 {{- end }}
