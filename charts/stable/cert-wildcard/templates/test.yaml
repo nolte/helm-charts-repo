@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dummy-load-certificates
+  namespace: cert-manager
+spec:
+  tls:
+  - hosts:
+    - "*.rpi-just-homestyle.duckdns.org"
+    secretName: cert-wildcard
+  rules:
+  - host: "*.rpi-just-homestyle.duckdns.org"

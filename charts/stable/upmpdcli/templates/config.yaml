@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: upmpdcli-config
+  labels:
+    {{- include "common.labels" . | nindent 4 }}
+data:
+  upmpdcli.conf: |
+    {{- tpl .Values.upmpdcli.config . | nindent 4 }}

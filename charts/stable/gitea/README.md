@@ -1,0 +1,26 @@
+# gitea
+
+![Version: 1.1.1](https://img.shields.io/badge/Version-1.1.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+
+Preconfigured gitea Deployment
+
+## Source Code
+
+* <https://gitea.com/gitea/helm-chart>
+* <https://gitea.io/en-us/>
+
+## Requirements
+
+| Repository | Name | Version |
+|------------|------|---------|
+| https://dl.gitea.io/charts/ | gitea | 5.0.4 |
+
+## Values
+
+| Key | Type | Default | Description |
+|-----|------|---------|-------------|
+| externalSecret.create | bool | `false` |  |
+| httpProxy.create | bool | `false` |  |
+| httpProxy.fqdn | string | `"gitea.smart-home.k8sservices.local"` |  |
+| httpProxy.tls.secretName | string | `"cert-manager/wildcard-duckdns-org-tls"` |  |
+

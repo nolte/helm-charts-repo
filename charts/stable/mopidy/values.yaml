@@ -1,0 +1,125 @@
+#
+# IMPORTANT NOTE
+#
+# This chart inherits from our common library chart. You can check the default values/options here:
+# https://github.com/k8s-at-home/library-charts/tree/main/charts/stable/common/values.yaml
+#
+
+image:
+  # -- image repository
+  repository: nolte/mopidy
+  # -- image tag
+  tag: v3.2.0-4
+  # -- image pull policy
+  pullPolicy: IfNotPresent
+
+
+controller:
+  strategy: Recreate
+
+securityContext:
+  privileged: true  # required for /dev/snd
+#  runAsUser: 105
+#  runAsGroup: 26
+
+podSecurityContext:
+  fsGroup: 29
+  runAsUser: 105
+  runAsGroup: 29
+
+# @default -- See below
+env:
+  # -- Set the container timezone
+  TZ: UTC
+
+mopidy:
+  snapcast:
+    server:
+      host: snapcast-server
+  spotify:
+    enabled: false
+  config: |
+    [local]
+    data_dir = /var/lib/mopidy/local
+    media_dir = /var/lib/mopidy/media
+
+    [http]
+    hostname = 0.0.0.0
+
+    [mpd]
+    hostname = 0.0.0.0
+    enabled = true
+    port = 6600
+    password =
+    max_connections = 20
+    connection_timeout = 60
+    zeroconf = Mopidy MPD server on $hostname
+    command_blacklist = listall,listallinfo
+    default_playlist_scheme = m3u
+
+    [spotify]
+    enabled = {{.Values.mopidy.spotify.enabled}}
+
+    [audio]
+    output = audioresample ! audioconvert ! audio/x-raw,rate=48000,channels=2,format=S16LE ! wavenc ! tcpclientsink host={{.Values.mopidy.snapcast.server.host}}
+
+# -- Configures service settings for the chart.
+# @default -- See values.yaml
+service:
+  main:
+    ports:
+      http:
+        enabled: true
+        protocol: TCP
+        port: 6680
+      # https://github.com/mopidy/mopidy/issues/775
+      visualizer:
+        enabled: false
+        protocol: UDP
+        port: 5555
+  public:
+    type: NodePort
+    enabled: true
+    ports:
+      mpd:
+        enabled: true
+        protocol: TCP
+        port: 6600
+        nodePort: 36600
+
+persistence:
+  # -- Default persistence for configuration files.
+  # @default -- See below
+  media:
+    # -- Enables or disables the persistence item
+    enabled: true
+    mountPath: /var/lib/mopidy/media
+    type: pvc
+    accessMode: ReadWriteOnce
+    size: 1Gi
+  # sound:
+  #   enabled: true
+  #   mountPath: /dev/snd
+  #   hostPath: /dev/snd
+  #   type: hostPath
+  playlists:
+    # -- Enables or disables the persistence item
+    enabled: true
+    mountPath: /var/lib/mopidy/playlists
+    type: emptyDir
+  local:
+    # -- Enables or disables the persistence item
+    enabled: true
+    mountPath: /var/lib/mopidy/local
+    type: emptyDir
+  cache:
+    # -- Enables or disables the persistence item
+    enabled: true
+    mountPath: /var/lib/mopidy/.cache
+    type: emptyDir
+  config:
+    name: mopidy-config
+    # -- Enables or disables the persistence item
+    enabled: true
+    mountPath: /var/lib/mopidy/.config/mopidy
+    type: configMap

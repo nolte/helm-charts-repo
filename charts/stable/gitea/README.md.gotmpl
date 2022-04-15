@@ -1,0 +1,7 @@
+{{- define "custom.usageSection" -}}
+
+```
+helm template . --set externalSecret.create=true --set httpProxy.create=true
+```
+
+{{- end -}}

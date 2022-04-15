@@ -20,7 +20,7 @@ rules:
   resources:
   - pods
   verbs:
-  - patch 
+  - patch
   - get
   - watch
 {{- end }}
