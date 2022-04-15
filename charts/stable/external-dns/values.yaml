@@ -1,4 +1,4 @@
-externalDns:
+externaldns:
   pdns:
     apiUrl: http://powerdns-webserver.powerdns.svc
     secretName: pdns-access
