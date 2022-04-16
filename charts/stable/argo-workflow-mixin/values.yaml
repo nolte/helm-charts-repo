@@ -27,3 +27,17 @@ serviceAccount:
   annotations: {}
   create: false
   name: argo-workflows-executer
+
+configurationWorkflows: {}
+#  post-install:
+#    type: terragrunt
+#    workflow: true
+#    terraform:
+#      action: apply
+#    extraEnv:
+#      - name: PDNS_SERVER_URL
+#        value: http://powerdns-webserver.{{.Release.Namespace}}.svc:8081
+#    source:
+#      repo: https://github.com/nolte/argo-charts.git
+#      path: ./src/applications/powerdns/configuration/baseline
+#      revision: master
