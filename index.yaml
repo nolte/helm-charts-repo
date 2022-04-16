@@ -402,6 +402,16 @@ entries:
   cert-wildcard:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-04-16T11:44:18.428233913Z"
+    description: A Helm chart for Kubernetes
+    digest: 9df7b09aa1440ec96930dffdb01da1707d18682cb3ae7128b95de77a2f6a46de
+    name: cert-wildcard
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/cert-wildcard-0.3.1/cert-wildcard-0.3.1.tgz
+    version: 0.3.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-04-15T12:53:26.093113924Z"
     description: A Helm chart for Kubernetes
     digest: 0375f3e076256f079d8128656ce08f8fe592f60babc634880c56df79e385adad
@@ -1981,4 +1991,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-04-16T11:24:54.068832112Z"
+generated: "2022-04-16T11:44:18.428603027Z"
