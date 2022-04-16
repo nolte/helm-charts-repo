@@ -12,5 +12,5 @@ dependencies:
     repository: https://k8s-at-home.com/charts
   - name: argo-workflow-mixin
     repository: https://nolte.github.io/helm-charts-repo/
-    version: 0.4.1
+    version: 0.4.2
     alias: argo-workflows-execution

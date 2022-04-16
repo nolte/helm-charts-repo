@@ -25,6 +25,8 @@ argo-workflows-execution:
       workflow: true
       terraform:
         action: apply
+      extraSourceElements:
+        - "source /vault/secrets/pdnsaccess"
       extraAnnotations:
         # Load a Secret for Terraform State file access
         vault.hashicorp.com/agent-inject-secret-pdnsaccess: secrets-tf/services/dns/users/root
