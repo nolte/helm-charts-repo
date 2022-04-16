@@ -59,7 +59,9 @@ spec:
         set -o pipefail
         set -o nounset
         cd {{ "{{" }}inputs.parameters.path{{ "}}" }}
-        source /vault/secrets/pdnsaccess
+        {{- range $index, $var := $v.extraSourceElements }}
+        {{ tpl $var $dot}}
+        {{- end }}
         export VAULT_TOKEN=$(cat /vault/secrets/token)
         terragrunt {{ "{{" }}inputs.parameters.action{{ "}}" }} -input=false -auto-approve -no-color
 
