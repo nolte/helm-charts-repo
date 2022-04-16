@@ -3,5 +3,8 @@ repos:
   - repo: "https://github.com/pre-commit/pre-commit-hooks"
     rev: v4.2.0
     hooks:
+      - id: end-of-file-fixer
+        exclude: "charts/stable/*.*/README.md"
+
       - id: trailing-whitespace
         args: ['--markdown-linebreak-ext=md']

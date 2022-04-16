@@ -14,4 +14,4 @@ sources:
   - https://gitea.com/gitea/helm-chart
   - https://gitea.io/en-us/
 type: application
-version: 1.2.0
+version: 1.2.1

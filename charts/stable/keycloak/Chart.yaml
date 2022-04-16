@@ -2,7 +2,7 @@ apiVersion: v2
 name: keycloak
 description: Preconfigured keycloak Deployment
 type: application
-version: 3.4.0
+version: 3.4.1
 sources:
   - https://codecentric.github.io/helm-charts
   - https://github.com/codecentric/helm-charts/tree/master/charts/keycloak

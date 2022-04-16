@@ -9,4 +9,4 @@ sources:
   - https://stakater.github.io/stakater-charts
   - https://github.com/stakater/Forecastle/tree/master/deployments/kubernetes/chart/forecastle
 type: application
-version: 0.2.9
+version: 0.2.10
