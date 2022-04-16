@@ -54,11 +54,8 @@ homeassistant:
 certificate:
   create: false
 
-gitCreds:
-  create: false
-
-assistantCreds:
-  create: false
+externalsecrets:
+  enabled: false
 
 httpProxy:
   create: false
