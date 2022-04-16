@@ -32,8 +32,6 @@ argo-workflows-execution:
           {{- with secret "secrets-tf/services/dns/users/root" -}}
           export PDNS_API_KEY={{ .Data.data.token }}
           {{- end }}
-      extraSourceElements:
-        - "source /vault/secrets/pdnsaccess"
       extraEnv:
         - name: PDNS_SERVER_URL
           value: http://powerdns-webserver.{{.Release.Namespace}}.svc:8081
