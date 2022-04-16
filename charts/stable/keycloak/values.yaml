@@ -60,3 +60,15 @@ argo-workflows-execution:
         repo: https://github.com/nolte/argo-charts.git
         path: ./src/applications/keycloak/configuration/baseline
         revision: master
+
+externalsecrets:
+  enabled: true
+  secrets:
+    keycloak-admin-user:
+      data:
+        - key: secrets-tf/data/services/IdentityAccessManagement/users/admin
+          name: KEYCLOAK_PASSWORD
+          property: password
+        - key: secrets-tf/data/services/IdentityAccessManagement/users/admin
+          name: KEYCLOAK_USER
+          property: username
