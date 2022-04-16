@@ -34,6 +34,13 @@ configurationWorkflows: {}
 #    workflow: true
 #    terraform:
 #      action: apply
+#    extraAnnotations:
+#      # Load a Secret for Terraform State file access
+#      vault.hashicorp.com/agent-inject-secret-pdnsaccess: secrets-tf/services/dns/users/root
+#      vault.hashicorp.com/agent-inject-template-pdnsaccess: |
+#        {{- with secret "secrets-tf/services/dns/users/root" -}}
+#        export PDNS_API_KEY={{ .Data.data.token }}
+#        {{- end }}
 #    extraEnv:
 #      - name: PDNS_SERVER_URL
 #        value: http://powerdns-webserver.{{.Release.Namespace}}.svc:8081
