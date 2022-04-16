@@ -1186,6 +1186,26 @@ entries:
     version: 0.2.2
   keycloak:
   - apiVersion: v2
+    created: "2022-04-16T11:24:53.907583874Z"
+    dependencies:
+    - name: keycloak
+      repository: https://codecentric.github.io/helm-charts
+      version: 18.1.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.4.2
+    description: Preconfigured keycloak Deployment
+    digest: 41c13520b5c72e76e38958971f24ea5f0474afb35c98ed66ac03e834215a0304
+    name: keycloak
+    sources:
+    - https://codecentric.github.io/helm-charts
+    - https://github.com/codecentric/helm-charts/tree/master/charts/keycloak
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/keycloak-3.3.0/keycloak-3.3.0.tgz
+    version: 3.3.0
+  - apiVersion: v2
     created: "2022-04-15T21:50:14.473137742Z"
     dependencies:
     - name: keycloak
@@ -1491,6 +1511,25 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/mopidy-0.1.0/mopidy-0.1.0.tgz
     version: 0.1.0
   powerdns:
+  - apiVersion: v2
+    created: "2022-04-16T11:24:54.068485908Z"
+    dependencies:
+    - name: powerdns
+      repository: https://k8s-at-home.com/charts
+      version: 4.1.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.4.2
+    description: extendet powerdns chart
+    digest: 7ed0cfbf9067f4b4c55ba92e044b82e5cb0838e5e5bc0612058f23813d138ffd
+    name: powerdns
+    sources:
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/powerdns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/powerdns-1.3.1/powerdns-1.3.1.tgz
+    version: 1.3.1
   - apiVersion: v2
     created: "2022-04-16T11:08:34.605330867Z"
     dependencies:
@@ -1942,4 +1981,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-04-16T11:11:34.655522872Z"
+generated: "2022-04-16T11:24:54.068832112Z"
