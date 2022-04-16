@@ -3,6 +3,16 @@ entries:
   argo-workflow-mixin:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-04-16T12:28:09.008174522Z"
+    description: A Helm chart for Kubernetes
+    digest: dd4a21b85348f218a8b2b14dac14558f6790432e1cc07c5ab6a4c1214bbaaba4
+    name: argo-workflow-mixin
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflow-mixin-0.4.3/argo-workflow-mixin-0.4.3.tgz
+    version: 0.4.3
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-04-16T11:11:34.654682868Z"
     description: A Helm chart for Kubernetes
     digest: 9865197b69aff8e35354b7b689a9509f6b1f67b887175dc7651b2061f4ad63c2
@@ -72,6 +82,26 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflow-mixin-0.1.0/argo-workflow-mixin-0.1.0.tgz
     version: 0.1.0
   argo-workflows:
+  - apiVersion: v2
+    created: "2022-04-16T12:28:09.145856603Z"
+    dependencies:
+    - alias: argoworkflows
+      name: argo-workflows
+      repository: https://argoproj.github.io/argo-helm
+      version: 0.13.1
+    - alias: argoworkflowmixin
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.3.0
+    description: Preconfigured argo workflows Deployment
+    digest: 2ad91ea3bc8bfdb83fa95968b5d2ee6e1e4e829891055fecbf4541ae49fda9cb
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/master/charts/argo-workflows
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflows-0.8.1/argo-workflows-0.8.1.tgz
+    version: 0.8.1
   - apiVersion: v2
     created: "2022-04-15T21:50:14.273572818Z"
     dependencies:
@@ -334,6 +364,28 @@ entries:
     version: 0.2.2
   cert-manager-webhook-duckdns:
   - apiVersion: v2
+    created: "2022-04-16T12:28:09.28540051Z"
+    dependencies:
+    - alias: certmanagerwebhookduckdns
+      name: cert-manager-webhook-duckdns
+      repository: https://nolte.github.io/ebrianne-helm-charts
+      version: 1.2.4
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.2
+    description: Preconfigured Certmanager Duckdns Deployment
+    digest: bf778b3da80a70cd72451d0b23b192dcdeb917fcfa9180a7a9cba1de958527e7
+    name: cert-manager-webhook-duckdns
+    sources:
+    - https://github.com/ebrianne/helm-charts/tree/master/charts/cert-manager-webhook-duckdns
+    - https://github.com/ebrianne/cert-manager-webhook-duckdns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/cert-manager-webhook-duckdns-0.2.5/cert-manager-webhook-duckdns-0.2.5.tgz
+    version: 0.2.5
+  - apiVersion: v2
     created: "2022-04-01T18:15:56.129184665Z"
     dependencies:
     - alias: certmanagerwebhookduckdns
@@ -400,6 +452,16 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/cert-manager-webhook-duckdns-0.2.2/cert-manager-webhook-duckdns-0.2.2.tgz
     version: 0.2.2
   cert-wildcard:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-04-16T12:28:09.420593357Z"
+    description: A Helm chart for Kubernetes
+    digest: faf11ebdc021aaecf839cd6e74205b38691bc11a1949542e6ea8604003f37d39
+    name: cert-wildcard
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/cert-wildcard-0.3.2/cert-wildcard-0.3.2.tgz
+    version: 0.3.2
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2022-04-16T11:44:18.428233913Z"
@@ -471,6 +533,22 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/cert-wildcard-0.1.0/cert-wildcard-0.1.0.tgz
     version: 0.1.0
   esphome:
+  - apiVersion: v2
+    created: "2022-04-16T12:28:09.606044291Z"
+    dependencies:
+    - name: esphome
+      repository: https://k8s-at-home.com/charts/
+      version: 8.2.0
+    description: Pre Configured ESPHome Deployment, with example values for use a
+      git init container to receive configurations from a repository.
+    digest: 92c80e867e623ddf0d48931aeae4ebacfb20f1d852ee35fa3a88039f7929db9a
+    name: esphome
+    sources:
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/esphome
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/esphome-0.4.2/esphome-0.4.2.tgz
+    version: 0.4.2
   - apiVersion: v2
     created: "2022-03-31T21:56:11.931984618Z"
     dependencies:
@@ -550,6 +628,28 @@ entries:
     version: 0.0.1
   external-dns:
   - apiVersion: v2
+    created: "2022-04-16T12:28:09.75020486Z"
+    dependencies:
+    - alias: externaldns
+      name: external-dns
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.2.4
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.2
+    description: Wrapped External DNS deployment, with External Secrets Support.
+    digest: 0539aa7a137f9ab2e7a7c9934ccfb8078c12dd773c91f06a2aaeb1de00a5d28a
+    name: external-dns
+    sources:
+    - https://artifacthub.io/packages/helm/bitnami/external-dns
+    - https://github.com/bitnami/charts/tree/master/bitnami/external-dns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/external-dns-0.1.1/external-dns-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
     created: "2022-04-15T14:42:38.567848599Z"
     dependencies:
     - alias: externaldns
@@ -584,6 +684,26 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/external-dns-0.0.1/external-dns-0.0.1.tgz
     version: 0.0.1
   external-secrets-manifests:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-04-16T12:28:09.876914291Z"
+    description: A Helm chart for Configure External Secrets, allows to keep the Git
+      Password free
+    digest: 166b961e3c3827e65b203b504d6bffdcab64b7b770a9548c52c05247f91e3aec
+    home: https://github.com/nolte/helm-charts-repo/tree/main/stable/external-secrets-manifests
+    keywords:
+    - secrets
+    - vault
+    maintainers:
+    - name: nolte
+    name: external-secrets-manifests
+    sources:
+    - https://github.com/nolte/helm-charts-repo
+    - https://github.com/external-secrets/kubernetes-external-secrets
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/external-secrets-manifests-0.1.3/external-secrets-manifests-0.1.3.tgz
+    version: 0.1.3
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2022-03-31T21:56:12.055269535Z"
@@ -625,6 +745,22 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/external-secrets-manifests-0.1.1/external-secrets-manifests-0.1.1.tgz
     version: 0.1.1
   forecastle:
+  - apiVersion: v2
+    created: "2022-04-16T12:28:10.019342137Z"
+    dependencies:
+    - name: forecastle
+      repository: https://stakater.github.io/stakater-charts
+      version: v1.0.79
+    description: Preconfigured forecastle Deployment
+    digest: 8d05a85c159398ea1bc39dc306c1fed74615f10fe9b6f9bb342027336daf7945
+    name: forecastle
+    sources:
+    - https://stakater.github.io/stakater-charts
+    - https://github.com/stakater/Forecastle/tree/master/deployments/kubernetes/chart/forecastle
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/forecastle-0.2.10/forecastle-0.2.10.tgz
+    version: 0.2.10
   - apiVersion: v2
     created: "2022-04-10T20:22:54.810469125Z"
     dependencies:
@@ -722,6 +858,31 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/forecastle-0.2.2/forecastle-0.2.2.tgz
     version: 0.2.2
   fritz-exporter:
+  - apiVersion: v2
+    appVersion: v2.0.0
+    created: "2022-04-16T12:28:10.174183053Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.3.0
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.2
+    description: FritzBox Exporter
+    digest: e8ca87e6c2f9f11eae5e4b4e1bd8f9a2e54526f6a4cec4880185e5e7733138e5
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/incubator/fritzbox-exporter
+    keywords:
+    - fritz-exporter
+    - fritzbox
+    kubeVersion: '>=1.16.0-0'
+    name: fritz-exporter
+    sources:
+    - https://github.com/pdreker/fritz_exporter
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/fritz-exporter-0.2.2/fritz-exporter-0.2.2.tgz
+    version: 0.2.2
   - apiVersion: v2
     appVersion: v2.0.0
     created: "2022-04-01T18:15:56.783743562Z"
@@ -823,6 +984,27 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/fritz-exporter-0.0.1/fritz-exporter-0.0.1.tgz
     version: 0.0.1
   gitea:
+  - apiVersion: v2
+    created: "2022-04-16T12:28:10.332172111Z"
+    dependencies:
+    - name: gitea
+      repository: https://dl.gitea.io/charts/
+      version: 5.0.4
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.2
+    description: Preconfigured gitea Deployment
+    digest: 712c1ca058b70e1caa7a1977a40c6a41e8e3ff3ef42eb7ce51a6d3c367642839
+    name: gitea
+    sources:
+    - https://gitea.com/gitea/helm-chart
+    - https://gitea.io/en-us/
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/gitea-1.2.1/gitea-1.2.1.tgz
+    version: 1.2.1
   - apiVersion: v2
     created: "2022-04-15T11:06:17.24526711Z"
     dependencies:
@@ -969,6 +1151,23 @@ entries:
     version: 0.0.1
   harbor:
   - apiVersion: v2
+    created: "2022-04-16T12:28:10.480136133Z"
+    dependencies:
+    - name: harbor
+      repository: https://helm.goharbor.io
+      version: 1.9.0
+    description: Preconfigured harbor Deployment
+    digest: b7f25f21a3cde6a6fa971beb348c85d175d9a80386e56948e23af833206a964c
+    name: harbor
+    sources:
+    - https://github.com/goharbor/harbor-helm
+    - https://github.com/goharbor/harbor
+    - https://goharbor.io/
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/harbor-0.2.1/harbor-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
     created: "2022-04-14T21:06:43.815273854Z"
     dependencies:
     - name: harbor
@@ -1054,6 +1253,31 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/harbor-0.0.1/harbor-0.0.1.tgz
     version: 0.0.1
   home-assistant:
+  - apiVersion: v2
+    created: "2022-04-16T12:28:10.657843761Z"
+    dependencies:
+    - alias: homeassistant
+      name: home-assistant
+      repository: https://k8s-at-home.com/charts/
+      version: 13.0.1
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.2
+    description: 'Extended Home Assistant Deployment, with optional Project Contour
+      HTTPProxy support and using External Secrets for Direct load Credentials from
+      Vault Secret Backend. '
+    digest: d2832642f95cc468824efb648bc602dc8f5bc1e357a7c8e71bb9c79857ccdf12
+    home: https://github.com/nolte/helm-charts-repo/tree/main/charts/stable/home-assistant
+    name: home-assistant
+    sources:
+    - https://github.com/nolte/helm-charts-repo/tree/main/charts/stable/home-assistant
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/home-assistant
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/home-assistant-2.1.1/home-assistant-2.1.1.tgz
+    version: 2.1.1
   - apiVersion: v2
     created: "2022-04-07T22:55:02.68603548Z"
     dependencies:
@@ -1195,6 +1419,31 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/home-assistant-0.2.2/home-assistant-0.2.2.tgz
     version: 0.2.2
   keycloak:
+  - apiVersion: v2
+    created: "2022-04-16T12:28:10.846990333Z"
+    dependencies:
+    - name: keycloak
+      repository: https://codecentric.github.io/helm-charts
+      version: 18.1.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.4.2
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.2
+    description: Preconfigured keycloak Deployment
+    digest: 3f9c1f48c2758dfa162c16a749f528aa804dfdb1e0c34a26478097e180f63356
+    name: keycloak
+    sources:
+    - https://codecentric.github.io/helm-charts
+    - https://github.com/codecentric/helm-charts/tree/master/charts/keycloak
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/keycloak-3.4.1/keycloak-3.4.1.tgz
+    version: 3.4.1
   - apiVersion: v2
     created: "2022-04-16T11:24:53.907583874Z"
     dependencies:
@@ -1478,6 +1727,28 @@ entries:
   mopidy:
   - apiVersion: v2
     appVersion: v0.0.1
+    created: "2022-04-16T12:28:10.995834591Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.3.0
+    description: Hackable Music Server
+    digest: 3ee43be9f94617439ca2fab834aa92062c5e69244e11fe9eadd7491324e1d954
+    home: https://github.com/nolte/helm-charts-repo/tree/master/charts/stable/mopidy
+    keywords:
+    - fritz-exporter
+    - fritzbox
+    kubeVersion: '>=1.16.0-0'
+    name: mopidy
+    sources:
+    - https://github.com/mopidy/mopidy
+    - https://mopidy.com/
+    - https://github.com/wernight/docker-mopidy
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/mopidy-0.1.2/mopidy-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: v0.0.1
     created: "2022-03-31T21:56:12.639875001Z"
     dependencies:
     - name: common
@@ -1521,6 +1792,25 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/mopidy-0.1.0/mopidy-0.1.0.tgz
     version: 0.1.0
   powerdns:
+  - apiVersion: v2
+    created: "2022-04-16T12:28:11.152448477Z"
+    dependencies:
+    - name: powerdns
+      repository: https://k8s-at-home.com/charts
+      version: 4.1.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.4.2
+    description: extendet powerdns chart
+    digest: 55c636aa965c5fd74878b556667a7b531dba24345ef5b2aaa16e9e4163911cde
+    name: powerdns
+    sources:
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/powerdns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/powerdns-1.3.2/powerdns-1.3.2.tgz
+    version: 1.3.2
   - apiVersion: v2
     created: "2022-04-16T11:24:54.068485908Z"
     dependencies:
@@ -1733,6 +2023,27 @@ entries:
   snapcast-client:
   - apiVersion: v2
     appVersion: v0.2.6
+    created: "2022-04-16T12:28:11.290031093Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.3.0
+    description: Multi Room Music Client
+    digest: 2587cab2909e999a7734b6a7b87f0b0702b3bb89bd265f83caace7fcc037d991
+    home: https://github.com/nolte/helm-charts-repo/tree/master/charts/stable/snapcast-server
+    keywords:
+    - snapcast
+    - multi-room-audio
+    kubeVersion: '>=1.16.0-0'
+    name: snapcast-client
+    sources:
+    - https://github.com/badaix/snapcast
+    - https://github.com/nolte/docker-snapcast
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/snapcast-client-0.1.2/snapcast-client-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: v0.2.6
     created: "2022-03-31T21:56:12.897422538Z"
     dependencies:
     - name: common
@@ -1774,6 +2085,27 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/snapcast-client-0.1.0/snapcast-client-0.1.0.tgz
     version: 0.1.0
   snapcast-server:
+  - apiVersion: v2
+    appVersion: v0.2.6
+    created: "2022-04-16T12:28:11.447975384Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.3.0
+    description: Multi Room Music Server
+    digest: 25fa12228f48d354c49c590651592a4204ba44ca5a69d9437d678a67d417d86e
+    home: https://github.com/nolte/helm-charts-repo/tree/master/charts/stable/snapcast-server
+    keywords:
+    - snapcast
+    - multi-room-audio
+    kubeVersion: '>=1.16.0-0'
+    name: snapcast-server
+    sources:
+    - https://github.com/badaix/snapcast
+    - https://github.com/nolte/docker-snapcast
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/snapcast-server-0.1.2/snapcast-server-0.1.2.tgz
+    version: 0.1.2
   - apiVersion: v2
     appVersion: v0.2.6
     created: "2022-03-31T21:56:13.023245433Z"
@@ -1819,6 +2151,26 @@ entries:
   upmpdcli:
   - apiVersion: v2
     appVersion: v0.0.1
+    created: "2022-04-16T12:28:11.605945276Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.3.0
+    description: upmpdcli Receiver
+    digest: 34ff8133909c0656a4443e27454c9e000a497d7abcbf12a58db1d50fae52cecd
+    home: https://github.com/nolte/helm-charts-repo/tree/master/charts/stable/upmpdcli
+    keywords:
+    - upmpdcli
+    - audio
+    kubeVersion: '>=1.16.0-0'
+    name: upmpdcli
+    sources:
+    - https://github.com/nolte/docker-upmpdcli
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/upmpdcli-0.1.2/upmpdcli-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: v0.0.1
     created: "2022-03-31T21:56:13.214946549Z"
     dependencies:
     - name: common
@@ -1858,6 +2210,25 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/upmpdcli-0.0.1/upmpdcli-0.0.1.tgz
     version: 0.0.1
   vault:
+  - apiVersion: v2
+    created: "2022-04-16T12:28:11.757494144Z"
+    dependencies:
+    - name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.19.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.3.0
+    description: Preconfigured Vault Deployment
+    digest: cb05867bacdd8b5cbccc08ebb259491e6023299851c0f88c328d82db1972a020
+    name: vault
+    sources:
+    - https://github.com/hashicorp/vault-helm
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.7.1/vault-0.7.1.tgz
+    version: 0.7.1
   - apiVersion: v2
     created: "2022-04-15T21:50:14.765234589Z"
     dependencies:
@@ -1991,4 +2362,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-04-16T11:44:18.428603027Z"
+generated: "2022-04-16T12:28:11.757969645Z"
