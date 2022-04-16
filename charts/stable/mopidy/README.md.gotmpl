@@ -9,7 +9,7 @@ kind load docker-image nolte/mopidy:dirty
 
 export MOPIDY_NAMESPACE=audio-station
 
-helm upgrade -i mopidy . -n $MOPIDY_NAMESPACE --create-namespace 
+helm upgrade -i mopidy . -n $MOPIDY_NAMESPACE --create-namespace
 
 helm delete mopidy -n -n $MOPIDY_NAMESPACE
 
@@ -29,7 +29,7 @@ kubectl -n $MOPIDY_NAMESPACE exec $(kubectl get pods -l app.kubernetes.io/name=m
 
 ## Links
 
-* [badaix/snapcast/](https://github.com/badaix/snapcast/) 
+* [badaix/snapcast/](https://github.com/badaix/snapcast/)
 * [medoc92/upmpdcli](https://framagit.org/medoc92/upmpdcli)
 * [mopidy/mopidy](https://github.com/mopidy/mopidy)
 * [nolte/docker_compose-audiostation](https://github.com/nolte/docker_compose-audiostation/blob/master/docker-compose.yml)

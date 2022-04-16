@@ -1,6 +1,6 @@
 # vault
 
-![Version: 0.6.2](https://img.shields.io/badge/Version-0.6.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.7.1](https://img.shields.io/badge/Version-0.7.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Preconfigured Vault Deployment
 
@@ -13,7 +13,7 @@ Preconfigured Vault Deployment
 | Repository | Name | Version |
 |------------|------|---------|
 | https://helm.releases.hashicorp.com | vault | 0.19.0 |
-| https://nolte.github.io/helm-charts-repo/ | argo-workflows-execution(argo-workflow-mixin) | 0.2.1 |
+| https://nolte.github.io/helm-charts-repo/ | argo-workflows-execution(argo-workflow-mixin) | 0.3.0 |
 
 ## Values
 

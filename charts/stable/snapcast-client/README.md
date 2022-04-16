@@ -1,6 +1,6 @@
 # snapcast-client
 
-![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square) ![AppVersion: v0.2.6](https://img.shields.io/badge/AppVersion-v0.2.6-informational?style=flat-square)
+![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![AppVersion: v0.2.6](https://img.shields.io/badge/AppVersion-v0.2.6-informational?style=flat-square)
 
 Multi Room Music Client
 

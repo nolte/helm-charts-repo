@@ -4,5 +4,17 @@ httpProxy:
   tls:
     secretName: cert-manager/wildcard-duckdns-org-tls
 
-externalSecret:
-  create: false
+externalsecrets:
+  enabled: false
+  secrets:
+    gitea-admin-secret:
+      data:
+        - key: secrets-tf/data/services/gitea/users/admin
+          name: username
+          property: username
+        - key: secrets-tf/data/services/gitea/users/admin
+          name: password
+          property: password
+        - key: secrets-tf/data/services/gitea/users/admin
+          name: email
+          property: email

@@ -1,6 +1,6 @@
 # home-assistant
 
-![Version: 1.3.1](https://img.shields.io/badge/Version-1.3.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 2.1.1](https://img.shields.io/badge/Version-2.1.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Extended Home Assistant Deployment, with optional Project Contour HTTPProxy support
 and using External Secrets for Direct load Credentials from Vault Secret Backend.
@@ -16,15 +16,15 @@ and using External Secrets for Direct load Credentials from Vault Secret Backend
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://k8s-at-home.com/charts/ | homeassistant(home-assistant) | 12.2.0 |
+| https://k8s-at-home.com/charts/ | homeassistant(home-assistant) | 13.0.1 |
+| https://nolte.github.io/helm-charts-repo/ | externalsecrets(external-secrets-manifests) | 0.1.2 |
 
 ## Values
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| assistantCreds.create | bool | `false` |  |
 | certificate.create | bool | `false` |  |
-| gitCreds.create | bool | `false` |  |
+| externalsecrets.enabled | bool | `false` |  |
 | homeassistant.additionalContainers.hassConfigurator.image | string | `"causticlab/hass-configurator-docker:latest"` |  |
 | homeassistant.additionalContainers.hassConfigurator.name | string | `"hass-configurator"` |  |
 | homeassistant.additionalContainers.hassConfigurator.volumeMounts[0].mountPath | string | `"/hass-config"` |  |

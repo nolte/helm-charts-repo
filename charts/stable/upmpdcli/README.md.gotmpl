@@ -5,7 +5,7 @@
 
 export UPMPDCLI_NAMESPACE=audio-station
 
-helm upgrade -i upmpdcli . -n $UPMPDCLI_NAMESPACE --create-namespace 
+helm upgrade -i upmpdcli . -n $UPMPDCLI_NAMESPACE --create-namespace
 
 helm delete upmpdcli -n $UPMPDCLI_NAMESPACE
 

@@ -15,4 +15,4 @@ name: argo-workflows
 sources:
   - https://github.com/argoproj/argo-helm/tree/master/charts/argo-workflows
 type: application
-version: 0.8.0
+version: 0.8.1
