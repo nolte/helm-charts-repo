@@ -40,8 +40,6 @@ argo-workflows-execution:
   serviceAccount:
     create: true
 
-
-
   configurationWorkflows:
     post-install:
       type: terragrunt
