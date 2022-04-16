@@ -4,8 +4,4 @@ repos:
     rev: v4.2.0
     hooks:
       - id: trailing-whitespace
-        exclude: |
-          (?x)(
-              .md|
-              .bumpversion.cfg
-          )
+        args: ['--markdown-linebreak-ext=md']
