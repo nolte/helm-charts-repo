@@ -364,6 +364,28 @@ entries:
     version: 0.2.2
   cert-manager-webhook-duckdns:
   - apiVersion: v2
+    created: "2022-04-20T17:06:28.908148046Z"
+    dependencies:
+    - alias: certmanagerwebhookduckdns
+      name: cert-manager-webhook-duckdns
+      repository: https://nolte.github.io/ebrianne-helm-charts
+      version: 1.2.4
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.3
+    description: Preconfigured Certmanager Duckdns Deployment
+    digest: 4a444fd497f23b1278b62f6e45c07987300ecb3e45cb3e69d45391cfcccf6716
+    name: cert-manager-webhook-duckdns
+    sources:
+    - https://github.com/ebrianne/helm-charts/tree/master/charts/cert-manager-webhook-duckdns
+    - https://github.com/ebrianne/cert-manager-webhook-duckdns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/cert-manager-webhook-duckdns-0.2.6/cert-manager-webhook-duckdns-0.2.6.tgz
+    version: 0.2.6
+  - apiVersion: v2
     created: "2022-04-16T12:28:09.28540051Z"
     dependencies:
     - alias: certmanagerwebhookduckdns
@@ -628,6 +650,28 @@ entries:
     version: 0.0.1
   external-dns:
   - apiVersion: v2
+    created: "2022-04-20T17:06:29.03997857Z"
+    dependencies:
+    - alias: externaldns
+      name: external-dns
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.2.6
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.3
+    description: Wrapped External DNS deployment, with External Secrets Support.
+    digest: a868444d5b386b3c1371cacb5954e63d369d1f6f91fe0f157bc2efaf9c447ebf
+    name: external-dns
+    sources:
+    - https://artifacthub.io/packages/helm/bitnami/external-dns
+    - https://github.com/bitnami/charts/tree/master/bitnami/external-dns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/external-dns-0.1.2/external-dns-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
     created: "2022-04-16T12:28:09.75020486Z"
     dependencies:
     - alias: externaldns
@@ -860,6 +904,31 @@ entries:
   fritz-exporter:
   - apiVersion: v2
     appVersion: v2.0.0
+    created: "2022-04-20T17:06:29.170723156Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.3.0
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.3
+    description: FritzBox Exporter
+    digest: 0256d059d1cd183a7661dc6f93ea85c2b167f1eaf4a82a55eb2fd5d4dcc05baf
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/incubator/fritzbox-exporter
+    keywords:
+    - fritz-exporter
+    - fritzbox
+    kubeVersion: '>=1.16.0-0'
+    name: fritz-exporter
+    sources:
+    - https://github.com/pdreker/fritz_exporter
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/fritz-exporter-0.2.3/fritz-exporter-0.2.3.tgz
+    version: 0.2.3
+  - apiVersion: v2
+    appVersion: v2.0.0
     created: "2022-04-16T12:28:10.174183053Z"
     dependencies:
     - name: common
@@ -984,6 +1053,27 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/fritz-exporter-0.0.1/fritz-exporter-0.0.1.tgz
     version: 0.0.1
   gitea:
+  - apiVersion: v2
+    created: "2022-04-20T17:06:29.309744332Z"
+    dependencies:
+    - name: gitea
+      repository: https://dl.gitea.io/charts/
+      version: 5.0.4
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.3
+    description: Preconfigured gitea Deployment
+    digest: 7a510a7e2ab70da3634654ef3c790e253a7718c051d6825d256de6bd53d784bf
+    name: gitea
+    sources:
+    - https://gitea.com/gitea/helm-chart
+    - https://gitea.io/en-us/
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/gitea-1.2.2/gitea-1.2.2.tgz
+    version: 1.2.2
   - apiVersion: v2
     created: "2022-04-16T12:28:10.332172111Z"
     dependencies:
@@ -1254,6 +1344,31 @@ entries:
     version: 0.0.1
   home-assistant:
   - apiVersion: v2
+    created: "2022-04-20T17:06:29.459076869Z"
+    dependencies:
+    - alias: homeassistant
+      name: home-assistant
+      repository: https://k8s-at-home.com/charts/
+      version: 13.0.2
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.3
+    description: 'Extended Home Assistant Deployment, with optional Project Contour
+      HTTPProxy support and using External Secrets for Direct load Credentials from
+      Vault Secret Backend. '
+    digest: c946aefa84974b70694964ccda822c6bf52faf36ed1fe920ca3bbe6b1d897b7a
+    home: https://github.com/nolte/helm-charts-repo/tree/main/charts/stable/home-assistant
+    name: home-assistant
+    sources:
+    - https://github.com/nolte/helm-charts-repo/tree/main/charts/stable/home-assistant
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/home-assistant
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/home-assistant-2.1.2/home-assistant-2.1.2.tgz
+    version: 2.1.2
+  - apiVersion: v2
     created: "2022-04-16T12:28:10.657843761Z"
     dependencies:
     - alias: homeassistant
@@ -1419,6 +1534,31 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/home-assistant-0.2.2/home-assistant-0.2.2.tgz
     version: 0.2.2
   keycloak:
+  - apiVersion: v2
+    created: "2022-04-20T17:06:29.704365873Z"
+    dependencies:
+    - name: keycloak
+      repository: https://codecentric.github.io/helm-charts
+      version: 18.1.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.4.3
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.3
+    description: Preconfigured keycloak Deployment
+    digest: e7bc27f1404143c9afbe130cfb4fea855be60ab72cdba0da6cd6f486bcc4ba5d
+    name: keycloak
+    sources:
+    - https://codecentric.github.io/helm-charts
+    - https://github.com/codecentric/helm-charts/tree/master/charts/keycloak
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/keycloak-3.4.2/keycloak-3.4.2.tgz
+    version: 3.4.2
   - apiVersion: v2
     created: "2022-04-16T12:28:10.846990333Z"
     dependencies:
@@ -1792,6 +1932,25 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/mopidy-0.1.0/mopidy-0.1.0.tgz
     version: 0.1.0
   powerdns:
+  - apiVersion: v2
+    created: "2022-04-20T17:06:29.84400387Z"
+    dependencies:
+    - name: powerdns
+      repository: https://k8s-at-home.com/charts
+      version: 4.1.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.4.3
+    description: extendet powerdns chart
+    digest: 8771cd21227264110303c71499b1e80112dc04bcf1d8cb42df8d6dcea6094d9c
+    name: powerdns
+    sources:
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/powerdns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/powerdns-1.3.3/powerdns-1.3.3.tgz
+    version: 1.3.3
   - apiVersion: v2
     created: "2022-04-16T12:28:11.152448477Z"
     dependencies:
@@ -2362,4 +2521,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-04-16T12:28:11.757969645Z"
+generated: "2022-04-20T17:06:29.84457399Z"
