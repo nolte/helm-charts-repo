@@ -2,7 +2,7 @@ apiVersion: v2
 name: keycloak
 description: Preconfigured keycloak Deployment
 type: application
-version: 3.4.1
+version: 3.4.2
 sources:
   - https://codecentric.github.io/helm-charts
   - https://github.com/codecentric/helm-charts/tree/master/charts/keycloak
@@ -12,10 +12,10 @@ dependencies:
     repository: https://codecentric.github.io/helm-charts
   - name: argo-workflow-mixin
     repository: https://nolte.github.io/helm-charts-repo/
-    version: 0.4.2
+    version: 0.4.3
     alias: argo-workflows-execution
   - name: external-secrets-manifests
-    version: 0.1.2
+    version: 0.1.3
     repository: https://nolte.github.io/helm-charts-repo/
     alias: externalsecrets
     condition: externalsecrets.enabled
