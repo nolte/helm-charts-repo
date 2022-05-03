@@ -61,6 +61,7 @@ homeassistant:
       - "-rf"
       - "-a"
       - "-L"
+      - "-H"
       - "/tmp/repo/current/src/"
       - "/config/"
       stdin: true
