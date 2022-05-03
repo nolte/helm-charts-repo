@@ -45,7 +45,6 @@ homeassistant:
       args:
       - cp
       - "-rf"
-      - "-L"
       - "-a"
       - "/tmp/repo/current/src/."
       - "/config/"
