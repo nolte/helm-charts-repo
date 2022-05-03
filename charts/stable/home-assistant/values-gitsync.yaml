@@ -1,4 +1,7 @@
 homeassistant:
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 1000
   podSecurityContext:
     fsGroup: 1000
   persistence:
