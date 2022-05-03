@@ -58,9 +58,11 @@ homeassistant:
       image: alpine:latest
       args:
       - cp
+      - "-rf"
+      - "-L"
       - "-av"
-      - "/tmp/repo/current/src"
-      - "/config"
+      - "/tmp/repo/current/src/."
+      - "/config/"
       stdin: true
       stdinOnce: true
       tty: true
