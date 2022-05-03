@@ -37,7 +37,7 @@ homeassistant:
         name: gitsecret
       - mountPath: "/tmp/repo"
         name: shared
-    copy:
+    xcopy:
       name: copy
       image: busybox:latest
       args:
