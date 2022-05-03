@@ -76,3 +76,19 @@ homeassistant:
         name: shared
       - mountPath: "/config"
         name: config
+    ychown:
+      name: chown
+      image: alpine:latest
+      args:
+      - chown
+      - "-R"
+      - "root:root"
+      - "/config/"
+      stdin: true
+      stdinOnce: true
+      tty: true
+      volumeMounts:
+      - mountPath: "/tmp/repo"
+        name: shared
+      - mountPath: "/config"
+        name: config
