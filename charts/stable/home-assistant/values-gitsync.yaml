@@ -1,5 +1,5 @@
 homeassistant:
-  podSecurityContext:
+  securityContext:
     fsGroup: 1000
   persistence:
     shared:
