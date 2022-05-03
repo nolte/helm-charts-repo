@@ -39,17 +39,31 @@ homeassistant:
         name: gitsecret
       - mountPath: "/tmp/repo"
         name: shared
+    ucopy:
+      name: copy-debig
+      image: alpine:latest
+      args:
+      - ls
+      - "/config/"
+      stdin: true
+      stdinOnce: true
+      tty: true
+      volumeMounts:
+      - mountPath: "/tmp/repo"
+        name: shared
+      - mountPath: "/config"
+        name: config
     xcopy:
       name: copy
       image: alpine:latest
       args:
       - cp
       - "--help"
-      # - "-rf"
-      # - "-a"
-      # - "-L"
-      # - "/tmp/repo/current/src/."
-      # - "/config/"
+      - "-rf"
+      - "-a"
+      - "-L"
+      - "/tmp/repo/current/src/"
+      - "/config/"
       stdin: true
       stdinOnce: true
       tty: true
