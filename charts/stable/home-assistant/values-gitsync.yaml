@@ -46,6 +46,7 @@ homeassistant:
       - cp
       - "-rf"
       - "-a"
+      - "-L"
       - "/tmp/repo/current/src/."
       - "/config/"
       stdin: true
