@@ -2,8 +2,9 @@ homeassistant:
   securityContext:
     runAsNonRoot: false
     #runAsUser: 0
-  #podSecurityContext:
-  #  fsGroup: 1000
+  podSecurityContext:
+    fsGroup: 0
+    runAsUser: 0
   persistence:
     shared:
       enabled: true
