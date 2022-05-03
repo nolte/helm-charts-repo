@@ -41,7 +41,7 @@ homeassistant:
         name: shared
     xcopy:
       name: copy
-      image: busybox:latest
+      image: alpine:latest
       args:
       - cp
       - "-rf"
