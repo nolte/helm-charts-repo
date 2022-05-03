@@ -44,7 +44,7 @@ homeassistant:
       image: alpine:latest
       args:
       - ls
-      - "/tmp/repo/current/src/"
+      - "/tmp/repo/current/src/custom_components/mopidy/"
       stdin: true
       stdinOnce: true
       tty: true
@@ -58,7 +58,7 @@ homeassistant:
       image: alpine:latest
       args:
       - cp
-      - "-RLf"
+      - "-av"
       - "/tmp/repo/current/src/"
       - "/config/"
       stdin: true
