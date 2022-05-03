@@ -44,7 +44,6 @@ homeassistant:
       image: alpine:latest
       args:
       - ls
-      -  "--all"
       - "/tmp/repo/current/src/"
       stdin: true
       stdinOnce: true
