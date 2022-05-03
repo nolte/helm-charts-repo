@@ -59,8 +59,8 @@ homeassistant:
       args:
       - cp
       - "-av"
-      - "/tmp/repo/current/src/."
-      - "/config/"
+      - "/tmp/repo/current/src"
+      - "/config"
       stdin: true
       stdinOnce: true
       tty: true
