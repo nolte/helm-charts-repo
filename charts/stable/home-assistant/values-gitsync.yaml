@@ -1,10 +1,9 @@
 homeassistant:
-  securityContext:
-    runAsNonRoot: false
-    #runAsUser: 0
+  #securityContext:
+  #  runAsNonRoot: false
+  #  #runAsUser: 0
   podSecurityContext:
     fsGroup: 1000
-    runAsUser: 0
   persistence:
     shared:
       enabled: true
@@ -17,8 +16,8 @@ homeassistant:
       stdin: true
       stdinOnce: true
       tty: true
-      securityContext:
-        runAsNonRoot: true
+      #securityContext:
+      #  runAsNonRoot: true
       env:
       - name: GIT_SYNC_ONE_TIME
         value: 'true'
