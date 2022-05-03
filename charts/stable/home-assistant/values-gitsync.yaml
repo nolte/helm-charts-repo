@@ -1,4 +1,9 @@
 homeassistant:
+  persistence:
+    shared:
+      enabled: true
+      type: emptyDir
+
   initContainers:
     gitsync:
       name: init
@@ -31,7 +36,7 @@ homeassistant:
       - mountPath: "/tmp/ssh-key"
         name: gitsecret
       - mountPath: "/tmp/repo"
-        name: config-temp
+        name: shared
     copy:
       name: copy
       image: busybox:latest
@@ -47,6 +52,6 @@ homeassistant:
       tty: true
       volumeMounts:
       - mountPath: "/tmp/repo"
-        name: config-temp
+        name: shared
       - mountPath: "/config"
         name: config
