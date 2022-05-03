@@ -1,4 +1,6 @@
 homeassistant:
+  podSecurityContext:
+    fsGroup: 1000
   persistence:
     shared:
       enabled: true
