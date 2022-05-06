@@ -44,20 +44,6 @@ homeassistant:
         name: gitsecret
       - mountPath: "/tmp/repo"
         name: shared
-    ucopy:
-      name: copy-debig
-      image: alpine:latest
-      args:
-      - ls
-      - "/tmp/repo/current/src/custom_components/mopidy/"
-      stdin: true
-      stdinOnce: true
-      tty: true
-      volumeMounts:
-      - mountPath: "/tmp/repo"
-        name: shared
-      - mountPath: "/config"
-        name: config
     xcopy:
       name: copy
       image: alpine:latest
