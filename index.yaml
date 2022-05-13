@@ -1024,6 +1024,31 @@ entries:
   fritz-exporter:
   - apiVersion: v2
     appVersion: v2.0.0
+    created: "2022-05-13T20:17:08.018632246Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.4.2
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.3
+    description: FritzBox Exporter
+    digest: 3c9eaa37fdb6a68649cb3479e5471728c986610bf0f8205872f51fb639d58e0e
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/incubator/fritzbox-exporter
+    keywords:
+    - fritz-exporter
+    - fritzbox
+    kubeVersion: '>=1.16.0-0'
+    name: fritz-exporter
+    sources:
+    - https://github.com/pdreker/fritz_exporter
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/fritz-exporter-0.3.2/fritz-exporter-0.3.2.tgz
+    version: 0.3.2
+  - apiVersion: v2
+    appVersion: v2.0.0
     created: "2022-05-05T17:10:56.62358079Z"
     dependencies:
     - name: common
@@ -2150,6 +2175,28 @@ entries:
   mopidy:
   - apiVersion: v2
     appVersion: v0.0.1
+    created: "2022-05-13T20:17:08.167528605Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.4.2
+    description: Hackable Music Server
+    digest: 876a027c5f5187baee14ae73c485d7466921d2a8b5730743895f8653d0f68998
+    home: https://github.com/nolte/helm-charts-repo/tree/master/charts/stable/mopidy
+    keywords:
+    - fritz-exporter
+    - fritzbox
+    kubeVersion: '>=1.16.0-0'
+    name: mopidy
+    sources:
+    - https://github.com/mopidy/mopidy
+    - https://mopidy.com/
+    - https://github.com/wernight/docker-mopidy
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/mopidy-0.2.2/mopidy-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: v0.0.1
     created: "2022-05-05T17:10:56.750685496Z"
     dependencies:
     - name: common
@@ -2528,6 +2575,27 @@ entries:
   snapcast-client:
   - apiVersion: v2
     appVersion: v0.2.6
+    created: "2022-05-13T20:17:08.329667946Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.4.2
+    description: Multi Room Music Client
+    digest: a1154e73a737b539e9eac91716bc815fc5c1e4571e694bc1f8063b265091cc19
+    home: https://github.com/nolte/helm-charts-repo/tree/master/charts/stable/snapcast-server
+    keywords:
+    - snapcast
+    - multi-room-audio
+    kubeVersion: '>=1.16.0-0'
+    name: snapcast-client
+    sources:
+    - https://github.com/badaix/snapcast
+    - https://github.com/nolte/docker-snapcast
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/snapcast-client-0.2.2/snapcast-client-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: v0.2.6
     created: "2022-05-05T17:10:56.858100585Z"
     dependencies:
     - name: common
@@ -2634,6 +2702,27 @@ entries:
   snapcast-server:
   - apiVersion: v2
     appVersion: v0.2.6
+    created: "2022-05-13T20:17:08.486736025Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.4.2
+    description: Multi Room Music Server
+    digest: 999c3b5e1662212ebf0bb5f8bf604ae377d10499960f855ce912311b468ba8a2
+    home: https://github.com/nolte/helm-charts-repo/tree/master/charts/stable/snapcast-server
+    keywords:
+    - snapcast
+    - multi-room-audio
+    kubeVersion: '>=1.16.0-0'
+    name: snapcast-server
+    sources:
+    - https://github.com/badaix/snapcast
+    - https://github.com/nolte/docker-snapcast
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/snapcast-server-0.2.2/snapcast-server-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: v0.2.6
     created: "2022-05-05T17:10:56.986177592Z"
     dependencies:
     - name: common
@@ -2738,6 +2827,26 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/snapcast-server-0.1.0/snapcast-server-0.1.0.tgz
     version: 0.1.0
   upmpdcli:
+  - apiVersion: v2
+    appVersion: v0.0.1
+    created: "2022-05-13T20:17:08.712024914Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.4.2
+    description: upmpdcli Receiver
+    digest: d4baba55d21da6a8dbf59ada942b8ec74b5740076b94c77ce47be6251d857c91
+    home: https://github.com/nolte/helm-charts-repo/tree/master/charts/stable/upmpdcli
+    keywords:
+    - upmpdcli
+    - audio
+    kubeVersion: '>=1.16.0-0'
+    name: upmpdcli
+    sources:
+    - https://github.com/nolte/docker-upmpdcli
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/upmpdcli-0.2.2/upmpdcli-0.2.2.tgz
+    version: 0.2.2
   - apiVersion: v2
     appVersion: v0.0.1
     created: "2022-05-05T17:10:57.11242695Z"
@@ -3010,4 +3119,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-05-05T17:10:57.11299998Z"
+generated: "2022-05-13T20:17:08.713010865Z"
