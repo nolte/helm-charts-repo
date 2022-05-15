@@ -83,6 +83,26 @@ entries:
     version: 0.1.0
   argo-workflows:
   - apiVersion: v2
+    created: "2022-05-15T22:07:47.775351937Z"
+    dependencies:
+    - alias: argoworkflows
+      name: argo-workflows
+      repository: https://argoproj.github.io/argo-helm
+      version: 0.15.0
+    - alias: argoworkflowmixin
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.4.3
+    description: Preconfigured argo workflows Deployment
+    digest: 5475956e3035e593fb11224de4ed78b6c2ac6e2819111f32f5d819cd3936da7d
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/master/charts/argo-workflows
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflows-0.11.0/argo-workflows-0.11.0.tgz
+    version: 0.11.0
+  - apiVersion: v2
     created: "2022-05-15T22:06:04.286791144Z"
     dependencies:
     - alias: argoworkflows
@@ -761,6 +781,28 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/esphome-0.0.1/esphome-0.0.1.tgz
     version: 0.0.1
   external-dns:
+  - apiVersion: v2
+    created: "2022-05-15T22:07:47.880650795Z"
+    dependencies:
+    - alias: externaldns
+      name: external-dns
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.4.0
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.3
+    description: Wrapped External DNS deployment, with External Secrets Support.
+    digest: abb60cc4d50f13451e8a569788b23bd3f5236d21794e64665ca46b6de1b5bf44
+    name: external-dns
+    sources:
+    - https://artifacthub.io/packages/helm/bitnami/external-dns
+    - https://github.com/bitnami/charts/tree/master/bitnami/external-dns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/external-dns-0.3.0/external-dns-0.3.0.tgz
+    version: 0.3.0
   - apiVersion: v2
     created: "2022-05-15T22:06:04.615741353Z"
     dependencies:
@@ -1659,6 +1701,31 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/harbor-0.0.1/harbor-0.0.1.tgz
     version: 0.0.1
   home-assistant:
+  - apiVersion: v2
+    created: "2022-05-15T22:07:48.067704885Z"
+    dependencies:
+    - alias: homeassistant
+      name: home-assistant
+      repository: https://k8s-at-home.com/charts/
+      version: 13.2.0
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.3
+    description: 'Extended Home Assistant Deployment, with optional Project Contour
+      HTTPProxy support and using External Secrets for Direct load Credentials from
+      Vault Secret Backend. '
+    digest: af9ed93b748d7ad6d873fef4985189a3a916268128d559a91781ed9e23587039
+    home: https://github.com/nolte/helm-charts-repo/tree/main/charts/stable/home-assistant
+    name: home-assistant
+    sources:
+    - https://github.com/nolte/helm-charts-repo/tree/main/charts/stable/home-assistant
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/home-assistant
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/home-assistant-2.3.0/home-assistant-2.3.0.tgz
+    version: 2.3.0
   - apiVersion: v2
     created: "2022-05-15T22:06:04.806544568Z"
     dependencies:
@@ -3202,4 +3269,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-05-15T22:06:04.807134976Z"
+generated: "2022-05-15T22:07:48.068180992Z"
