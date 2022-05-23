@@ -83,6 +83,26 @@ entries:
     version: 0.1.0
   argo-workflows:
   - apiVersion: v2
+    created: "2022-05-23T23:11:33.173140742Z"
+    dependencies:
+    - alias: argoworkflows
+      name: argo-workflows
+      repository: https://argoproj.github.io/argo-helm
+      version: 0.15.3
+    - alias: argoworkflowmixin
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.4.3
+    description: Preconfigured argo workflows Deployment
+    digest: d0e099d86cda4b57c2a5a9785a87904fec0496aa85ffa42dde41b1381d0559ea
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/master/charts/argo-workflows
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflows-0.11.1/argo-workflows-0.11.1.tgz
+    version: 0.11.1
+  - apiVersion: v2
     created: "2022-05-15T22:07:47.775351937Z"
     dependencies:
     - alias: argoworkflows
@@ -782,6 +802,28 @@ entries:
     version: 0.0.1
   external-dns:
   - apiVersion: v2
+    created: "2022-05-23T23:11:33.350847429Z"
+    dependencies:
+    - alias: externaldns
+      name: external-dns
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.4.4
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.3
+    description: Wrapped External DNS deployment, with External Secrets Support.
+    digest: 980a2768d49c9c91a8d713020813cc311c194603479a2e51e7f350dc6e47bbb9
+    name: external-dns
+    sources:
+    - https://artifacthub.io/packages/helm/bitnami/external-dns
+    - https://github.com/bitnami/charts/tree/master/bitnami/external-dns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/external-dns-0.3.1/external-dns-0.3.1.tgz
+    version: 0.3.1
+  - apiVersion: v2
     created: "2022-05-15T22:07:47.880650795Z"
     dependencies:
     - alias: externaldns
@@ -1009,6 +1051,22 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/external-secrets-manifests-0.1.1/external-secrets-manifests-0.1.1.tgz
     version: 0.1.1
   forecastle:
+  - apiVersion: v2
+    created: "2022-05-23T23:11:33.529373215Z"
+    dependencies:
+    - name: forecastle
+      repository: https://stakater.github.io/stakater-charts
+      version: v1.0.80
+    description: Preconfigured forecastle Deployment
+    digest: 9d8927329806135274baf44a0b2977742649b4f8fbdf89afced2988dda59e7f8
+    name: forecastle
+    sources:
+    - https://stakater.github.io/stakater-charts
+    - https://github.com/stakater/Forecastle/tree/master/deployments/kubernetes/chart/forecastle
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/forecastle-0.2.11/forecastle-0.2.11.tgz
+    version: 0.2.11
   - apiVersion: v2
     created: "2022-04-16T12:28:10.019342137Z"
     dependencies:
@@ -1348,6 +1406,27 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/fritz-exporter-0.0.1/fritz-exporter-0.0.1.tgz
     version: 0.0.1
   gitea:
+  - apiVersion: v2
+    created: "2022-05-23T23:11:33.723643965Z"
+    dependencies:
+    - name: gitea
+      repository: https://dl.gitea.io/charts/
+      version: 5.0.8
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.3
+    description: Preconfigured gitea Deployment
+    digest: 6b381cbfd84e66dc9d32a2f0f3a993270c48c5512a396a7515de7ef157f123b3
+    name: gitea
+    sources:
+    - https://gitea.com/gitea/helm-chart
+    - https://gitea.io/en-us/
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/gitea-1.2.6/gitea-1.2.6.tgz
+    version: 1.2.6
   - apiVersion: v2
     created: "2022-05-05T17:06:52.136516744Z"
     dependencies:
@@ -3288,4 +3367,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-05-23T23:09:55.485976792Z"
+generated: "2022-05-23T23:11:33.724123964Z"
