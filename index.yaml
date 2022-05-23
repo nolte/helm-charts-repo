@@ -2536,6 +2536,25 @@ entries:
     version: 0.1.0
   powerdns:
   - apiVersion: v2
+    created: "2022-05-23T23:13:00.673773094Z"
+    dependencies:
+    - name: powerdns
+      repository: https://k8s-at-home.com/charts
+      version: 5.0.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.4.3
+    description: extendet powerdns chart
+    digest: 5e5dd174ad33404b831efdeba3f3b112bd4bf698ba76775f79c183922a89a6fa
+    name: powerdns
+    sources:
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/powerdns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/powerdns-2.0.0/powerdns-2.0.0.tgz
+    version: 2.0.0
+  - apiVersion: v2
     created: "2022-05-05T17:06:52.283675473Z"
     dependencies:
     - name: powerdns
@@ -3367,4 +3386,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-05-23T23:11:33.724123964Z"
+generated: "2022-05-23T23:13:00.674396594Z"
