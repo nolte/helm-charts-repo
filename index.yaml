@@ -83,6 +83,26 @@ entries:
     version: 0.1.0
   argo-workflows:
   - apiVersion: v2
+    created: "2022-05-28T12:47:24.581274317Z"
+    dependencies:
+    - alias: argoworkflows
+      name: argo-workflows
+      repository: https://argoproj.github.io/argo-helm
+      version: 0.15.4
+    - alias: argoworkflowmixin
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.4.3
+    description: Preconfigured argo workflows Deployment
+    digest: 39e4fdc356aecc9114d935f0d9e296a2e286eeeb828a39b5f36daa4c5645d863
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/master/charts/argo-workflows
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflows-0.11.2/argo-workflows-0.11.2.tgz
+    version: 0.11.2
+  - apiVersion: v2
     created: "2022-05-23T23:11:33.173140742Z"
     dependencies:
     - alias: argoworkflows
@@ -801,6 +821,28 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/esphome-0.0.1/esphome-0.0.1.tgz
     version: 0.0.1
   external-dns:
+  - apiVersion: v2
+    created: "2022-05-28T12:47:24.71691019Z"
+    dependencies:
+    - alias: externaldns
+      name: external-dns
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.4.6
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.3
+    description: Wrapped External DNS deployment, with External Secrets Support.
+    digest: 9b4a89d33f2b1db11439950ef65c6dbbeddc2f8f02b3c7fd4113c0e09f20fecb
+    name: external-dns
+    sources:
+    - https://artifacthub.io/packages/helm/bitnami/external-dns
+    - https://github.com/bitnami/charts/tree/master/bitnami/external-dns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/external-dns-0.3.2/external-dns-0.3.2.tgz
+    version: 0.3.2
   - apiVersion: v2
     created: "2022-05-23T23:11:33.350847429Z"
     dependencies:
@@ -3197,6 +3239,25 @@ entries:
     version: 0.0.1
   vault:
   - apiVersion: v2
+    created: "2022-05-28T12:47:24.864066482Z"
+    dependencies:
+    - name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.20.1
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.4.3
+    description: Preconfigured Vault Deployment
+    digest: f67b4d582af6604d96ff4895aff442c055d5ecd7ce26528edd432afa343cec93
+    name: vault
+    sources:
+    - https://github.com/hashicorp/vault-helm
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.9.1/vault-0.9.1.tgz
+    version: 0.9.1
+  - apiVersion: v2
     created: "2022-05-23T23:09:55.485523691Z"
     dependencies:
     - name: vault
@@ -3386,4 +3447,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-05-23T23:13:00.674396594Z"
+generated: "2022-05-28T12:47:24.864739695Z"
