@@ -1240,6 +1240,22 @@ entries:
     version: 0.1.1
   forecastle:
   - apiVersion: v2
+    created: "2022-06-30T19:51:09.410381589Z"
+    dependencies:
+    - name: forecastle
+      repository: https://stakater.github.io/stakater-charts
+      version: v1.0.89
+    description: Preconfigured forecastle Deployment
+    digest: 603ae66c62a69b4f008f4c3e780c5ae8247b56318d0baee7c376471f4de67c29
+    name: forecastle
+    sources:
+    - https://stakater.github.io/stakater-charts
+    - https://github.com/stakater/Forecastle/tree/master/deployments/kubernetes/chart/forecastle
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/forecastle-0.2.14/forecastle-0.2.14.tgz
+    version: 0.2.14
+  - apiVersion: v2
     created: "2022-06-29T20:31:56.428939083Z"
     dependencies:
     - name: forecastle
@@ -3663,4 +3679,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-06-29T20:31:56.429603188Z"
+generated: "2022-06-30T19:51:09.411029699Z"
