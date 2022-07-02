@@ -10,15 +10,6 @@ homeassistant:
     annotations:
       reloader.stakater.com/auto: "true"
 
-  additionalContainers:
-    hassConfigurator:
-      image: causticlab/hass-configurator-docker:latest
-      name: hass-configurator
-      volumeMounts:
-        - mountPath: /hass-config
-          name: config
-        - mountPath: /root/.ssh
-          name: gitsecret
   resources:
     limits:
       cpu: 2
