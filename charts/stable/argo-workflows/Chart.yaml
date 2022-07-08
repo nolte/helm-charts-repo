@@ -6,7 +6,7 @@ dependencies:
     version: 0.16.6
   - name: argo-workflow-mixin
     repository: https://nolte.github.io/helm-charts-repo/
-    version: 0.4.3
+    version: 0.5.0
     alias: argoworkflowmixin
 
 description: Preconfigured argo workflows Deployment
@@ -15,4 +15,4 @@ name: argo-workflows
 sources:
   - https://github.com/argoproj/argo-helm/tree/master/charts/argo-workflows
 type: application
-version: 0.12.3
+version: 0.13.0
