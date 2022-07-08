@@ -7,6 +7,12 @@ cmTfStaticEndpoints:
   vaultEndpoint: http://vault.vault.svc:8200
   keycloak: http://keycloak-http.keycloak.svc
 
+global:
+  workflow:
+    terragrunt:
+      # -- Default terragrunt Container version
+      image: alpine/terragrunt:1.2.4
+
 role:
   tfState:
     create: false

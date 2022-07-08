@@ -14,6 +14,7 @@ A Helm chart for Kubernetes
 | cmTfStaticEndpoints.vaultEndpoint | string | `"http://vault.vault.svc:8200"` |  |
 | configurationWorkflows | object | `{}` |  |
 | fullnameOverride | string | `""` |  |
+| global.workflow.terragrunt.image | string | `"alpine/terragrunt:1.2.4"` | Default terragrunt Container version |
 | nameOverride | string | `""` |  |
 | role.tfState.create | bool | `false` |  |
 | role.tfState.name | string | `"argo-workflows-execution"` |  |
