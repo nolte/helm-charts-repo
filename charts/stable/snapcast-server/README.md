@@ -1,6 +1,6 @@
 # snapcast-server
 
-![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![AppVersion: v0.2.6](https://img.shields.io/badge/AppVersion-v0.2.6-informational?style=flat-square)
+![Version: 0.2.2](https://img.shields.io/badge/Version-0.2.2-informational?style=flat-square) ![AppVersion: v0.2.6](https://img.shields.io/badge/AppVersion-v0.2.6-informational?style=flat-square)
 
 Multi Room Music Server
 
@@ -17,7 +17,7 @@ Kubernetes: `>=1.16.0-0`
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://library-charts.k8s-at-home.com | common | 4.3.0 |
+| https://library-charts.k8s-at-home.com | common | 4.4.2 |
 
 ## Values
 

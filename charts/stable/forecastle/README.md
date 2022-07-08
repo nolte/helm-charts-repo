@@ -1,6 +1,6 @@
 # forecastle
 
-![Version: 0.2.10](https://img.shields.io/badge/Version-0.2.10-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.2.15](https://img.shields.io/badge/Version-0.2.15-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Preconfigured forecastle Deployment
 
@@ -13,7 +13,7 @@ Preconfigured forecastle Deployment
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://stakater.github.io/stakater-charts | forecastle | v1.0.79 |
+| https://stakater.github.io/stakater-charts | forecastle | v1.0.91 |
 
 ## Values
 

@@ -1,6 +1,6 @@
 # external-dns
 
-![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.4.3](https://img.shields.io/badge/Version-0.4.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Wrapped External DNS deployment, with External Secrets Support.
 
@@ -13,8 +13,8 @@ Wrapped External DNS deployment, with External Secrets Support.
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.bitnami.com/bitnami | externaldns(external-dns) | 6.2.4 |
-| https://nolte.github.io/helm-charts-repo/ | externalsecrets(external-secrets-manifests) | 0.1.2 |
+| https://charts.bitnami.com/bitnami | externaldns(external-dns) | 6.5.7 |
+| https://nolte.github.io/helm-charts-repo/ | externalsecrets(external-secrets-manifests) | 0.1.3 |
 
 ## Values
 

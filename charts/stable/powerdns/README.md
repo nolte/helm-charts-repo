@@ -1,6 +1,6 @@
 # powerdns
 
-![Version: 1.3.2](https://img.shields.io/badge/Version-1.3.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 2.0.0](https://img.shields.io/badge/Version-2.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 extendet powerdns chart
 
@@ -12,8 +12,8 @@ extendet powerdns chart
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://k8s-at-home.com/charts | powerdns | 4.1.0 |
-| https://nolte.github.io/helm-charts-repo/ | argo-workflows-execution(argo-workflow-mixin) | 0.4.2 |
+| https://k8s-at-home.com/charts | powerdns | 5.0.0 |
+| https://nolte.github.io/helm-charts-repo/ | argo-workflows-execution(argo-workflow-mixin) | 0.4.3 |
 
 ## Values
 

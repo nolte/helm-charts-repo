@@ -1,6 +1,6 @@
 # harbor
 
-![Version: 0.2.1](https://img.shields.io/badge/Version-0.2.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.2.3](https://img.shields.io/badge/Version-0.2.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Preconfigured harbor Deployment
 
@@ -14,7 +14,7 @@ Preconfigured harbor Deployment
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://helm.goharbor.io | harbor | 1.9.0 |
+| https://helm.goharbor.io | harbor | 1.9.2 |
 
 ## Values
 

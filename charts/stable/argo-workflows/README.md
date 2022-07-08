@@ -1,6 +1,6 @@
 # argo-workflows
 
-![Version: 0.8.1](https://img.shields.io/badge/Version-0.8.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.12.3](https://img.shields.io/badge/Version-0.12.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Preconfigured argo workflows Deployment
 
@@ -12,8 +12,8 @@ Preconfigured argo workflows Deployment
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://argoproj.github.io/argo-helm | argoworkflows(argo-workflows) | 0.13.1 |
-| https://nolte.github.io/helm-charts-repo/ | argoworkflowmixin(argo-workflow-mixin) | 0.3.0 |
+| https://argoproj.github.io/argo-helm | argoworkflows(argo-workflows) | 0.16.6 |
+| https://nolte.github.io/helm-charts-repo/ | argoworkflowmixin(argo-workflow-mixin) | 0.4.3 |
 
 ## Values
 

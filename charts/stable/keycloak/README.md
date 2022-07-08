@@ -1,6 +1,6 @@
 # keycloak
 
-![Version: 3.4.1](https://img.shields.io/badge/Version-3.4.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 3.4.3](https://img.shields.io/badge/Version-3.4.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Preconfigured keycloak Deployment
 
@@ -13,9 +13,9 @@ Preconfigured keycloak Deployment
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://codecentric.github.io/helm-charts | keycloak | 18.1.0 |
-| https://nolte.github.io/helm-charts-repo/ | argo-workflows-execution(argo-workflow-mixin) | 0.4.2 |
-| https://nolte.github.io/helm-charts-repo/ | externalsecrets(external-secrets-manifests) | 0.1.2 |
+| https://codecentric.github.io/helm-charts | keycloak | 18.1.1 |
+| https://nolte.github.io/helm-charts-repo/ | argo-workflows-execution(argo-workflow-mixin) | 0.4.3 |
+| https://nolte.github.io/helm-charts-repo/ | externalsecrets(external-secrets-manifests) | 0.1.3 |
 
 ## Values
 

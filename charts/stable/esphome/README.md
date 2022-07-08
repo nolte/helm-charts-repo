@@ -1,6 +1,6 @@
 # esphome
 
-![Version: 0.4.2](https://img.shields.io/badge/Version-0.4.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.5.1](https://img.shields.io/badge/Version-0.5.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Pre Configured ESPHome Deployment, with example values for use a git init container to receive configurations from a repository.
 
@@ -12,7 +12,7 @@ Pre Configured ESPHome Deployment, with example values for use a git init contai
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://k8s-at-home.com/charts/ | esphome | 8.2.0 |
+| https://k8s-at-home.com/charts/ | esphome | 8.3.2 |
 
 ## Values
 

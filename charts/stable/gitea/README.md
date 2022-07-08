@@ -1,6 +1,6 @@
 # gitea
 
-![Version: 1.2.1](https://img.shields.io/badge/Version-1.2.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 1.2.7](https://img.shields.io/badge/Version-1.2.7-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Preconfigured gitea Deployment
 
@@ -13,8 +13,8 @@ Preconfigured gitea Deployment
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://dl.gitea.io/charts/ | gitea | 5.0.4 |
-| https://nolte.github.io/helm-charts-repo/ | externalsecrets(external-secrets-manifests) | 0.1.2 |
+| https://dl.gitea.io/charts/ | gitea | 5.0.9 |
+| https://nolte.github.io/helm-charts-repo/ | externalsecrets(external-secrets-manifests) | 0.1.3 |
 
 ## Values
 
