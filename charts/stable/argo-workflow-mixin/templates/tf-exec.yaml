@@ -38,11 +38,11 @@ spec:
     inputs:
       parameters:
       - name: revision
-        value: "{{ $v.source.revision }}" #master
+        value: "{{ tpl $v.source.revision $dot | default "main" }}"
       - name: action
         value: {{ $v.terraform.action }}
       - name: path
-        value: {{ $v.source.path }}
+        value: {{ tpl $v.source.path $dot }}
       artifacts:
       - name: argo-source
         path: "/src"
@@ -50,7 +50,11 @@ spec:
           repo: "{{ $v.source.repo }}"
           revision: "{{ "{{" }}inputs.parameters.revision{{ "}}" }}"
     script:
-      image: alpine/terragrunt
+      {{- $imageName := $dot.Values.global.workflow.terragrunt.image }}
+      {{- if $v.script }}{{ if $v.script.image }}
+      {{- $imageName = $v.script.image }}
+      {{- end }}{{- end }}
+      image: {{ tpl $imageName $dot }}
       command: [bash]
       workingDir: "/src"
       source: |
