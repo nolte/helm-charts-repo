@@ -93,6 +93,26 @@ entries:
     version: 0.1.0
   argo-workflows:
   - apiVersion: v2
+    created: "2022-07-16T22:21:30.478711576Z"
+    dependencies:
+    - alias: argoworkflows
+      name: argo-workflows
+      repository: https://argoproj.github.io/argo-helm
+      version: 0.16.7
+    - alias: argoworkflowmixin
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.5.0
+    description: Preconfigured argo workflows Deployment
+    digest: 961d38480f2423d42b83f30a7ee356add73c660aa2c1080583077ed74f167f85
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/master/charts/argo-workflows
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflows-0.13.1/argo-workflows-0.13.1.tgz
+    version: 0.13.1
+  - apiVersion: v2
     created: "2022-07-08T23:30:48.969056846Z"
     dependencies:
     - alias: argoworkflows
@@ -931,6 +951,28 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/esphome-0.0.1/esphome-0.0.1.tgz
     version: 0.0.1
   external-dns:
+  - apiVersion: v2
+    created: "2022-07-16T22:21:30.604662611Z"
+    dependencies:
+    - alias: externaldns
+      name: external-dns
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.6.1
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.3
+    description: Wrapped External DNS deployment, with External Secrets Support.
+    digest: 0e5102c7c4caf13c337dd48a49e36a7677780b7b10803c2780a71ff201c85d7f
+    name: external-dns
+    sources:
+    - https://artifacthub.io/packages/helm/bitnami/external-dns
+    - https://github.com/bitnami/charts/tree/master/bitnami/external-dns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/external-dns-0.5.1/external-dns-0.5.1.tgz
+    version: 0.5.1
   - apiVersion: v2
     created: "2022-07-05T22:05:53.677126981Z"
     dependencies:
@@ -2024,6 +2066,23 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/gitea-0.0.1/gitea-0.0.1.tgz
     version: 0.0.1
   harbor:
+  - apiVersion: v2
+    created: "2022-07-16T22:21:30.732078152Z"
+    dependencies:
+    - name: harbor
+      repository: https://helm.goharbor.io
+      version: 1.9.3
+    description: Preconfigured harbor Deployment
+    digest: a8cf8ebacf6d2bb4b8ede8b246aa6fa425f1daea8dc3b7d24eb079c166d64032
+    name: harbor
+    sources:
+    - https://github.com/goharbor/harbor-helm
+    - https://github.com/goharbor/harbor
+    - https://goharbor.io/
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/harbor-0.2.4/harbor-0.2.4.tgz
+    version: 0.2.4
   - apiVersion: v2
     created: "2022-07-01T22:23:23.022221118Z"
     dependencies:
@@ -3874,4 +3933,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-07-08T23:30:49.386120411Z"
+generated: "2022-07-16T22:21:30.732698356Z"
