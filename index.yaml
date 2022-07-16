@@ -2512,6 +2512,31 @@ entries:
     version: 0.2.2
   keycloak:
   - apiVersion: v2
+    created: "2022-07-16T22:31:46.435601929Z"
+    dependencies:
+    - name: keycloak
+      repository: https://codecentric.github.io/helm-charts
+      version: 18.2.1
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.5.0
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.3
+    description: Preconfigured keycloak Deployment
+    digest: 0305cb6993d828cb551cd1c8f8a8e14fbda000337ca14696de9ddda7d21c225d
+    name: keycloak
+    sources:
+    - https://codecentric.github.io/helm-charts
+    - https://github.com/codecentric/helm-charts/tree/master/charts/keycloak
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/keycloak-3.6.0/keycloak-3.6.0.tgz
+    version: 3.6.0
+  - apiVersion: v2
     created: "2022-07-08T23:30:49.11123435Z"
     dependencies:
     - name: keycloak
@@ -3933,4 +3958,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-07-16T22:21:30.732698356Z"
+generated: "2022-07-16T22:31:46.436256233Z"
