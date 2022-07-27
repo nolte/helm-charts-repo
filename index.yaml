@@ -103,6 +103,26 @@ entries:
     version: 0.1.0
   argo-workflows:
   - apiVersion: v2
+    created: "2022-07-27T22:47:00.371757993Z"
+    dependencies:
+    - alias: argoworkflows
+      name: argo-workflows
+      repository: https://argoproj.github.io/argo-helm
+      version: 0.16.7
+    - alias: argoworkflowmixin
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.6.0
+    description: Preconfigured argo workflows Deployment
+    digest: b1dd462f7388dc8f39b6b0a61f46cf9ca79a5a039894fab7416bc8019fb0f0dd
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/master/charts/argo-workflows
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflows-0.14.0/argo-workflows-0.14.0.tgz
+    version: 0.14.0
+  - apiVersion: v2
     created: "2022-07-16T22:21:30.478711576Z"
     dependencies:
     - alias: argoworkflows
@@ -2585,6 +2605,31 @@ entries:
     version: 0.2.2
   keycloak:
   - apiVersion: v2
+    created: "2022-07-27T22:47:00.512145309Z"
+    dependencies:
+    - name: keycloak
+      repository: https://codecentric.github.io/helm-charts
+      version: 18.2.1
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.6.0
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.1.3
+    description: Preconfigured keycloak Deployment
+    digest: 3800df6260a93698d66cf273656bb64d7962cfb6e2265ff22852e136aa4ce07b
+    name: keycloak
+    sources:
+    - https://codecentric.github.io/helm-charts
+    - https://github.com/codecentric/helm-charts/tree/master/charts/keycloak
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/keycloak-3.7.0/keycloak-3.7.0.tgz
+    version: 3.7.0
+  - apiVersion: v2
     created: "2022-07-16T22:31:46.435601929Z"
     dependencies:
     - name: keycloak
@@ -3145,6 +3190,25 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/mopidy-0.1.0/mopidy-0.1.0.tgz
     version: 0.1.0
   powerdns:
+  - apiVersion: v2
+    created: "2022-07-27T22:47:00.639415071Z"
+    dependencies:
+    - name: powerdns
+      repository: https://k8s-at-home.com/charts
+      version: 5.0.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.6.0
+    description: extendet powerdns chart
+    digest: 7204c0638f8fbd32e7f4f58ac9b235e68a66f816d7a0f72ff5ef2521fb05c1f8
+    name: powerdns
+    sources:
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/powerdns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/powerdns-2.2.0/powerdns-2.2.0.tgz
+    version: 2.2.0
   - apiVersion: v2
     created: "2022-07-08T23:30:49.25867238Z"
     dependencies:
@@ -3888,6 +3952,25 @@ entries:
     version: 0.0.1
   vault:
   - apiVersion: v2
+    created: "2022-07-27T22:47:00.75621833Z"
+    dependencies:
+    - name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.20.1
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.6.0
+    description: Preconfigured Vault Deployment
+    digest: 17f6785e8c86300df9aa802bcf83a080261479cbd55b04fd3348fd51c7990fd7
+    name: vault
+    sources:
+    - https://github.com/hashicorp/vault-helm
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.11.0/vault-0.11.0.tgz
+    version: 0.11.0
+  - apiVersion: v2
     created: "2022-07-08T23:30:49.385371907Z"
     dependencies:
     - name: vault
@@ -4115,4 +4198,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2022-07-27T22:44:21.570348791Z"
+generated: "2022-07-27T22:47:00.757120748Z"
