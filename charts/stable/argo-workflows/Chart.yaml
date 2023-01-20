@@ -3,7 +3,7 @@ dependencies:
   - alias: argoworkflows
     name: argo-workflows
     repository: https://argoproj.github.io/argo-helm
-    version: 0.16.8
+    version: 0.22.8
   - name: argo-workflow-mixin
     repository: https://nolte.github.io/helm-charts-repo/
     version: 0.6.0
