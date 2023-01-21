@@ -2,7 +2,7 @@ apiVersion: v2
 dependencies:
   - name: vault
     repository: https://helm.releases.hashicorp.com
-    version: 0.20.1
+    version: 0.23.0
   - name: argo-workflow-mixin
     repository: https://nolte.github.io/helm-charts-repo/
     version: 0.6.0
