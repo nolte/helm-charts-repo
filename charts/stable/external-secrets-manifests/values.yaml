@@ -5,6 +5,16 @@
 nameOverride: ""
 fullnameOverride: ""
 
+secretstore:
+  create: false
+  path: secrets-tf
+  server: "http://vault.vault.svc:8200"
+  role: external-secrets
+  mountPath: kubernetes
+  serviceAccount:
+    create: false
+    name: external-secrets
+
 secrets: {}
 #  test-secret-one:
 #    data:
