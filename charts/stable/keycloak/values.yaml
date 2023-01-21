@@ -63,12 +63,17 @@ argo-workflows-execution:
 
 externalsecrets:
   enabled: true
+
+  secretstore:
+    create: true
+    serviceAccount:
+      create: true
   secrets:
     keycloak-admin-user:
       data:
-        - key: secrets-tf/data/services/IdentityAccessManagement/users/admin
+        - key: services/IdentityAccessManagement/users/admin
           name: KEYCLOAK_PASSWORD
           property: password
-        - key: secrets-tf/data/services/IdentityAccessManagement/users/admin
+        - key: services/IdentityAccessManagement/users/admin
           name: KEYCLOAK_USER
           property: username
