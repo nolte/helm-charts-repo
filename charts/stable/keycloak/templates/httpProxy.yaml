@@ -15,6 +15,6 @@ spec:
       secretName: {{ tpl .Values.httpProxy.tls.secretName . }}
   routes:
   - services:
-    - name: keycloak-http
+    - name: keycloak
       port: 80
 {{- end }}
