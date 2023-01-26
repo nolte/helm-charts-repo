@@ -11,9 +11,9 @@ httpProxy:
     secretName: cert-manager/wildcard-duckdns-org-tls
 
 keycloak:
-  extraEnvFrom: |
-    - secretRef:
-        name: 'keycloak-admin-user'
+  auth:
+    existingSecret: keycloak-admin-user
+    passwordSecretKey: KEYCLOAK_PASSWORD
 
 terraformModule:
   address: https://github.com/nolte/argo-charts.git//src/applications/keycloak/configuration/baseline?ref=master
