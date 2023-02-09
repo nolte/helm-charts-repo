@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: v0.2.6
 description: Multi Room Music Server
 name: snapcast-server
-version: 0.3.0
+version: 0.3.1
 kubeVersion: ">=1.16.0-0"
 keywords:
 - snapcast
@@ -15,4 +15,4 @@ maintainers: []
 dependencies:
 - name: common
   repository: https://library-charts.k8s-at-home.com
-  version: 4.5.0
+  version: 4.5.2
