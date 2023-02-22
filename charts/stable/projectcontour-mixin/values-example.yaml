@@ -1,0 +1,9 @@
+fullnameOverride: ''
+nameOverride: ''
+
+httpProxy:
+  create: true
+  routes:
+  - services:
+    - name: argo-workflows-server
+      port: 2746

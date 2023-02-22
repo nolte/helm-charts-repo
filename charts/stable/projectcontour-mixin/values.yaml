@@ -1,0 +1,13 @@
+fullnameOverride: ''
+nameOverride: ''
+
+
+httpProxy:
+  create: false
+  fqdn: "test.local"
+  tls:
+    secretName: httpproxy-tls
+  routes:
+  - services:
+    - name: argo-workflows-server
+      port: 2746
