@@ -5,8 +5,8 @@ kind: WorkflowTemplate
 metadata:
   name: flow-tf-vault-baseline
   labels:
-    app.kubernetes.io/name: {{ include "vault.name" . }}
-    helm.sh/chart: {{ include "vault.chart" . }}
+    app.kubernetes.io/name: vault-config-workflow
+    helm.sh/chart: vault-config-workflow
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
