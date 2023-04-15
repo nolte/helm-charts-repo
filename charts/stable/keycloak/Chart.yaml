@@ -10,9 +10,9 @@ dependencies:
   - name: keycloak
     version: 13.0.6
     repository: https://charts.bitnami.com/bitnami
-    #name: keycloakx
-    #version: 2.1.0
-    #repository: https://codecentric.github.io/helm-charts
+    # name: keycloakx
+    # version: 2.1.0
+    # repository: https://codecentric.github.io/helm-charts
   - name: argo-workflow-mixin
     repository: https://nolte.github.io/helm-charts-repo/
     version: 0.6.0
