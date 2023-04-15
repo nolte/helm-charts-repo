@@ -4,6 +4,11 @@ httpProxy:
   tls:
     secretName: cert-manager/wildcard-duckdns-org-tls
 
+argoworkflows:
+  images:
+    # https://github.com/argoproj/argo-workflows/pull/10150
+    tag: "latest"
+
 argoworkflowmixin:
   role:
     tfState:

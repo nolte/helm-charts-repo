@@ -27,6 +27,9 @@ argo-workflows-execution:
   serviceAccount:
     create: true
 
+postconfig:
+  revision: master
+
 vault:
   server:
     ingress:

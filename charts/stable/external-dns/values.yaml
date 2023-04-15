@@ -7,9 +7,13 @@ externaldns:
 
 externalsecrets:
   enabled: false
+  secretstore:
+    create: true
+    serviceAccount:
+      create: true
   secrets:
     pdns-access:
       data:
-        - key: secrets-tf/data/services/dns/users/root
+        - key: services/dns/users/root
           name: pdns_api_key
           property: token

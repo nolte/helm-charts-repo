@@ -5,7 +5,7 @@ cmTfStaticEndpoints:
   create: false
   s3: http://minio.minio.svc
   vaultEndpoint: http://vault.vault.svc:8200
-  keycloak: http://keycloak-http.keycloak.svc
+  keycloak: http://keycloak.keycloak.svc
 
 global:
   workflow:

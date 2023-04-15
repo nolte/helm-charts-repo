@@ -11,9 +11,9 @@ httpProxy:
     secretName: cert-manager/wildcard-duckdns-org-tls
 
 keycloak:
-  extraEnvFrom: |
-    - secretRef:
-        name: 'keycloak-admin-user'
+  auth:
+    existingSecret: keycloak-admin-user
+    passwordSecretKey: KEYCLOAK_PASSWORD
 
 terraformModule:
   address: https://github.com/nolte/argo-charts.git//src/applications/keycloak/configuration/baseline?ref=master
@@ -63,12 +63,17 @@ argo-workflows-execution:
 
 externalsecrets:
   enabled: true
+
+  secretstore:
+    create: true
+    serviceAccount:
+      create: true
   secrets:
     keycloak-admin-user:
       data:
-        - key: secrets-tf/data/services/IdentityAccessManagement/users/admin
+        - key: services/IdentityAccessManagement/users/admin
           name: KEYCLOAK_PASSWORD
           property: password
-        - key: secrets-tf/data/services/IdentityAccessManagement/users/admin
+        - key: services/IdentityAccessManagement/users/admin
           name: KEYCLOAK_USER
           property: username

@@ -6,15 +6,19 @@ httpProxy:
 
 externalsecrets:
   enabled: false
+  secretstore:
+    create: true
+    serviceAccount:
+      create: true
   secrets:
     gitea-admin-secret:
       data:
-        - key: secrets-tf/data/services/gitea/users/admin
+        - key: services/gitea/users/admin
           name: username
           property: username
-        - key: secrets-tf/data/services/gitea/users/admin
+        - key: services/gitea/users/admin
           name: password
           property: password
-        - key: secrets-tf/data/services/gitea/users/admin
+        - key: services/gitea/users/admin
           name: email
           property: email

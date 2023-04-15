@@ -1,0 +1,16 @@
+{{- if .Values.httpProxy.create }}
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  name: {{ tpl ( .Values.httpProxy.name | default "http-proxy") . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "projectcontour-mixin.labels" . | nindent 4 }}
+spec:
+  virtualhost:
+    fqdn: {{ tpl .Values.httpProxy.fqdn . }}
+    tls:
+      secretName: {{ tpl .Values.httpProxy.tls.secretName . }}
+  routes:
+  {{- tpl (.Values.httpProxy.routes | toYaml) . | nindent 6 }}
+{{- end }}
