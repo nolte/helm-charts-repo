@@ -11,7 +11,7 @@ global:
   workflow:
     terragrunt:
       # -- Default terragrunt Container version
-      image: alpine/terragrunt:1.2.5
+      image: alpine/terragrunt:1.4.5
 
 role:
   tfState:
