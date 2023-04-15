@@ -1971,6 +1971,27 @@ entries:
     version: 0.0.1
   gitea:
   - apiVersion: v2
+    created: "2023-04-15T19:04:58.480952677Z"
+    dependencies:
+    - name: gitea
+      repository: https://dl.gitea.io/charts/
+      version: 8.1.0
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 1.0.0
+    description: Preconfigured gitea Deployment
+    digest: 2c099da6e586a82761fceab840af6fc289e8dd5b3dcda6462964db56685dc1ee
+    name: gitea
+    sources:
+    - https://gitea.com/gitea/helm-chart
+    - https://gitea.io/en-us/
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/gitea-3.0.0/gitea-3.0.0.tgz
+    version: 3.0.0
+  - apiVersion: v2
     created: "2023-04-15T19:04:23.005401575Z"
     dependencies:
     - name: gitea
@@ -2437,6 +2458,31 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/harbor-0.0.1/harbor-0.0.1.tgz
     version: 0.0.1
   home-assistant:
+  - apiVersion: v2
+    created: "2023-04-15T19:04:58.72908913Z"
+    dependencies:
+    - alias: homeassistant
+      name: home-assistant
+      repository: https://k8s-at-home.com/charts/
+      version: 13.3.0
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 1.0.0
+    description: 'Extended Home Assistant Deployment, with optional Project Contour
+      HTTPProxy support and using External Secrets for Direct load Credentials from
+      Vault Secret Backend. '
+    digest: 19d2647a5953f431b2b872acf312e7943da0fb690613ab0f12207b463cd9076f
+    home: https://github.com/nolte/helm-charts-repo/tree/main/charts/stable/home-assistant
+    name: home-assistant
+    sources:
+    - https://github.com/nolte/helm-charts-repo/tree/main/charts/stable/home-assistant
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/home-assistant
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/home-assistant-3.0.0/home-assistant-3.0.0.tgz
+    version: 3.0.0
   - apiVersion: v2
     created: "2022-07-01T22:22:55.398863963Z"
     dependencies:
@@ -4417,4 +4463,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2023-04-15T19:04:23.006365682Z"
+generated: "2023-04-15T19:04:58.729873481Z"
