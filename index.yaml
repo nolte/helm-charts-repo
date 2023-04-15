@@ -3638,6 +3638,17 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/powerdns-0.0.1/powerdns-0.0.1.tgz
     version: 0.0.1
+  projectcontour-mixin:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2023-04-15T18:58:21.300459343Z"
+    description: A Helm chart Project Contoure (Ingress) Manifests
+    digest: fabdc758761cc5aa353a2895b5f99fa6d9d89350df3f7837952cc58098770ffb
+    name: projectcontour-mixin
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/projectcontour-mixin-0.0.1/projectcontour-mixin-0.0.1.tgz
+    version: 0.0.1
   snapcast-client:
   - apiVersion: v2
     appVersion: v0.2.6
@@ -4385,4 +4396,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2023-02-09T22:56:16.493003345Z"
+generated: "2023-04-15T18:58:21.50471301Z"
