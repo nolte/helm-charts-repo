@@ -103,6 +103,26 @@ entries:
     version: 0.1.0
   argo-workflows:
   - apiVersion: v2
+    created: "2023-04-15T19:14:32.984905654Z"
+    dependencies:
+    - alias: argoworkflows
+      name: argo-workflows
+      repository: https://argoproj.github.io/argo-helm
+      version: 0.22.16
+    - alias: argoworkflowmixin
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.6.0
+    description: Preconfigured argo workflows Deployment
+    digest: 14da7c1efaf9f73bc5906b245788ff3c1e193d1868bbc57e5d68c9e577cf1802
+    name: argo-workflows
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/master/charts/argo-workflows
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflows-0.14.2/argo-workflows-0.14.2.tgz
+    version: 0.14.2
+  - apiVersion: v2
     created: "2022-07-27T22:49:46.996076656Z"
     dependencies:
     - alias: argoworkflows
@@ -1002,6 +1022,28 @@ entries:
     version: 0.0.1
   external-dns:
   - apiVersion: v2
+    created: "2023-04-15T19:14:33.218294029Z"
+    dependencies:
+    - alias: externaldns
+      name: external-dns
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.13.4
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 1.0.0
+    description: Wrapped External DNS deployment, with External Secrets Support.
+    digest: bd8353f5e29a839455d959f9e5fa5c3b75d7e661c31be70ffff14ab922eef3f8
+    name: external-dns
+    sources:
+    - https://artifacthub.io/packages/helm/bitnami/external-dns
+    - https://github.com/bitnami/charts/tree/master/bitnami/external-dns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/external-dns-0.6.2/external-dns-0.6.2.tgz
+    version: 0.6.2
+  - apiVersion: v2
     created: "2022-07-27T22:49:47.248662091Z"
     dependencies:
     - alias: externaldns
@@ -1469,6 +1511,22 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/external-secrets-manifests-0.1.1/external-secrets-manifests-0.1.1.tgz
     version: 0.1.1
   forecastle:
+  - apiVersion: v2
+    created: "2023-04-15T19:14:33.419729816Z"
+    dependencies:
+    - name: forecastle
+      repository: https://stakater.github.io/stakater-charts
+      version: v1.0.123
+    description: Preconfigured forecastle Deployment
+    digest: 1251831e8746554ade45b51c96e1ebcaaf3d30bc8f80acc7b2196c9d3189242e
+    name: forecastle
+    sources:
+    - https://stakater.github.io/stakater-charts
+    - https://github.com/stakater/Forecastle/tree/master/deployments/kubernetes/chart/forecastle
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/forecastle-0.2.18/forecastle-0.2.18.tgz
+    version: 0.2.18
   - apiVersion: v2
     created: "2022-07-27T22:49:48.003624666Z"
     dependencies:
@@ -2330,6 +2388,23 @@ entries:
     version: 0.0.1
   harbor:
   - apiVersion: v2
+    created: "2023-04-15T19:14:33.635695034Z"
+    dependencies:
+    - name: harbor
+      repository: https://helm.goharbor.io
+      version: 1.9.6
+    description: Preconfigured harbor Deployment
+    digest: 007daadd9e4e9b05dd580fb33a2b07694284d26036373340b344f8df92b09148
+    name: harbor
+    sources:
+    - https://github.com/goharbor/harbor-helm
+    - https://github.com/goharbor/harbor
+    - https://goharbor.io/
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/harbor-0.2.5/harbor-0.2.5.tgz
+    version: 0.2.5
+  - apiVersion: v2
     created: "2022-07-16T22:21:30.732078152Z"
     dependencies:
     - name: harbor
@@ -2799,6 +2874,31 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/home-assistant-0.2.2/home-assistant-0.2.2.tgz
     version: 0.2.2
   keycloak:
+  - apiVersion: v2
+    created: "2023-04-15T19:14:33.875567914Z"
+    dependencies:
+    - name: keycloak
+      repository: https://charts.bitnami.com/bitnami
+      version: 13.0.6
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.6.0
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 1.0.0
+    description: Preconfigured keycloak Deployment
+    digest: 9a779b6fe01cfeb36253048f149220165dbd6bb0b7c9b8e083f36ad110593eef
+    name: keycloak
+    sources:
+    - https://codecentric.github.io/helm-charts
+    - https://github.com/codecentric/helm-charts/tree/master/charts/keycloak
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/keycloak-3.7.1/keycloak-3.7.1.tgz
+    version: 3.7.1
   - apiVersion: v2
     created: "2022-07-27T22:47:00.512145309Z"
     dependencies:
@@ -4488,4 +4588,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2023-04-15T19:05:29.325799632Z"
+generated: "2023-04-15T19:14:33.877227943Z"
