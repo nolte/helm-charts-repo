@@ -2,7 +2,7 @@ apiVersion: v2
 dependencies:
   - name: harbor
     repository: https://helm.goharbor.io
-    version: 1.9.3
+    version: 1.9.6
 description: Preconfigured harbor Deployment
 name: harbor
 sources:
@@ -10,4 +10,4 @@ sources:
   - https://github.com/goharbor/harbor
   - https://goharbor.io/
 type: application
-version: 0.2.4
+version: 0.2.5
