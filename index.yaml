@@ -4502,6 +4502,17 @@ entries:
     version: 0.0.1
   vault:
   - apiVersion: v2
+    created: "2023-04-15T21:19:52.106193023Z"
+    description: Post Config Vault Deployment
+    digest: bf53089a3a6cba4b4dcbd0cd64de9f1b66c2993cefe0f02c6862236adfb0c6d2
+    name: vault
+    sources:
+    - https://github.com/hashicorp/vault-helm
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.12.1/vault-0.12.1.tgz
+    version: 0.12.1
+  - apiVersion: v2
     created: "2023-04-15T19:24:52.762020936Z"
     dependencies:
     - name: vault
@@ -4767,4 +4778,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2023-04-15T19:24:52.763341953Z"
+generated: "2023-04-15T21:19:52.10678756Z"
