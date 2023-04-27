@@ -2481,6 +2481,23 @@ entries:
     version: 0.0.1
   harbor:
   - apiVersion: v2
+    created: "2023-04-27T19:12:14.564158323Z"
+    dependencies:
+    - name: harbor
+      repository: https://helm.goharbor.io
+      version: 1.11.2
+    description: Preconfigured harbor Deployment
+    digest: cc626fe610131b4b60e0517ab84daab4c5936594915835fd7d9117c2270c8d87
+    name: harbor
+    sources:
+    - https://github.com/goharbor/harbor-helm
+    - https://github.com/goharbor/harbor
+    - https://goharbor.io/
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/harbor-0.3.1/harbor-0.3.1.tgz
+    version: 0.3.1
+  - apiVersion: v2
     created: "2023-04-15T19:24:52.232231187Z"
     dependencies:
     - name: harbor
@@ -3009,6 +3026,31 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/home-assistant-0.2.2/home-assistant-0.2.2.tgz
     version: 0.2.2
   keycloak:
+  - apiVersion: v2
+    created: "2023-04-27T19:12:14.713287675Z"
+    dependencies:
+    - name: keycloak
+      repository: https://charts.bitnami.com/bitnami
+      version: 13.4.1
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.6.1
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 1.0.0
+    description: Preconfigured keycloak Deployment
+    digest: 33f0cab5e04ac874ce8eaeca8966142069b31703689689d288cff4053a459dd0
+    name: keycloak
+    sources:
+    - https://codecentric.github.io/helm-charts
+    - https://github.com/codecentric/helm-charts/tree/master/charts/keycloak
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/keycloak-3.8.1/keycloak-3.8.1.tgz
+    version: 3.8.1
   - apiVersion: v2
     created: "2023-04-15T19:24:52.596833838Z"
     dependencies:
@@ -3667,6 +3709,25 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/mopidy-0.1.0/mopidy-0.1.0.tgz
     version: 0.1.0
   powerdns:
+  - apiVersion: v2
+    created: "2023-04-27T19:12:14.891922652Z"
+    dependencies:
+    - name: powerdns
+      repository: https://k8s-at-home.com/charts
+      version: 5.0.0
+    - alias: argo-workflows-execution
+      name: argo-workflow-mixin
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 0.6.1
+    description: extendet powerdns chart
+    digest: 4c735f71c6ef17212ef3da230834a5b5ffeedd26681a7c90bb223e2a1e2e0477
+    name: powerdns
+    sources:
+    - https://github.com/k8s-at-home/charts/tree/master/charts/stable/powerdns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/powerdns-2.2.1/powerdns-2.2.1.tgz
+    version: 2.2.1
   - apiVersion: v2
     created: "2022-07-27T22:47:00.639415071Z"
     dependencies:
@@ -4778,4 +4839,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2023-04-15T21:19:52.10678756Z"
+generated: "2023-04-27T19:12:15.029463498Z"
