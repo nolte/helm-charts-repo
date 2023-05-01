@@ -2147,6 +2147,27 @@ entries:
     version: 0.0.1
   gitea:
   - apiVersion: v2
+    created: "2023-05-01T08:11:14.720163638Z"
+    dependencies:
+    - name: gitea
+      repository: https://dl.gitea.io/charts/
+      version: 8.2.0
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 1.0.0
+    description: Preconfigured gitea Deployment
+    digest: 51452d8b63a8a8b2dc45fe1e7bdf1d2402dd34df47482c12a96c9303e4f8b271
+    name: gitea
+    sources:
+    - https://gitea.com/gitea/helm-chart
+    - https://gitea.io/en-us/
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/gitea-3.1.0/gitea-3.1.0.tgz
+    version: 3.1.0
+  - apiVersion: v2
     created: "2023-04-15T19:04:58.480952677Z"
     dependencies:
     - name: gitea
@@ -2480,6 +2501,23 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/gitea-0.0.1/gitea-0.0.1.tgz
     version: 0.0.1
   harbor:
+  - apiVersion: v2
+    created: "2023-05-01T08:11:14.941754831Z"
+    dependencies:
+    - name: harbor
+      repository: https://helm.goharbor.io
+      version: 1.12.0
+    description: Preconfigured harbor Deployment
+    digest: ca1ac93d1dcfe53f9c5692063fd3e56b0976f92165583a120460414e74280386
+    name: harbor
+    sources:
+    - https://github.com/goharbor/harbor-helm
+    - https://github.com/goharbor/harbor
+    - https://goharbor.io/
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/harbor-0.4.0/harbor-0.4.0.tgz
+    version: 0.4.0
   - apiVersion: v2
     created: "2023-04-27T19:12:14.564158323Z"
     dependencies:
@@ -4839,4 +4877,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2023-04-27T19:12:15.029463498Z"
+generated: "2023-05-01T08:11:14.942642735Z"
