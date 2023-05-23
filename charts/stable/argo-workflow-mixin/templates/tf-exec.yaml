@@ -1,6 +1,12 @@
 
 {{- $dot := . -}}
 {{- range $k, $v := .Values.configurationWorkflows }}
+{{- $type := (default "terragrunt" $v.type) }}
+{{- $hasParameters := false }}
+{{- if hasKey $v "source" }}
+{{- $hasParameters = true }}
+{{- end }}
+# {{ $type }}
 apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
@@ -9,14 +15,23 @@ metadata:
     {{- include "argo-workflows-execution.labels" $dot | nindent 4 }}
 spec:
   entrypoint: exec
+  {{- if $hasParameters }}
   arguments:
     parameters:
+    {{- if $v.source }}
+    {{- with $v.source.revision }}    
     - name: revision
-      value: "{{ $v.source.revision }}" #master
+      value: "{{ tpl . $dot }}" #master
+    {{- end }}{{- end }}      
+    {{- if eq "terraform" $type }}
     - name: action
       value: {{ $v.terraform.action }}
+    {{- end }}
+    {{- if $v.source }}
+    {{- with $v.source.path }}    
     - name: path
-      value: {{ $v.source.path }}
+      value: {{ tpl . $dot }}
+    {{- end }}{{- end }}{{- end }} 
 
   templates:
   - name: exec
@@ -35,20 +50,32 @@ spec:
         {{- with $v.extraAnnotations }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
+    {{- if $hasParameters }}
     inputs:
       parameters:
+      {{- if $v.source }}
+      {{- with $v.source.revision }}      
       - name: revision
-        value: "{{ tpl $v.source.revision $dot | default "main" }}"
+        value: "{{ tpl . $dot | default "main" }}"
+      {{- end }}{{- end }}      
+      {{- if eq "terraform" $type }}
       - name: action
         value: {{ $v.terraform.action }}
+      {{- end }}
+      {{- if $v.source }}
+      {{- with $v.source.path }}      
       - name: path
-        value: {{ tpl $v.source.path $dot }}
+        value: {{ tpl . $dot }}
+      {{- end }}{{- end }}
+      {{- if $v.source }}
+      {{- with $v.source.repo }}
       artifacts:
       - name: argo-source
         path: "/src"
         git:
-          repo: "{{ $v.source.repo }}"
+          repo: "{{ . }}"
           revision: "{{ "{{" }}inputs.parameters.revision{{ "}}" }}"
+      {{- end }}{{- end }}{{- end }}
     script:
       {{- $imageName := $dot.Values.global.workflow.terragrunt.image }}
       {{- if $v.script }}{{ if $v.script.image }}
@@ -67,8 +94,12 @@ spec:
         {{ tpl $var $dot}}
         {{- end }}
         export VAULT_TOKEN=$(cat /vault/secrets/token)
+        {{- if eq "terragrunt" $type }}
         terragrunt {{ "{{" }}inputs.parameters.action{{ "}}" }} -input=false -auto-approve -no-color
-
+        {{- end }}
+        {{- with $v.script.source }}
+        {{ . | nindent 8 }}
+        {{- end }}
       env:
         - name: AWS_SHARED_CREDENTIALS_FILE
           value: /vault/secrets/s3access
@@ -79,6 +110,9 @@ spec:
       envFrom:
         - configMapRef:
             name: tf-static-endpoints
+        {{- range $index, $envFrom := $v.extraEnvFrom }}
+        - {{ toYaml $envFrom | nindent 10 -}}
+        {{- end }}            
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
@@ -88,7 +122,11 @@ metadata:
     {{- include "argo-workflows-execution.labels" $dot | nindent 4 }}
   annotations:
     argocd.argoproj.io/sync-wave: "5"
-    argocd.argoproj.io/hook: PostSync
+    {{- $argocdHook := $dot.Values.global.argocd.hook }}
+    {{- if $v.script }}{{ if $v.argocdHook }}
+    {{- $argocdHook = $v.argocdHook }}
+    {{- end }}{{- end }}    
+    argocd.argoproj.io/hook: {{ tpl $argocdHook $dot}}
 spec:
   entrypoint: exec
   templates:
