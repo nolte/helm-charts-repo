@@ -8,6 +8,8 @@ cmTfStaticEndpoints:
   keycloak: http://keycloak.keycloak.svc
 
 global:
+  argocd:
+    hook: PostSync
   workflow:
     terragrunt:
       # -- Default terragrunt Container version

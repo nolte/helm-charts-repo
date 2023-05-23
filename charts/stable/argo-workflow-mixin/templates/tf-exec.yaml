@@ -1,6 +1,8 @@
 
 {{- $dot := . -}}
 {{- range $k, $v := .Values.configurationWorkflows }}
+{{- $type := (default "terraform" $v.type) }}
+# {{ $type }}
 apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
@@ -13,8 +15,10 @@ spec:
     parameters:
     - name: revision
       value: "{{ $v.source.revision }}" #master
+    {{- if eq "terraform" $type }}
     - name: action
       value: {{ $v.terraform.action }}
+    {{- end }}
     - name: path
       value: {{ $v.source.path }}
 
@@ -39,8 +43,10 @@ spec:
       parameters:
       - name: revision
         value: "{{ tpl $v.source.revision $dot | default "main" }}"
+      {{- if eq "terraform" $type }}
       - name: action
         value: {{ $v.terraform.action }}
+      {{- end }}
       - name: path
         value: {{ tpl $v.source.path $dot }}
       artifacts:
@@ -67,8 +73,12 @@ spec:
         {{ tpl $var $dot}}
         {{- end }}
         export VAULT_TOKEN=$(cat /vault/secrets/token)
+        {{- if eq "terraform" $type }}
         terragrunt {{ "{{" }}inputs.parameters.action{{ "}}" }} -input=false -auto-approve -no-color
-
+        {{- end }}
+        {{- with $v.script.source }}
+        {{ . | nindent 8 }}
+        {{- end }}
       env:
         - name: AWS_SHARED_CREDENTIALS_FILE
           value: /vault/secrets/s3access
@@ -79,6 +89,9 @@ spec:
       envFrom:
         - configMapRef:
             name: tf-static-endpoints
+        {{- range $index, $envFrom := $v.extraEnvFrom }}
+        - {{ toYaml $envFrom | nindent 10 -}}
+        {{- end }}            
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
@@ -88,7 +101,11 @@ metadata:
     {{- include "argo-workflows-execution.labels" $dot | nindent 4 }}
   annotations:
     argocd.argoproj.io/sync-wave: "5"
-    argocd.argoproj.io/hook: PostSync
+    {{- $argocdHook := $dot.Values.global.argocd.hook }}
+    {{- if $v.script }}{{ if $v.argocdHook }}
+    {{- $argocdHook = $v.argocdHook }}
+    {{- end }}{{- end }}    
+    argocd.argoproj.io/hook: {{ tpl $argocdHook $dot}}
 spec:
   entrypoint: exec
   templates:
