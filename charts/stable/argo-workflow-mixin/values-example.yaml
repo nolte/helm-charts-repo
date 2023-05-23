@@ -51,10 +51,10 @@ configurationWorkflows:
     extraEnv:
       - name: PDNS_SERVER_URL
         value: http://powerdns-webserver.{{.Release.Namespace}}.svc:8081
-    source:
-      repo: https://github.com/nolte/argo-charts.git
-      path: ./src/applications/powerdns/configuration/baseline
-      revision: master
+    #source:
+    #  repo: https://github.com/nolte/argo-charts.git
+    #  path: ./src/applications/powerdns/configuration/baseline
+    #  revision: master
     extraEnvFrom: 
       - secretRef:
           name: harbor-admin
