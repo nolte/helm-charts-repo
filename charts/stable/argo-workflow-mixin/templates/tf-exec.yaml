@@ -58,7 +58,7 @@ spec:
       - name: revision
         value: "{{ tpl . $dot | default "main" }}"
       {{- end }}{{- end }}      
-      {{- if eq "terraform" $type }}
+      {{- if eq "terragrunt" $type }}
       - name: action
         value: {{ $v.terraform.action }}
       {{- end }}
