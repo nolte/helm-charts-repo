@@ -1,0 +1,25 @@
+secretstore:
+  create: true
+  serviceAccount:
+    create: true
+secrets:
+  gitea-oauth:
+    data:
+      - key: services/IdentityAccessManagement/clients/gitea
+        name: key
+        property: client_id
+      - key: services/IdentityAccessManagement/clients/gitea
+        name: secret
+        property: client_secret
+
+  gitea-admin-secret:
+    data:
+      - key: services/gitea/users/admin
+        name: username
+        property: username
+      - key: services/gitea/users/admin
+        name: password
+        property: password
+      - key: services/gitea/users/admin
+        name: email
+        property: email
