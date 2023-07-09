@@ -1140,6 +1140,28 @@ entries:
     version: 0.0.1
   external-dns:
   - apiVersion: v2
+    created: "2023-07-09T21:35:54.936840032Z"
+    dependencies:
+    - alias: externaldns
+      name: external-dns
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.20.4
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 1.0.1
+    description: Wrapped External DNS deployment, with External Secrets Support.
+    digest: 8a6c9140d4628c2f92b1d6a177ee0a936aa5813bac89d541d42b9ec6fdbd2263
+    name: external-dns
+    sources:
+    - https://artifacthub.io/packages/helm/bitnami/external-dns
+    - https://github.com/bitnami/charts/tree/master/bitnami/external-dns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/external-dns-0.8.2/external-dns-0.8.2.tgz
+    version: 0.8.2
+  - apiVersion: v2
     created: "2023-05-28T22:26:02.288918606Z"
     dependencies:
     - alias: externaldns
@@ -5038,4 +5060,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2023-06-13T20:21:02.210624976Z"
+generated: "2023-07-09T21:35:54.937491334Z"
