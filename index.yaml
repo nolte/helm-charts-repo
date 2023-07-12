@@ -3,6 +3,16 @@ entries:
   argo-workflow-mixin:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-07-12T13:01:03.670722392Z"
+    description: A Helm chart for Kubernetes
+    digest: 4acc8c7837965b40a53294b597eb777b815f52a4b4ac05bc1126a00982b242d1
+    name: argo-workflow-mixin
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflow-mixin-0.7.4/argo-workflow-mixin-0.7.4.tgz
+    version: 0.7.4
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2023-06-13T20:21:02.210037376Z"
     description: A Helm chart for Kubernetes
     digest: afb52a04f76190bdf31788e3e21a71b72aecedb8298d313cdd91a6cb32dd2f76
@@ -5060,4 +5070,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2023-07-09T21:35:54.937491334Z"
+generated: "2023-07-12T13:01:03.671432613Z"
