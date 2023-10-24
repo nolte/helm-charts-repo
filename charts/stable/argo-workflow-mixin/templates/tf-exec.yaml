@@ -106,7 +106,13 @@ spec:
           value: /vault/secrets/s3access
         {{- range $index, $var := $v.extraEnv }}
         - name: {{ tpl $var.name $dot}}
-          value: {{ tpl $var.value $dot}}
+          {{- with $var.value }}
+          value: {{ tpl . $dot}}
+          {{- end }}
+          {{- with $var.valueFrom }}
+          valueFrom:
+          {{- tpl ($var.valueFrom | toYaml) $dot | nindent 12 }}
+          {{- end }}
         {{- end }}
       envFrom:
         - configMapRef:
