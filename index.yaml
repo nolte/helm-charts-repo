@@ -4285,6 +4285,16 @@ entries:
   projectcontour-mixin:
   - apiVersion: v2
     appVersion: 0.1.0
+    created: "2023-10-24T19:04:00.484152016Z"
+    description: A Helm chart Project Contoure (Ingress) Manifests
+    digest: 7f4050edfd402231215ce8943323f299e8150e3dd1c224d48c9e9779c29caa9b
+    name: projectcontour-mixin
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/projectcontour-mixin-0.1.0/projectcontour-mixin-0.1.0.tgz
+    version: 0.1.0
+  - apiVersion: v2
+    appVersion: 0.1.0
     created: "2023-04-15T18:58:21.300459343Z"
     description: A Helm chart Project Contoure (Ingress) Manifests
     digest: fabdc758761cc5aa353a2895b5f99fa6d9d89350df3f7837952cc58098770ffb
@@ -5070,4 +5080,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2023-07-12T13:01:03.671432613Z"
+generated: "2023-10-24T19:04:00.484649118Z"
