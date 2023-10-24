@@ -1,0 +1,20 @@
+{{- if .Values.certificate.create }}
+{{- $dot := . }}
+---
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: {{ tpl .Values.certificate.name . }}
+  labels:
+    {{- include "projectcontour-mixin.labels" . | nindent 4 }}
+spec:
+  commonName: {{ tpl .Values.certificate.commonName . }}
+  secretName: {{ tpl .Values.certificate.secretName . }}
+  dnsNames:
+  {{- range $i := .Values.certificate.dnsNames }}
+    - "{{ tpl $i $dot }}" #master
+  {{- end }}
+  issuerRef:
+    kind: {{ tpl .Values.certificate.issuerRef.kind . }}
+    name: {{ tpl .Values.certificate.issuerRef.name . }}
+{{- end }}

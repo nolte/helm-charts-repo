@@ -1,7 +1,6 @@
 fullnameOverride: ''
 nameOverride: ''
 
-
 httpProxy:
   create: false
   fqdn: "test.local"
@@ -11,3 +10,18 @@ httpProxy:
   - services:
     - name: argo-workflows-server
       port: 2746
+
+certificate:
+  create: false
+  name: certificate
+  commonName: "{{ tpl .Values.httpProxy.fqdn . }}"
+  secretName: "{{ tpl .Values.httpProxy.tls.secretName . }}"
+  dnsNames:
+    # Ingress domain
+    - "{{ tpl .Values.httpProxy.fqdn . }}"
+    # Internal domain
+    - minio-hl-svc
+    - minio-hl-svc.default.svc.cluster.local
+  issuerRef:
+    kind: ClusterIssuer
+    name: selfsigned-cluster-issuer
