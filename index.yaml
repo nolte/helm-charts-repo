@@ -1160,6 +1160,28 @@ entries:
     version: 0.0.1
   external-dns:
   - apiVersion: v2
+    created: "2023-11-04T21:11:04.531139807Z"
+    dependencies:
+    - alias: externaldns
+      name: external-dns
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.28.1
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 1.0.1
+    description: Wrapped External DNS deployment, with External Secrets Support.
+    digest: 4bd8d4e28eb0ae5186aa338b0270ac4236d36bc10ff54085c0142825efc5a955
+    name: external-dns
+    sources:
+    - https://artifacthub.io/packages/helm/bitnami/external-dns
+    - https://github.com/bitnami/charts/tree/master/bitnami/external-dns
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/external-dns-0.9.0/external-dns-0.9.0.tgz
+    version: 0.9.0
+  - apiVersion: v2
     created: "2023-10-24T20:05:27.220285224Z"
     dependencies:
     - alias: externaldns
@@ -2020,6 +2042,31 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/forecastle-0.2.2/forecastle-0.2.2.tgz
     version: 0.2.2
   fritz-exporter:
+  - apiVersion: v2
+    appVersion: v2.0.0
+    created: "2023-11-04T21:11:04.65498037Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.5.2
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 1.0.1
+    description: FritzBox Exporter
+    digest: 98cd5611be75683a209605e88a3d8b8e1cfb653f8fc6e437162eb3abf5f786f0
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/incubator/fritzbox-exporter
+    keywords:
+    - fritz-exporter
+    - fritzbox
+    kubeVersion: '>=1.16.0-0'
+    name: fritz-exporter
+    sources:
+    - https://github.com/pdreker/fritz_exporter
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/fritz-exporter-1.0.4/fritz-exporter-1.0.4.tgz
+    version: 1.0.4
   - apiVersion: v2
     appVersion: v2.0.0
     created: "2023-05-28T22:26:02.411472875Z"
@@ -5112,4 +5159,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2023-10-24T21:19:49.522215308Z"
+generated: "2023-11-04T21:11:04.655524722Z"
