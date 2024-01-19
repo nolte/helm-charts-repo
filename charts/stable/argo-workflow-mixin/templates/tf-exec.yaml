@@ -95,7 +95,7 @@ spec:
         {{- end }}
         export VAULT_TOKEN=$(cat /vault/secrets/token)
         {{- if eq "terragrunt" $type }}
-        terragrunt {{ "{{" }}inputs.parameters.action{{ "}}" }} -input=false -auto-approve -no-color
+        terragrunt {{ "{{" }}inputs.parameters.action{{ "}}" }} --terragrunt-non-interactive --terragrunt-no-color
         {{- end }}
         {{- if $v.script }}
         {{- with $v.script.source }}
