@@ -95,7 +95,7 @@ spec:
         {{- end }}
         export VAULT_TOKEN=$(cat /vault/secrets/token)
         {{- if eq "terragrunt" $type }}
-        terraform run-all init --terragrunt-non-interactive --terragrunt-no-color \
+        terragrunt run-all init --terragrunt-non-interactive --terragrunt-no-color \
           && terraform init \
           && terragrunt run-all {{ "{{" }}inputs.parameters.action{{ "}}" }} \
             --terragrunt-non-interactive \
