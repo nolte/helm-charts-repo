@@ -4,6 +4,9 @@ secretstore:
     create: true
 secrets:
   gitea-oauth:
+    additionalLabels:
+      app.kubernetes.io/part-of: argocd
+
     data:
       - key: services/IdentityAccessManagement/clients/gitea
         name: key
