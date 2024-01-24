@@ -93,3 +93,7 @@ Create the name of the Role to use
 {{- define "argo-workflows-execution.roleK8SStateName" -}}
 {{- printf "%s-%s" (default (include "argo-workflows-execution.fullname" .) .Values.role.vaultInjector.name) "state" | trunc 63 | trimSuffix "-" }}
 {{- end }}
+
+{{- define "argo-workflows-execution.roleExecutorName" -}}
+{{- printf "%s-%s" (default (include "argo-workflows-execution.fullname" .) .Values.role.executor.name) "executor" | trunc 63 | trimSuffix "-" }}
+{{- end }}

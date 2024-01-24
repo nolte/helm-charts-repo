@@ -1,0 +1,19 @@
+{{- if .Values.role.executor.create }}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: {{ include "argo-workflows-execution.roleKind" . }}
+metadata:
+  name: {{ include "argo-workflows-execution.roleExecutorName" . }}
+  {{- if eq .Values.role.type "Role" }}
+  namespace: {{ .Release.Namespace }}
+  {{- end }}
+  labels:
+    {{- include "argo-workflows-execution.labels" . | nindent 4 }}
+rules:
+  - apiGroups:
+      - argoproj.io
+    resources:
+      - workflowtaskresults
+    verbs:
+      - create
+      - patch
+{{- end }}
