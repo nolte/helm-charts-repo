@@ -3,6 +3,16 @@ entries:
   argo-workflow-mixin:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2024-11-02T16:25:30.746670382Z"
+    description: Generate Argo Workflow Additional Manifest
+    digest: dce490aed12a631518aef789f6f8be987b432cb60f0f7caf77981c28bbb8c2c4
+    name: argo-workflow-mixin
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflow-mixin-0.8.5/argo-workflow-mixin-0.8.5.tgz
+    version: 0.8.5
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2024-01-24T11:59:13.144994723Z"
     description: Generate Argo Workflow Additional Manifest
     digest: 02be5bdfe6f3e6ef001688df9b30ceafb565fea1873d644783df706a2ebf9479
@@ -2112,6 +2122,31 @@ entries:
     - https://github.com/nolte/helm-charts-repo/releases/download/forecastle-0.2.2/forecastle-0.2.2.tgz
     version: 0.2.2
   fritz-exporter:
+  - apiVersion: v2
+    appVersion: v2.0.0
+    created: "2024-11-02T16:25:30.866318336Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.5.2
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 1.1.0
+    description: FritzBox Exporter
+    digest: 7bbf7363cb997a674be019fd871810c55f5c7f6f3c34b9b91a4b132fe7c502a7
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/incubator/fritzbox-exporter
+    keywords:
+    - fritz-exporter
+    - fritzbox
+    kubeVersion: '>=1.16.0-0'
+    name: fritz-exporter
+    sources:
+    - https://github.com/pdreker/fritz_exporter
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/fritz-exporter-1.1.0/fritz-exporter-1.1.0.tgz
+    version: 1.1.0
   - apiVersion: v2
     appVersion: v2.0.0
     created: "2023-11-04T21:11:04.65498037Z"
@@ -5239,4 +5274,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2024-01-24T21:18:16.244072647Z"
+generated: "2024-11-02T16:25:30.866818544Z"
