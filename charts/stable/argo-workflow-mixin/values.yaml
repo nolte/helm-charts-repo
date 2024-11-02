@@ -13,7 +13,7 @@ global:
   workflow:
     terragrunt:
       # -- Default terragrunt Container version
-      image: alpine/terragrunt:1.6.3
+      image: alpine/terragrunt:1.9.8
 
 role:
   tfState:
@@ -26,7 +26,6 @@ role:
   executor:
     create: false
     name: argo-workflows-execution
-        
 
 roleBinding:
   tfState:

@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: v2.0.0
 description: FritzBox Exporter
 name: fritz-exporter
-version: 1.0.4
+version: 1.1.0
 kubeVersion: ">=1.16.0-0"
 keywords:
 - fritz-exporter
@@ -16,7 +16,7 @@ dependencies:
   repository: https://library-charts.k8s-at-home.com
   version: 4.5.2
 - name: external-secrets-manifests
-  version: 1.0.1
+  version: 1.1.0
   repository: https://nolte.github.io/helm-charts-repo/
   alias: externalsecrets
   condition: externalsecrets.enabled
