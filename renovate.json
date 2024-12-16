@@ -1,131 +1,121 @@
 {
-   "extends":[
+   "extends": [
       "github>nolte/gh-plumbing//renovate-configs/common#v1.0.7"
    ],
-   "rebaseWhen":"conflicted",
-   "helm-values":{
-      "enabled":true
+   "rebaseWhen": "conflicted",
+   "helm-values": {
+      "enabled": true
    },
-   "helmv3":{
-      "fileMatch":[
+   "helmv3": {
+      "fileMatch": [
          "charts/stable/.+/Chart\\.yaml$"
       ]
    },
-   "packageRules":[
+   "packageRules": [
       {
-         "matchDatasources":[
+         "matchDatasources": [
             "helm"
          ],
-         "commitMessageTopic":"Helm chart {{depName}}",
-         "separateMinorPatch":true
+         "commitMessageTopic": "Helm chart {{depName}}",
+         "separateMinorPatch": true
       },
       {
-         "matchDatasources":[
+         "matchDatasources": [
             "github-tags"
          ],
-         "matchPackageNames":[
+         "matchPackageNames": [
             "potiuk/get-workflow-origin"
          ],
-         "versioning":"regex:^v(?<major>\\d+)_(?<minor>\\d+)(_(?<patch>\\d+))?$"
+         "versioning": "regex:^v(?<major>\\d+)_(?<minor>\\d+)(_(?<patch>\\d+))?$"
       },
       {
-         "commitMessagePrefix":"[{{{parentDir}}}]",
-         "branchTopic":"{{{parentDir}}}-{{{depNameSanitized}}}-{{{newMajor}}}{{#if isPatch}}.{{{newMinor}}}{{/if}}.x{{#if isLockfileUpdate}}-lockfile{{/if}}",
-         "updateTypes":[
+         "commitMessagePrefix": "[{{{parentDir}}}]",
+         "branchTopic": "{{{parentDir}}}-{{{depNameSanitized}}}-{{{newMajor}}}{{#if isPatch}}.{{{newMinor}}}{{/if}}.x{{#if isLockfileUpdate}}-lockfile{{/if}}",
+         "matchUpdateTypes": [
             "major"
          ],
-         "bumpVersion":"major",
-         "labels":[
+         "bumpVersion": "major",
+         "labels": [
             "dependency/major"
          ],
-         "packageNames":[
+         "matchPackageNames": [
             "common"
          ],
-         "groupName":[
-            "internal major dep"
-         ]
+         "groupName": "internal major dep"
       },
       {
-         "updateTypes":[
+         "matchUpdateTypes": [
             "minor"
          ],
-         "bumpVersion":"minor",
-         "labels":[
+         "bumpVersion": "minor",
+         "labels": [
             "dependency/minor"
          ],
-         "packageNames":[
+         "matchPackageNames": [
             "common"
          ],
-         "groupName":[
-            "internal minor dep"
-         ]
+         "groupName": "internal minor dep"
       },
       {
-         "updateTypes":[
+         "matchUpdateTypes": [
             "patch"
          ],
-         "bumpVersion":"patch",
-         "labels":[
+         "bumpVersion": "patch",
+         "labels": [
             "dependency/patch"
          ],
-         "packageNames":[
+         "matchPackageNames": [
             "common"
          ],
-         "groupName":[
-            "internal patch dep"
-         ]
+         "groupName": "internal patch dep"
       },
       {
-         "commitMessagePrefix":"[{{{parentDir}}}]",
-         "branchTopic":"{{{parentDir}}}-{{{depNameSanitized}}}-{{{newMajor}}}{{#if isPatch}}.{{{newMinor}}}{{/if}}.x{{#if isLockfileUpdate}}-lockfile{{/if}}",
-         "updateTypes":[
+         "commitMessagePrefix": "[{{{parentDir}}}]",
+         "branchTopic": "{{{parentDir}}}-{{{depNameSanitized}}}-{{{newMajor}}}{{#if isPatch}}.{{{newMinor}}}{{/if}}.x{{#if isLockfileUpdate}}-lockfile{{/if}}",
+         "matchUpdateTypes": [
             "major"
          ],
-         "bumpVersion":"major",
-         "labels":[
+         "bumpVersion": "major",
+         "labels": [
             "dependency/major"
          ],
-         "excludePackageNames":[
-            "common"
-         ],
-         "schedule":[
+         "schedule": [
             "every 3 months on the first day of the month"
+         ],
+         "matchPackageNames": [
+            "!common"
          ]
       },
       {
-         "updateTypes":[
+         "matchUpdateTypes": [
             "minor"
          ],
-         "bumpVersion":"minor",
-         "labels":[
+         "bumpVersion": "minor",
+         "labels": [
             "dependency/minor"
          ],
-         "excludePackageNames":[
-            "common"
-         ],
-         "groupName":[
-            "external minor dep"
-         ],
-         "schedule":[
+         "groupName": "external minor dep",
+         "schedule": [
             "every 2 months on the first day of the month"
+         ],
+         "matchPackageNames": [
+            "!common"
          ]
       },
       {
-         "updateTypes":[
+         "matchUpdateTypes": [
             "patch"
          ],
-         "bumpVersion":"patch",
-         "labels":[
+         "bumpVersion": "patch",
+         "labels": [
             "dependency/patch"
          ],
-         "excludePackageNames":[
-            "common"
-         ],
-         "groupName":[
-            "external patch dep"
-         ],
-         "schedule":[
+         "groupName": "external patch dep",
+         "schedule": [
             "every 1 months on the first day of the month"
+         ],
+         "matchPackageNames": [
+            "!common"
          ]
       }
    ]
