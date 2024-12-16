@@ -2124,6 +2124,31 @@ entries:
   fritz-exporter:
   - apiVersion: v2
     appVersion: v2.0.0
+    created: "2024-12-16T23:22:05.431072029Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.5.2
+    - alias: externalsecrets
+      condition: externalsecrets.enabled
+      name: external-secrets-manifests
+      repository: https://nolte.github.io/helm-charts-repo/
+      version: 1.1.0
+    description: FritzBox Exporter
+    digest: 3295735c3c78c76fbbd9e101d74469e54181b97cd3b7ca4e06c1218c84d9f90f
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/incubator/fritzbox-exporter
+    keywords:
+    - fritz-exporter
+    - fritzbox
+    kubeVersion: '>=1.16.0-0'
+    name: fritz-exporter
+    sources:
+    - https://github.com/pdreker/fritz_exporter
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/fritz-exporter-1.1.1/fritz-exporter-1.1.1.tgz
+    version: 1.1.1
+  - apiVersion: v2
+    appVersion: v2.0.0
     created: "2024-11-02T16:25:30.866318336Z"
     dependencies:
     - name: common
@@ -5274,4 +5299,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2024-11-02T16:25:30.866818544Z"
+generated: "2024-12-16T23:22:05.431955723Z"
