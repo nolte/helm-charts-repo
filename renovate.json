@@ -7,8 +7,8 @@
       "enabled": true
    },
    "helmv3": {
-      "fileMatch": [
-         "charts/stable/.+/Chart\\.yaml$"
+      "managerFilePatterns": [
+         "/charts/stable/.+/Chart\\.yaml$/"
       ]
    },
    "packageRules": [
