@@ -3,6 +3,16 @@ entries:
   argo-workflow-mixin:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-06-06T16:04:02.873418865Z"
+    description: Generate Argo Workflow Additional Manifest
+    digest: 032a9b695bbdf3855ef11a60cc453fedfca47b01424ff3ef4877a605a2e8a598
+    name: argo-workflow-mixin
+    type: application
+    urls:
+    - https://github.com/nolte/helm-charts-repo/releases/download/argo-workflow-mixin-0.8.7/argo-workflow-mixin-0.8.7.tgz
+    version: 0.8.7
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2024-12-16T23:31:27.803688142Z"
     description: Generate Argo Workflow Additional Manifest
     digest: 485327c75e2718461203cc3f88f8c2d5d7dd57e5191d8805052ea7a36e11593a
@@ -5309,4 +5319,4 @@ entries:
     urls:
     - https://github.com/nolte/helm-charts-repo/releases/download/vault-0.2.2/vault-0.2.2.tgz
     version: 0.2.2
-generated: "2024-12-16T23:31:27.804707188Z"
+generated: "2025-06-06T16:04:02.875004035Z"
