@@ -30,7 +30,7 @@ jobs:
         fetch-depth: 0
 
     - name: Set up chart-testing
-      uses: helm/chart-testing-action@v2.7.0
+      uses: helm/chart-testing-action@v2.8.0
 
     - name: Install Dev tools
       run: |
@@ -69,10 +69,10 @@ jobs:
 
     - uses: actions/setup-python@v5
       with:
-        python-version: 3.13
+        python-version: 3.14
 
     - name: Set up chart-testing
-      uses: helm/chart-testing-action@v2.7.0
+      uses: helm/chart-testing-action@v2.8.0
 
     - name: Run chart-testing (lint)
       id: lint

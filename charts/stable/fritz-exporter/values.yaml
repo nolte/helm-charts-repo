@@ -9,7 +9,7 @@ image:
   # -- image repository
   repository: pdreker/fritz_exporter
   # -- image tag
-  tag: 2.5.2
+  tag: 2.6.2
   # -- image pull policy
   pullPolicy: IfNotPresent
 
